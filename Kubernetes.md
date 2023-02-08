@@ -839,3 +839,71 @@ Both the above commands have their own challenges. While one of it cannot accept
 	================================================= by default anything k8s run on 'kube-system' namespace 
 	
 	
+	
+	================ Labels and selectors  ==
+	
+	kubectl get pods --selector app=myapp | wc -l
+	
+	
+	================= Taints and Tolerations
+
+	
+	This section deal with pods relationships to node and what pods can be place on which node
+	
+Tents are placed on nodes, whiles toerations are placed on pods.
+	
+	==== To tent a node
+		```
+		kubectl taint node node-name key=value:taint-effect
+	
+	
+	== Type of taint effect
+	1. NoExecute
+	2. preferNoSchedule
+	3. noSchedule
+
+	
+	=== Toleration
+	
+	```
+	
+	kubectl taint node node-name app=frontend:noSchedule
+	
+	```
+	
+	
+	```
+	
+	apiVersion: v1
+
+kind: Pod
+
+metadata:
+
+  name: nginx
+
+  labels:
+
+    env: test
+
+spec:
+
+  containers:
+
+  - name: nginx
+
+    image: nginx
+
+    imagePullPolicy: IfNotPresent
+
+  tolerations:
+
+  - key: "example-key"
+
+    operator: "Exists"
+
+    effect: "NoSchedule"
+```
+	
+	======= NOTE
+With this concept in place, it good to note that Taint/Toleration only give control to the node on which pods to accept but it does not guranteed that the pode will be scheduled on that particular node. This is were node affinity comes in. With node affinity the pods must be scheduled on the tainted pods.	
