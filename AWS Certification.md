@@ -28,7 +28,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2/
 
 Question 2: Incorrect
-An Amazon Elastic File System (EFS) has been created to store data that will be accessed by a large number of Amazon EC2 instances. The data is sensitive and a Solutions Architect is creating a design for security measures to protect the data. It is required that network traffic is restricted correctly based on firewall rules and access from hosts is restricted by user or group.
+# An Amazon Elastic File System (EFS) has been created to store data that will be accessed by a large number of Amazon EC2 instances. The data is sensitive and a Solutions Architect is creating a design for security measures to protect the data. It is required that network traffic is restricted correctly based on firewall rules and access from hosts is restricted by user or group.
 
 How can this be achieved with Amazon EFS? (choose 2)
 
@@ -40,9 +40,9 @@ How can this be achieved with Amazon EFS? (choose 2)
 Explanation
 You can control who can administer your file system using IAM. You can control access to files and directories with POSIX-compliant user and group-level permissions. POSIX permissions allows you to restrict access from hosts by user and group. EFS Security Groups act as a firewall, and the rules you add define the traffic flow.
 
-CORRECT: "Use POSIX permissions to control access from hosts by user or group" is the correct answer.
+## CORRECT: "Use POSIX permissions to control access from hosts by user or group" is the correct answer.
 
-CORRECT: "Use EFS Security Groups to control network traffic" is the correct answer.
+## CORRECT: "Use EFS Security Groups to control network traffic" is the correct answer.
 
 INCORRECT: "Use AWS Web Application Firewall (WAF) to protect EFS" is incorrect. You cannot use AWS WAF to protect EFS data using users and groups.
 
@@ -59,7 +59,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-efs/
 
 Question 3: Correct
-A company needs to ensure that they can failover between AWS Regions in the event of a disaster seamlessly with minimal downtime and data loss. The applications will run in an active-active configuration.
+# A company needs to ensure that they can failover between AWS Regions in the event of a disaster seamlessly with minimal downtime and data loss. The applications will run in an active-active configuration.
 
 Which DR strategy should a Solutions Architect recommend?
 
@@ -70,7 +70,7 @@ Which DR strategy should a Solutions Architect recommend?
 Explanation
 A multi-site solution runs on AWS as well as on your existing on-site infrastructure in an active- active configuration. The data replication method that you employ will be determined by the recovery point that you choose. This is either Recovery Time Objective (the maximum allowable downtime before degraded operations are restored) or Recovery Point Objective (the maximum allowable time window whereby you will accept the loss of transactions during the DR process).
 
-CORRECT: "Multi-site" is the correct answer.
+## CORRECT: "Multi-site" is the correct answer.
 
 INCORRECT: "Backup and restore" is incorrect. This is the lowest cost DR approach that simply entails creating online backups of all data and applications.
 
@@ -83,7 +83,7 @@ References:
 https://aws.amazon.com/blogs/publicsector/rapidly-recover-mission-critical-systems-in-a-disaster/
 
 Question 4: Skipped
-An Amazon EC2 instance has been launched into an Amazon VPC. A Solutions Architect needs to ensure that instances have both a private and public DNS hostnames. Assuming settings were not changed during creation of the VPC, how will DNS hostnames be assigned by default? (choose 2)
+# An Amazon EC2 instance has been launched into an Amazon VPC. A Solutions Architect needs to ensure that instances have both a private and public DNS hostnames. Assuming settings were not changed during creation of the VPC, how will DNS hostnames be assigned by default? (choose 2)
 
 
 
@@ -97,9 +97,9 @@ When you launch an instance into a nondefault VPC, we provide the instance with 
 
 All other statements are incorrect with default settings.
 
-CORRECT: "In a default VPC instances will be assigned a public and private DNS hostname" is the correct answer.
+## CORRECT: "In a default VPC instances will be assigned a public and private DNS hostname" is the correct answer.
 
-CORRECT: "In a non-default VPC instances will be assigned a private but not a public DNS hostname" is the correct answer.
+## CORRECT: "In a non-default VPC instances will be assigned a private but not a public DNS hostname" is the correct answer.
 
 INCORRECT: "In all VPCs instances no DNS hostnames will be assigned" is incorrect as explained above.
 
@@ -116,7 +116,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 5: Correct
-Several Amazon EC2 Spot instances are being used to process messages from an Amazon SQS queue and store results in an Amazon DynamoDB table. Shortly after picking up a message from the queue AWS terminated the Spot instance. The Spot instance had not finished processing the message. What will happen to the message?
+#Several Amazon EC2 Spot instances are being used to process messages from an Amazon SQS queue and store results in an Amazon DynamoDB table. Shortly after picking up a message from the queue AWS terminated the Spot instance. The Spot instance had not finished processing the message. What will happen to the message?
 
 
 
@@ -144,7 +144,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-application-integration-services/
 
 Question 6: Correct
-An application uses an Amazon RDS database and Amazon EC2 instances in a web tier. The web tier instances must not be directly accessible from the internet to improve security.
+#An application uses an Amazon RDS database and Amazon EC2 instances in a web tier. The web tier instances must not be directly accessible from the internet to improve security.
 
 How can a Solutions Architect meet these requirements?
 
@@ -174,7 +174,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 7: Incorrect
-A company is investigating ways to analyze and process large amounts of data in the cloud faster, without needing to load or transform the data in a data warehouse. The data resides in Amazon S3.
+#A company is investigating ways to analyze and process large amounts of data in the cloud faster, without needing to load or transform the data in a data warehouse. The data resides in Amazon S3.
 
 Which AWS services would allow the company to query the data in place? (choose 2)
 
@@ -209,7 +209,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-redshift/
 
 Question 8: Correct
-Three AWS accounts are owned by the same company but in different regions. Account Z has two AWS Direct Connect connections to two separate company offices. Accounts A and B require the ability to route across account Z’s Direct Connect connections to each company office. A Solutions Architect has created an AWS Direct Connect gateway in account Z.
+#Three AWS accounts are owned by the same company but in different regions. Account Z has two AWS Direct Connect connections to two separate company offices. Accounts A and B require the ability to route across account Z’s Direct Connect connections to each company office. A Solutions Architect has created an AWS Direct Connect gateway in account Z.
 
 How can the required connectivity be configured?
 
@@ -245,7 +245,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-direct-connect/
 
 Question 9: Correct
-A legacy application is being migrated into AWS. The application has a large amount of data that is rarely accessed. When files are accessed they are retrieved sequentially. The application will be migrated onto an Amazon EC2 instance.
+#A legacy application is being migrated into AWS. The application has a large amount of data that is rarely accessed. When files are accessed they are retrieved sequentially. The application will be migrated onto an Amazon EC2 instance.
 
 What is the LEAST expensive EBS volume type for this use case?
 
@@ -275,7 +275,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2/
 
 Question 10: Correct
-A company is transitioning their web presence into the AWS cloud. As part of the migration the company will be running a web application both on-premises and in AWS for a period of time. During the period of co-existence the client would like 80% of the traffic to hit the AWS-based web servers and 20% to be directed to the on-premises web servers.
+#A company is transitioning their web presence into the AWS cloud. As part of the migration the company will be running a web application both on-premises and in AWS for a period of time. During the period of co-existence the client would like 80% of the traffic to hit the AWS-based web servers and 20% to be directed to the on-premises web servers.
 
 What method can a Solutions Architect use to distribute traffic as requested?
 
@@ -305,7 +305,7 @@ https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
 https://digitalcloud.training/amazon-route-53/
 
 Question 11: Incorrect
-A Solutions Architect is designing the disk configuration for an Amazon EC2 instance. The instance needs to support a MapReduce process that requires high throughput for a large dataset with large I/O sizes.
+#A Solutions Architect is designing the disk configuration for an Amazon EC2 instance. The instance needs to support a MapReduce process that requires high throughput for a large dataset with large I/O sizes.
 
 Which Amazon EBS volume is the MOST cost-effective solution for these requirements?
 
@@ -337,7 +337,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ebs/
 
 Question 12: Incorrect
-A Solutions Architect has created an AWS Organization with several AWS accounts. Security policy requires that use of specific API actions are limited across all accounts. The Solutions Architect requires a method of centrally controlling these actions.
+#A Solutions Architect has created an AWS Organization with several AWS accounts. Security policy requires that use of specific API actions are limited across all accounts. The Solutions Architect requires a method of centrally controlling these actions.
 
 What is the SIMPLEST method of achieving the requirements?
 
@@ -369,7 +369,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/certification-training/aws-solutions-architect-associate/security-identity-compliance/aws-accounts/
 
 Question 13: Correct
-An Amazon EC2 instance behind an Elastic Load Balancer (ELB) is in the process of being de-registered. Which ELB feature is used to allow existing connections to close cleanly?
+#An Amazon EC2 instance behind an Elastic Load Balancer (ELB) is in the process of being de-registered. Which ELB feature is used to allow existing connections to close cleanly?
 
 
 
@@ -395,7 +395,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
 
 Question 14: Correct
-A Solutions Architect needs to upload a large (2GB) file to an S3 bucket. What is the recommended way to upload a single large file to an S3 bucket?
+#A Solutions Architect needs to upload a large (2GB) file to an S3 bucket. What is the recommended way to upload a single large file to an S3 bucket?
 
 
 
@@ -421,7 +421,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-s3-and-glacier/
 
 Question 15: Incorrect
-Some data has become corrupted in an Amazon RDS database. A Solutions Architect plans to use point-in-time restore to recover the data to the last known good configuration. Which of the following statements is correct about restoring an RDS database to a specific point-in-time? (choose 2)
+#Some data has become corrupted in an Amazon RDS database. A Solutions Architect plans to use point-in-time restore to recover the data to the last known good configuration. Which of the following statements is correct about restoring an RDS database to a specific point-in-time? (choose 2)
 
 
 
@@ -452,7 +452,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-rds/
 
 Question 16: Correct
-A large multi-national client has requested a design for a multi-region database. The master database will be in the EU (Frankfurt) region and databases will be located in 4 other regions to service local read traffic. The database should be a managed service including the replication.
+#A large multi-national client has requested a design for a multi-region database. The master database will be in the EU (Frankfurt) region and databases will be located in 4 other regions to service local read traffic. The database should be a managed service including the replication.
 
 The solution should be cost-effective and secure. Which AWS service can deliver these requirements?
 
@@ -480,7 +480,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-rds/
 
 Question 17: Incorrect
-A company runs a web-based application that uses Amazon EC2 instances for the web front-end and Amazon RDS for the database back-end. The web application writes transaction log files to an Amazon S3 bucket and the quantity of files is becoming quite large. It is acceptable to retain the most recent 60 days of log files and permanently delete the rest.
+#A company runs a web-based application that uses Amazon EC2 instances for the web front-end and Amazon RDS for the database back-end. The web application writes transaction log files to an Amazon S3 bucket and the quantity of files is becoming quite large. It is acceptable to retain the most recent 60 days of log files and permanently delete the rest.
 
 Which action can a Solutions Architect take to enable this to happen automatically?
 
@@ -512,9 +512,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-s3-and-glacier/
 
 Question 18: Correct
-A customer is deploying services in a hybrid cloud model. The customer has mandated that data is transferred directly between cloud data centers, bypassing ISPs.
+#A customer is deploying services in a hybrid cloud model. The customer has mandated that data is transferred directly between cloud data centers, bypassing ISPs.
 
-Which AWS service can be used to enable hybrid cloud connectivity?
+#Which AWS service can be used to enable hybrid cloud connectivity?
 
 
 
@@ -542,9 +542,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-direct-connect/
 
 Question 19: Incorrect
-A company has a fleet of Amazon EC2 instances behind an Elastic Load Balancer (ELB) that are a mixture of c4.2xlarge instance types and c5.large instances. The load on the CPUs on the c5.large instances has been very high, often hitting 100% utilization, whereas the c4.2xlarge instances have been performing well.
+#A company has a fleet of Amazon EC2 instances behind an Elastic Load Balancer (ELB) that are a mixture of c4.2xlarge instance types and c5.large instances. The load on the CPUs on the c5.large instances has been very high, often hitting 100% utilization, whereas the c4.2xlarge instances have been performing well.
 
-What should a Solutions Architect recommend to resolve the performance issues?
+#What should a Solutions Architect recommend to resolve the performance issues?
 
 
 
@@ -570,9 +570,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2/
 
 Question 20: Correct
-An application receives a high traffic load between 7:30am and 9:30am daily. The application uses an Auto Scaling group to maintain three instances most of the time but during the peak period it requires six instances.
+#An application receives a high traffic load between 7:30am and 9:30am daily. The application uses an Auto Scaling group to maintain three instances most of the time but during the peak period it requires six instances.
 
-How can a Solutions Architect configure Auto Scaling to perform a daily scale-out event at 7:30am and a scale-in event at 9:30am to account for the peak load?
+#How can a Solutions Architect configure Auto Scaling to perform a daily scale-out event at 7:30am and a scale-in event at 9:30am to account for the peak load?
 
 
 
@@ -606,9 +606,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2-auto-scaling/
 
 Question 21: Correct
-A web application receives order processing information from customers and places the messages on an Amazon SQS queue. A fleet of Amazon EC2 instances are configured to pick up the messages, process them, and store the results in a DynamoDB table. The current configuration has been resulting in a large number of empty responses to ReceiveMessage API requests.
+#A web application receives order processing information from customers and places the messages on an Amazon SQS queue. A fleet of Amazon EC2 instances are configured to pick up the messages, process them, and store the results in a DynamoDB table. The current configuration has been resulting in a large number of empty responses to ReceiveMessage API requests.
 
-A Solutions Architect needs to eliminate empty responses to reduce operational overhead. How can this be done? 
+#A Solutions Architect needs to eliminate empty responses to reduce operational overhead. How can this be done? 
 
 
 
@@ -656,9 +656,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-application-integration-services/
 
 Question 22: Correct
-A Solutions Architect has logged into an Amazon EC2 Linux instance using SSH and needs to determine a few pieces of information including what IAM role is assigned, the instance ID and the names of the security groups that are assigned to the instance.
+#A Solutions Architect has logged into an Amazon EC2 Linux instance using SSH and needs to determine a few pieces of information including what IAM role is assigned, the instance ID and the names of the security groups that are assigned to the instance.
 
-From the options below, what would be the best source of this information?
+#From the options below, what would be the best source of this information?
 
 
 
@@ -686,9 +686,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2/
 
 Question 23: Correct
-An application is generating a large amount of clickstream events data that is being stored on S3. The business needs to understand customer behaviour and want to run complex analytics queries against the data.
+#A#n application is generating a large amount of clickstream events data that is being stored on S3. The business needs to understand customer behaviour and want to run complex analytics queries against the data.
 
-Which AWS service can be used for this requirement?
+#Which AWS service can be used for this requirement?
 
 
 
@@ -718,7 +718,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-redshift/
 
 Question 24: Incorrect
-An application uses a MySQL database running on an Amazon EC2 instance. The application generates high I/O and constant writes to a single table on the database. Which Amazon EBS volume type will provide the MOST consistent performance and low latency?
+#An application uses a MySQL database running on an Amazon EC2 instance. The application generates high I/O and constant writes to a single table on the database. Which Amazon EBS volume type will provide the MOST consistent performance and low latency?
 
 
 
@@ -746,7 +746,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ebs/
 
 Question 25: Incorrect
-A large quantity of data that is rarely accessed is being archived onto Amazon Glacier. Your CIO wants to understand the resilience of the service. Which of the statements below is correct about Amazon Glacier storage?  (choose 2) 
+#A large quantity of data that is rarely accessed is being archived onto Amazon Glacier. Your CIO wants to understand the resilience of the service. Which of the statements below is correct about Amazon Glacier storage?  (choose 2) 
 
 
 
@@ -775,7 +775,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-s3-and-glacier/
 
 Question 26: Correct
-A Solutions Architect has created a new security group in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the security group? (choose 2)
+#A Solutions Architect has created a new security group in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the security group? (choose 2)
 
 
 
@@ -806,9 +806,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 27: Incorrect
-A company needs to capture detailed information about all HTTP requests that are processed by their Internet facing Application Load Balancer (ALB). The company requires information on the requester, IP address, and request type for analyzing traffic patterns to better understand their customer base.
+#A company needs to capture detailed information about all HTTP requests that are processed by their Internet facing Application Load Balancer (ALB). The company requires information on the requester, IP address, and request type for analyzing traffic patterns to better understand their customer base.
 
-Which actions should a Solutions Architect recommend?
+#Which actions should a Solutions Architect recommend?
 
 
 
@@ -834,7 +834,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
 
 Question 28: Correct
-A customer has requested some advice on how to implement security measures in their Amazon VPC. The client has recently been the victim of some hacking attempts. The client wants to implement measures to mitigate further threats. The client has explained that the attacks always come from the same small block of IP addresses.
+#A customer has requested some advice on how to implement security measures in their Amazon VPC. The client has recently been the victim of some hacking attempts. The client wants to implement measures to mitigate further threats. The client has explained that the attacks always come from the same small block of IP addresses.
 
 What would be a quick and easy measure to help prevent further attacks?
 
@@ -864,9 +864,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 29: Incorrect
-An on-premise data center will be connected to an Amazon VPC by a hardware VPN that has public and VPN-only subnets. The security team has requested that traffic hitting public subnets on AWS that’s destined to on-premise applications must be directed over the VPN to the corporate firewall.
+#An on-premise data center will be connected to an Amazon VPC by a hardware VPN that has public and VPN-only subnets. The security team has requested that traffic hitting public subnets on AWS that’s destined to on-premise applications must be directed over the VPN to the corporate firewall.
 
-How can this be achieved?
+#How can this be achieved?
 
 
 
@@ -894,7 +894,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 30: Correct
-A fleet of Amazon EC2 instances running Linux will be launched in an Amazon VPC. An application development framework and some custom software must be installed on the instances. The installation will be initiated using some scripts. What feature enables a Solutions Architect to specify the scripts the software can be installed during the EC2 instance launch?
+#A fleet of Amazon EC2 instances running Linux will be launched in an Amazon VPC. An application development framework and some custom software must be installed on the instances. The installation will be initiated using some scripts. What feature enables a Solutions Architect to specify the scripts the software can be installed during the EC2 instance launch?
 
 
 
@@ -922,9 +922,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2/
 
 Question 31: Incorrect
-A Solutions Architect needs to capture information about the traffic that reaches an Amazon Elastic Load Balancer. The information should include the source, destination, and protocol.
+#A Solutions Architect needs to capture information about the traffic that reaches an Amazon Elastic Load Balancer. The information should include the source, destination, and protocol.
 
-What is the most secure and reliable method for gathering this data?
+#What is the most secure and reliable method for gathering this data?
 
 
 
@@ -951,9 +951,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
 
 Question 32: Correct
-A company has launched a multi-tier application architecture. The web tier and database tier run on Amazon EC2 instances in private subnets within the same Availability Zone.
+#A company has launched a multi-tier application architecture. The web tier and database tier run on Amazon EC2 instances in private subnets within the same Availability Zone.
 
-Which combination of steps should a Solutions Architect take to add high availability to this architecture? (Select TWO.)
+#Which combination of steps should a Solutions Architect take to add high availability to this architecture? (Select TWO.)
 
 
 
@@ -986,9 +986,9 @@ https://digitalcloud.training/amazon-ec2/
 https://digitalcloud.training/amazon-rds/
 
 Question 33: Incorrect
-An on-premises server runs a MySQL database and will be migrated to the AWS Cloud. The company require a managed solution that supports high availability and automatic failover in the event of the outage of an Availability Zone (AZ).
+#An on-premises server runs a MySQL database and will be migrated to the AWS Cloud. The company require a managed solution that supports high availability and automatic failover in the event of the outage of an Availability Zone (AZ).
 
-Which solution is the BEST fit for these requirements?
+#Which solution is the BEST fit for these requirements?
 
 
 
@@ -1020,7 +1020,7 @@ https://digitalcloud.training/amazon-rds/
 https://digitalcloud.training/aws-migration-services/
 
 Question 34: Correct
-A tool needs to analyze data stored in an Amazon S3 bucket. Processing the data takes a few seconds and results are then written to another S3 bucket. Less than 256 MB of memory is needed to run the process. What would be the MOST cost-effective compute solutions for this use case?
+#A tool needs to analyze data stored in an Amazon S3 bucket. Processing the data takes a few seconds and results are then written to another S3 bucket. Less than 256 MB of memory is needed to run the process. What would be the MOST cost-effective compute solutions for this use case?
 
 
 
@@ -1046,7 +1046,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-lambda/
 
 Question 35: Incorrect
-The load on a MySQL database running on Amazon EC2 is increasing and performance has been impacted. Which of the options below would help to increase storage performance? (choose 2)
+#The load on a MySQL database running on Amazon EC2 is increasing and performance has been impacted. Which of the options below would help to increase storage performance? (choose 2)
 
 
 
@@ -1085,7 +1085,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ebs/
 
 Question 36: Correct
-A Solutions Architect is deploying a production application that will use several Amazon EC2 instances and run constantly on an ongoing basis. The application cannot be interrupted or restarted. Which EC2 pricing model would be best for this workload?
+#A Solutions Architect is deploying a production application that will use several Amazon EC2 instances and run constantly on an ongoing basis. The application cannot be interrupted or restarted. Which EC2 pricing model would be best for this workload?
 
 
 
@@ -1113,7 +1113,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2/
 
 Question 37: Correct
-A Solutions Architect created a new IAM user account for a temporary employee who recently joined the company. The user does not have permissions to perform any actions, which statement is true about newly created users in IAM?
+#A Solutions Architect created a new IAM user account for a temporary employee who recently joined the company. The user does not have permissions to perform any actions, which statement is true about newly created users in IAM?
 
 
 
@@ -1139,7 +1139,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-directory-services/
 
 Question 38: Incorrect
-A financial services company regularly runs an analysis of the day’s transaction costs, execution reporting, and market performance. The company currently uses third-party commercial software for provisioning, managing, monitoring, and scaling the computing jobs which utilize a large fleet of EC2 instances.
+#A financial services company regularly runs an analysis of the day’s transaction costs, execution reporting, and market performance. The company currently uses third-party commercial software for provisioning, managing, monitoring, and scaling the computing jobs which utilize a large fleet of EC2 instances.
 
 The company is seeking to reduce costs and utilize AWS services. Which AWS service could be used in place of the third-party software?
 
@@ -1163,7 +1163,7 @@ References:
 https://aws.amazon.com/batch/
 
 Question 39: Correct
-A Solutions Architect enabled Access Logs on an Application Load Balancer (ALB) and needs to process the log files using a hosted Hadoop service. What configuration changes and services can be leveraged to deliver this requirement?
+#A Solutions Architect enabled Access Logs on an Application Load Balancer (ALB) and needs to process the log files using a hosted Hadoop service. What configuration changes and services can be leveraged to deliver this requirement?
 
 
 
@@ -1191,7 +1191,7 @@ https://digitalcloud.training/amazon-emr/
 https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
 
 Question 40: Correct
-A company has multiple Amazon VPCs that are peered with each other. The company would like to use a single Elastic Load Balancer (ELB) to route traffic to multiple EC2 instances in peered VPCs within the same region. How can this be achieved?
+#A company has multiple Amazon VPCs that are peered with each other. The company would like to use a single Elastic Load Balancer (ELB) to route traffic to multiple EC2 instances in peered VPCs within the same region. How can this be achieved?
 
 
 
@@ -1223,7 +1223,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
 
 Question 41: Incorrect
-A Solutions Architect needs to run a PowerShell script on a fleet of Amazon EC2 instances running Microsoft Windows. The instances have already been launched in an Amazon VPC. What tool can be run from the AWS Management Console that to execute the script on all target EC2 instances?
+#A Solutions Architect needs to run a PowerShell script on a fleet of Amazon EC2 instances running Microsoft Windows. The instances have already been launched in an Amazon VPC. What tool can be run from the AWS Management Console that to execute the script on all target EC2 instances?
 
 
 
@@ -1247,7 +1247,7 @@ References:
 https://aws.amazon.com/blogs/aws/new-ec2-run-command-remote-instance-management-at-scale/
 
 Question 42: Correct
-A company is deploying a new two-tier web application that uses EC2 web servers and a DynamoDB database backend. An Internet facing ELB distributes connections between the web servers.
+#A company is deploying a new two-tier web application that uses EC2 web servers and a DynamoDB database backend. An Internet facing ELB distributes connections between the web servers.
 
 The Solutions Architect has created a security group for the web servers and needs to create a security group for the ELB. What rules should be added? (choose 2)
 
@@ -1282,7 +1282,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
 
 Question 43: Incorrect
-A Solutions Architect is launching an Amazon EC2 instance with multiple attached volumes by modifying the block device mapping. Which block device can be specified in a block device mapping to be used with an EC2 instance? (choose 2)
+#A Solutions Architect is launching an Amazon EC2 instance with multiple attached volumes by modifying the block device mapping. Which block device can be specified in a block device mapping to be used with an EC2 instance? (choose 2)
 
 
 
@@ -1315,7 +1315,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ebs/
 
 Question 44: Incorrect
-A Solutions Architect has created a VPC and is in the process of formulating the subnet design. The VPC will be used to host a two-tier application that will include Internet facing web servers, and internal-only DB servers. Zonal redundancy is required.
+#A Solutions Architect has created a VPC and is in the process of formulating the subnet design. The VPC will be used to host a two-tier application that will include Internet facing web servers, and internal-only DB servers. Zonal redundancy is required.
 
 How many subnets are required to support this requirement?
 
@@ -1341,7 +1341,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 45: Correct
-One of the departments in a company has been generating a large amount of data on Amazon S3 and costs are increasing. Data older than 90 days is rarely accessed but must be retained for several years. If this data does need to be accessed at least 24 hours notice is provided.
+#One of the departments in a company has been generating a large amount of data on Amazon S3 and costs are increasing. Data older than 90 days is rarely accessed but must be retained for several years. If this data does need to be accessed at least 24 hours notice is provided.
 
 How can a Solutions Architect optimize the costs associated with storage of this data whilst ensuring it is accessible if required?
 
@@ -1381,7 +1381,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-s3-and-glacier/
 
 Question 46: Incorrect
-The Solutions Architect in charge of a critical application must ensure the Amazon EC2 instances are able to be launched in another AWS Region in the event of a disaster.
+#The Solutions Architect in charge of a critical application must ensure the Amazon EC2 instances are able to be launched in another AWS Region in the event of a disaster.
 
 What steps should the Solutions Architect take? (Select TWO.)
 
@@ -1416,7 +1416,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2/
 
 Question 47: Incorrect
-An application runs on EC2 instances in a private subnet behind an Application Load Balancer in a public subnet. The application is highly available and distributed across multiple AZs. The EC2 instances must make API calls to an internet-based service. How can the Solutions Architect enable highly available internet connectivity?
+#An application runs on EC2 instances in a private subnet behind an Application Load Balancer in a public subnet. The application is highly available and distributed across multiple AZs. The EC2 instances must make API calls to an internet-based service. How can the Solutions Architect enable highly available internet connectivity?
 
 
 
@@ -1444,7 +1444,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 48: Incorrect
-A security officer has requested that all data associated with a specific customer is encrypted. The data resides on Elastic Block Store (EBS) volumes. Which of the following statements about using EBS encryption are correct? (choose 2)     
+#A security officer has requested that all data associated with a specific customer is encrypted. The data resides on Elastic Block Store (EBS) volumes. Which of the following statements about using EBS encryption are correct? (choose 2)     
 
 
 
@@ -1473,7 +1473,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ebs/
 
 Question 49: Correct
-The application development team in a company have developed a Java application and saved the source code in a .war file. They would like to run the application on AWS resources and are looking for a service that can handle the provisioning and management of the underlying resources it will run on.
+#The application development team in a company have developed a Java application and saved the source code in a .war file. They would like to run the application on AWS resources and are looking for a service that can handle the provisioning and management of the underlying resources it will run on.
 
 Which AWS service should a Solutions Architect recommend the Developers use to upload the Java source code file?
 
@@ -1538,7 +1538,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
 
 Question 51: Incorrect
-An Amazon EC2 instance is generating very high packets-per-second and performance of the application stack is being impacted. A Solutions Architect needs to determine a resolution to the issue that results in improved performance.
+#An Amazon EC2 instance is generating very high packets-per-second and performance of the application stack is being impacted. A Solutions Architect needs to determine a resolution to the issue that results in improved performance.
 
 Which action should the Architect take?
 
@@ -1600,7 +1600,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-cloudfront/
 
 Question 53: Correct
-A company runs an application on premises that stores a large quantity of semi-structured data using key-value pairs. The application code will be migrated to AWS Lambda and a highly scalable solution is required for storing the data.
+#A company runs an application on premises that stores a large quantity of semi-structured data using key-value pairs. The application code will be migrated to AWS Lambda and a highly scalable solution is required for storing the data.
 
 Which datastore will be the best fit for these requirements?
 
@@ -1687,7 +1687,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-cloudwatch/
 
 Question 56: Incorrect
-An Auto Scaling group of Amazon EC2 instances behind an Elastic Load Balancer (ELB) is running in an Amazon VPC. Health checks are configured on the ASG to use EC2 status checks. The ELB has determined that an EC2 instance is unhealthy and has removed it from service. A Solutions Architect noticed that the instance is still running and has not been terminated by EC2 Auto Scaling.
+#An Auto Scaling group of Amazon EC2 instances behind an Elastic Load Balancer (ELB) is running in an Amazon VPC. Health checks are configured on the ASG to use EC2 status checks. The ELB has determined that an EC2 instance is unhealthy and has removed it from service. A Solutions Architect noticed that the instance is still running and has not been terminated by EC2 Auto Scaling.
 
 What would be an explanation for this behavior?
 
@@ -1735,7 +1735,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ec2-auto-scaling/
 
 Question 57: Incorrect
-A Solutions Architect has created an AWS account and selected the Asia Pacific (Sydney) region. Within the default VPC there is a default security group. What settings are configured within this security group by default? (choose 2)
+#A Solutions Architect has created an AWS account and selected the Asia Pacific (Sydney) region. Within the default VPC there is a default security group. What settings are configured within this security group by default? (choose 2)
 
 
 
@@ -1792,7 +1792,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-ebs/
 
 Question 59: Incorrect
-A company runs a streaming media service and the content is stored on Amazon S3. The media catalog server pulls updated content from S3 and can issue over 1 million read operations per second for short periods. Latency must be kept under 5ms for these updates. Which solution will provide the BEST performance for the media catalog updates?
+#A company runs a streaming media service and the content is stored on Amazon S3. The media catalog server pulls updated content from S3 and can issue over 1 million read operations per second for short periods. Latency must be kept under 5ms for these updates. Which solution will provide the BEST performance for the media catalog updates?
 
 
 
@@ -1828,7 +1828,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-elasticache/
 
 Question 60: Correct
-A Solutions Architect has created a new Network ACL in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the Network ACL? (choose 2)
+#A Solutions Architect has created a new Network ACL in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the Network ACL? (choose 2)
 
 
 
@@ -1861,9 +1861,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 61: Incorrect
-An Amazon DynamoDB table has a variable load, ranging from sustained heavy usage some days, to only having small spikes on others. The load is 80% read and 20% write. The provisioned throughput capacity has been configured to account for the heavy load to ensure throttling does not occur.
+#An Amazon DynamoDB table has a variable load, ranging from sustained heavy usage some days, to only having small spikes on others. The load is 80% read and 20% write. The provisioned throughput capacity has been configured to account for the heavy load to ensure throttling does not occur.
 
-What would be the most efficient solution to optimize cost?
+#What would be the most efficient solution to optimize cost?
 
 
 
@@ -1889,9 +1889,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-dynamodb/
 
 Question 62: Correct
-The database layer of an on-premises web application is being migrated to AWS. The database currently uses an in-memory cache. A Solutions Architect must deliver a solution that supports high availability and replication for the caching layer.
+#The database layer of an on-premises web application is being migrated to AWS. The database currently uses an in-memory cache. A Solutions Architect must deliver a solution that supports high availability and replication for the caching layer.
 
-Which service should the Solutions Architect recommend?
+#Which service should the Solutions Architect recommend?
 
 
 
@@ -1919,9 +1919,9 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-elasticache/
 
 Question 63: Incorrect
-An organization in the agriculture sector is deploying sensors and smart devices around factory plants and fields. The devices will collect information and send it to cloud applications running on AWS.
+#An organization in the agriculture sector is deploying sensors and smart devices around factory plants and fields. The devices will collect information and send it to cloud applications running on AWS.
 
-Which AWS service will securely connect the devices to the cloud applications?
+#Which AWS service will securely connect the devices to the cloud applications?
 
 
 
@@ -1944,7 +1944,7 @@ References:
 https://aws.amazon.com/iot-core/
 
 Question 64: Incorrect
-A distribution method is required for some static files. The requests will mainly be GET requests and a high volume of GETs is expected, often exceeding 2000 per second. The files are currently stored in an S3 bucket. According to AWS best practices, how can performance be optimized?
+#A distribution method is required for some static files. The requests will mainly be GET requests and a high volume of GETs is expected, often exceeding 2000 per second. The files are currently stored in an S3 bucket. According to AWS best practices, how can performance be optimized?
 
 
 
@@ -1972,7 +1972,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-s3-and-glacier/
 
 Question 65: Correct
-A company requires an Elastic Load Balancer (ELB) for an application they are planning to deploy on AWS. The application requires extremely high throughput and extremely low latencies. The connections will be made using the TCP protocol and the ELB must support load balancing to multiple ports on an instance. Which ELB would should the company use?
+#A company requires an Elastic Load Balancer (ELB) for an application they are planning to deploy on AWS. The application requires extremely high throughput and extremely low latencies. The connections will be made using the TCP protocol and the ELB must support load balancing to multiple ports on an instance. Which ELB would should the company use?
 
 
 
