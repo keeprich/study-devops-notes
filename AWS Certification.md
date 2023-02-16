@@ -116,7 +116,8 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 5: Correct
-#Several Amazon EC2 Spot instances are being used to process messages from an Amazon SQS queue and store results in an Amazon DynamoDB table. Shortly after picking up a message from the queue AWS terminated the Spot instance. The Spot instance had not finished processing the message. What will happen to the message?
+
+# Several Amazon EC2 Spot instances are being used to process messages from an Amazon SQS queue and store results in an Amazon DynamoDB table. Shortly after picking up a message from the queue AWS terminated the Spot instance. The Spot instance had not finished processing the message. What will happen to the message?
 
 
 
@@ -174,7 +175,7 @@ Save time with our AWS cheat sheets:
 https://digitalcloud.training/amazon-vpc/
 
 Question 7: Incorrect
-#A company is investigating ways to analyze and process large amounts of data in the cloud faster, without needing to load or transform the data in a data warehouse. The data resides in Amazon S3.
+# A company is investigating ways to analyze and process large amounts of data in the cloud faster, without needing to load or transform the data in a data warehouse. The data resides in Amazon S3.
 
 Which AWS services would allow the company to query the data in place? (choose 2)
 
