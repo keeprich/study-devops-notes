@@ -842,14 +842,25 @@ Both the above commands have their own challenges. While one of it cannot accept
 	
 	================ Labels and selectors  ==
 	
+	Are used to filter objects and use as see fit
+	
 	kubectl get pods --selector app=myapp | wc -l
 	
+	to get pods without the header    'run'
 	
+	``` kubectl get pods --no-headers
+	```
+	
+	== Chain more env.
+	```
+		kubectl get pods --selector app=myapp,tier=frontend,env=prod | wc -l
+	```
+
 	================= Taints and Tolerations
 
 	
 	This section deal with pods relationships to node and what pods can be place on which node
-	
+	(Pods to node relationship)=== determins what pods can be scheduled or place on a node.
 Tents are placed on nodes, whiles toerations are placed on pods.
 	
 	==== To tent a node
@@ -871,7 +882,12 @@ Tents are placed on nodes, whiles toerations are placed on pods.
 	
 	```
 	
+	===To untaint node
+	```
+	kubectl taint node controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+	```
 	
+	NOTE: the '-' removes the taint
 	```
 	
 	apiVersion: v1
@@ -900,10 +916,133 @@ spec:
 
   - key: "example-key"
 
-    operator: "Exists"
-
+    operator: "Equal"
+    value: "blue"
     effect: "NoSchedule"
 ```
 	
 	======= NOTE
 With this concept in place, it good to note that Taint/Toleration only give control to the node on which pods to accept but it does not guranteed that the pode will be scheduled on that particular node. This is were node affinity comes in. With node affinity the pods must be scheduled on the tainted pods.	
+
+	
+	
+	============= NODE SELECTORS
+	
+	This si done by labelingthe nodes and asigning to nodes to the desired pods
+	
+	
+	To label a node use the following commands
+	
+	``` kubectl label node <node-name> <label-ket>=<lable-value>
+	
+	kubectl label nodes node1 size=large
+	
+	
+	```
+	
+	kubectl create deploy nginx --image nginx && kubectl scale deploy nginx --replicas 3
+OR
+	
+	kubectl create deployment red --image=nginx --replicas=3 --dry-run=client -o yaml
+	
+	
+	With node selectors, there are limitation in taht it can no handle complext demands and that was why node affinity was introduced
+	================== NODE AFFINITY
+	
+	Sometime to be sure the right pod is places on the desired node, we can use the combination of both node affinity and taints and toloration
+	
+	
+	
+	============== RESOURCE LIMITS
+	
+	by defaults pods are assume to use
+	
+	CPU - 0.5
+	MEM - 256 Mi
+	DISK - 
+	
+	Also, by default K8S set resourcelimits to containers and are as follows
+	
+	CPU - 1 -vCPU
+	
+	MEM - 512 Mi
+	
+	NOTE: the pod cannot use up CPU morethan it limite set, but can do so for the memeory and when that happen, the pods is killed by the node
+	
+	
+	
+	
+	A copy of the file with your changes is saved in a temporary location as shown above.
+
+You can then delete the existing pod by running the command:
+
+kubectl delete pod webapp
+
+Then create a new pod with your changes using the temporary file
+
+kubectl create -f /tmp/kubectl-edit-ccvrq.yaml
+
+2. The second option is to extract the pod definition in YAML format to a file using the command
+
+kubectl get pod webapp -o yaml > my-new-pod.yaml
+
+Then make the changes to the exported file using an editor (vi editor). Save the changes
+
+vi my-new-pod.yaml
+
+Then delete the existing pod
+
+kubectl delete pod webapp
+
+Then create a new pod with the edited file
+
+kubectl create -f my-new-pod.yaml
+
+Edit Deployments
+With Deployments you can easily edit any field/property of the POD template. Since the pod template is a child of the deployment specification,  with every change the deployment will automatically delete and create a new pod with the new changes. So if you are asked to edit a property of a POD part of a deployment you may do that simply by running the command
+
+kubectl edit deployment my-deployment
+	
+	
+	============ Daemon Sets
+	Ensure a pod is deploy on all the nodes in the cluster
+	EG: kube-proxy
+		- monitoring
+
+	
+	
+	============ STATIC PODS
+	
+	This are pods that are set to run on thier own and are noemally managed by the kube
+	
+	
+	Ar the pods that run on the master plan
+	
+	```
+	cat /var/lib/kubelet/config.yaml     --------------> Contains the path for all static pods
+	
+	ls /etc/kubernetes/manifests
+	```
+	
+	+++ TO CREATE A SOMPLE STATATIC POD AND PLACE THE YML FILE IN '/etc/kubernetes/manifest
+	
+	
+	```
+	kubectl run static-pod --image=nginx --restart=Never --dry-run=client -o yaml --command --sleep 1000 > static-pod.yml
+	
+	cp static-pod.yml /etc/kubernetes/manifest/
+	
+	
+	
+	
+	================ MULTIPLE SCHEDULERS
+	
+	The creation of custome schedular  
+	
+	
+	
+	using the new scheduler
+	
+	resourceNames:
+      - kube-scheduler
+      - my-scheduler
