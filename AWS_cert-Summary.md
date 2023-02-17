@@ -592,27 +592,8 @@ All EBS types and all instance families support encryption but not all instance 
 
 ## CORRECT: "There is no direct way to change the encryption state of a volume" is the correct answer.
 
-INCORRECT: "Not all EBS types support encryption" is incorrect as all EBS volume types support encryption.
 
-INCORRECT: "All attached EBS volumes must share the same encryption state" is incorrect. You can have encrypted and non-encrypted EBS volumes on a single instance.
-
-INCORRECT: "All instance types support encryption" is incorrect. All instance families support encryption, but not all instance types.
-
-References:
-
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-ebs/
-
-Question 49: Correct
-#The application development team in a company have developed a Java application and saved the source code in a .war file. They would like to run the application on AWS resources and are looking for a service that can handle the provisioning and management of the underlying resources it will run on.
-
-Which AWS service should a Solutions Architect recommend the Developers use to upload the Java source code file?
-
-
-
+# The application development team in a company have developed a Java application and saved the source code in a .war file. They would like to run the application on AWS resources and are looking for a service that can handle the provisioning and management of the underlying resources it will run on. Which AWS service should a Solutions Architect recommend the Developers use to upload the Java source code file?
 
 
 Explanation
@@ -620,28 +601,10 @@ AWS Elastic Beanstalk can be used to quickly deploy and manage applications in t
 
 Elastic Beanstalk supports applications developed in Go, Java, .NET, Node.js, PHP, Python, and Ruby, as well as different platform configurations for each language. To use Elastic Beanstalk, you create an application, upload an application version in the form of an application source bundle (for example, a Java .war file) to Elastic Beanstalk, and then provide some information about the application.
 
-CORRECT: "AWS Elastic Beanstalk" is the correct answer.
+## CORRECT: "AWS Elastic Beanstalk" is the correct answer.
 
-INCORRECT: "AWS CodeDeploy" is incorrect. AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, serverless Lambda functions, or Amazon ECS services.
-
-INCORRECT: "AWS CloudFormation" is incorrect. AWS CloudFormation uses templates to deploy infrastructure as code. It is not a PaaS service like Elastic Beanstalk and is more focused on infrastructure than applications and management of applications.
-
-INCORRECT: "AWS OpsWorks" is incorrect. AWS OpsWorks is a configuration management service that provides managed instances of Chef and Puppet.
-
-References:
-
-https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-elastic-beanstalk/
-
-Question 50: Incorrect
-A web application runs on a series of Amazon EC2 instances behind an Application Load Balancer (ALB). A Solutions Architect is updating the configuration with a health check and needs to select the protocol to use. What options are available? (choose 2)
-
-
-
-
+ 
+# A web application runs on a series of Amazon EC2 instances behind an Application Load Balancer (ALB). A Solutions Architect is updating the configuration with a health check and needs to select the protocol to use. What options are available? (choose 2)
 
 
 Explanation
@@ -653,31 +616,12 @@ If a target group contains only unhealthy registered targets, the load balancer 
 
 For an ALB the possible protocols are HTTP and HTTPS. The default is the HTTP protocol.
 
-CORRECT: "HTTP" is the correct answer.
+## CORRECT: "HTTP" is the correct answer.
 
-CORRECT: "HTTPS" is the correct answer.
-
-INCORRECT: "SSL" is incorrect as this is not supported by the ALB.
-
-INCORRECT: "TCP" is incorrect as this is not supported by the ALB.
-
-INCORRECT: "ICMP" is incorrect as this is not supported by the ALB.
-
-References:
-
-https://docs.aws.amazon.com/elasticloadbalancing/latest/network/target-group-health-checks.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
-
-Question 51: Incorrect
-#An Amazon EC2 instance is generating very high packets-per-second and performance of the application stack is being impacted. A Solutions Architect needs to determine a resolution to the issue that results in improved performance.
-
-Which action should the Architect take?
+## CORRECT: "HTTPS" is the correct answer.
 
 
-
+# An Amazon EC2 instance is generating very high packets-per-second and performance of the application stack is being impacted. A Solutions Architect needs to determine a resolution to the issue that results in improved performance. Which action should the Architect take?
 
 
 Explanation
@@ -685,30 +629,9 @@ Enhanced networking provides higher bandwidth, higher packet-per-second (PPS) pe
 
 AWS currently supports enhanced networking capabilities using SR-IOV. SR-IOV provides direct access to network adapters, provides higher performance (packets-per-second) and lower latency.
 
-CORRECT: "Use enhanced networking" is the correct answer.
+## CORRECT: "Use enhanced networking" is the correct answer.
 
-INCORRECT: "Configure a RAID 1 array from multiple EBS volumes" is incorrect. You do not need to create a RAID 1 array (which is more for redundancy than performance anyway).
-
-INCORRECT: "Create a placement group and put the EC2 instance in it" is incorrect. A placement group is used to increase network performance between instances. In this case there is only a single instance so it won’t help.
-
-INCORRECT: "Add multiple Elastic IP addresses to the instance" is incorrect. Adding multiple IP addresses is not a way to increase performance of the instance as the same amount of bandwidth is available to the Elastic Network Interface (ENI).
-
-References:
-
-https://aws.amazon.com/premiumsupport/knowledge-center/enable-configure-enhanced-networking/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-ec2/
-
-Question 52: Incorrect
-A government agency is using CloudFront for a web application that receives personally identifiable information (PII) from citizens.
-
-What feature of CloudFront applies an extra level of encryption at CloudFront edge locations to ensure the PII data is secured end-to-end?   
-
-
-
-
+# A government agency is using CloudFront for a web application that receives personally identifiable information (PII) from citizens. What feature of CloudFront applies an extra level of encryption at CloudFront edge locations to ensure the PII data is secured end-to-end?   
 
 Explanation
 With Amazon CloudFront, you can enforce secure end-to-end connections to origin servers by using HTTPS. Field-level encryption adds an additional layer of security that lets you protect specific data throughout system processing so that only certain applications can see it.
@@ -717,116 +640,40 @@ Field-level encryption allows you to enable your users to securely upload sensit
 
 
 
-CORRECT: "Field-level encryption" is the correct answer.
+## CORRECT: "Field-level encryption" is the correct answer.
 
-INCORRECT: "Object invalidation" is incorrect. Object invalidation is a method to remove objects from the cache.
-
-INCORRECT: "RTMP distribution" is incorrect. An RTMP distribution is a method of streaming media using Adobe Flash.
-
-INCORRECT: "Origin access identity" is incorrect. Origin access identity applies to S3 bucket origins, not web servers.
-
-References:
-
-https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-cloudfront/
-
-Question 53: Correct
-#A company runs an application on premises that stores a large quantity of semi-structured data using key-value pairs. The application code will be migrated to AWS Lambda and a highly scalable solution is required for storing the data.
-
-Which datastore will be the best fit for these requirements?
-
-
-
+ 
+# A company runs an application on premises that stores a large quantity of semi-structured data using key-value pairs. The application code will be migrated to AWS Lambda and a highly scalable solution is required for storing the data. Which datastore will be the best fit for these requirements?
 
 
 Explanation
 Amazon DynamoDB is a no-SQL database that stores data using key-value pairs. It is ideal for storing large amounts of semi-structured data and is also highly scalable. This is the best solution for storing this data based on the requirements in the scenario.
 
-CORRECT: "Amazon DynamoDB" is the correct answer.
-
-INCORRECT: "Amazon EFS" is incorrect. The Amazon Elastic File System (EFS) is not suitable for storing key-value pairs.
-
-INCORRECT: "Amazon RDS MySQL" is incorrect. Amazon Relational Database Service (RDS) is used for structured data as it is an SQL type of database.
-
-INCORRECT: "Amazon EBS" is incorrect. Amazon Elastic Block Store (EBS) is a block-based storage system. You attach volumes to EC2 instances. It is not used for key-value pairs or to be used by Lambda functions.
-
-References:
-
-https://aws.amazon.com/dynamodb/features/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-dynamodb/
-
-Question 54: Correct
-An application makes calls to a REST API running on Amazon EC2 instances behind an Application Load Balancer (ALB). Most API calls complete quickly. However, a single endpoint is making API calls that require much longer to complete and this is introducing overall latency into the system. What steps can a Solutions Architect take to minimize the effects of the long-running API calls?
+## CORRECT: "Amazon DynamoDB" is the correct answer.
 
 
-
+# An application makes calls to a REST API running on Amazon EC2 instances behind an Application Load Balancer (ALB). Most API calls complete quickly. However, a single endpoint is making API calls that require much longer to complete and this is introducing overall latency into the system. What steps can a Solutions Architect take to minimize the effects of the long-running API calls?
 
 
 Explanation
 An Amazon Simple Queue Service (SQS) can be used to offload and decouple the long-running requests. They can then be processed asynchronously by separate EC2 instances. This is the best way to reduce the overall latency introduced by the long-running API call.
 
-CORRECT: "Create an Amazon SQS queue and decouple the long-running API calls" is the correct answer.
-
-INCORRECT: "Change the EC2 instance to one with enhanced networking to reduce latency" is incorrect. This will not reduce the latency of the API call as network latency is not the issue here, it is the latency of how long the API call takes to complete.
-
-INCORRECT: "Increase the ALB idle timeout to allow the long-running requests to complete" is incorrect. The issue is not the connection being interrupted, it is that the API call takes a long time to complete.
-
-INCORRECT: "Change the ALB to a Network Load Balancer (NLB) and use SSL/TLS termination" is incorrect. SSL/TLS termination is not of benefit here as the problem is not encryption or processing of encryption. The issue is API call latency.
-
-References:
-
-https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-application-integration-services/
-
-Question 55: Incorrect
-A Solutions Architect is designing the system monitoring and deployment layers of a serverless application. The system monitoring layer will manage system visibility through recording logs and metrics and the deployment layer will deploy the application stack and manage workload changes through a release management process.
-
- The Architect needs to select the most appropriate AWS services for these functions. Which services and frameworks should be used for the system monitoring and deployment layers? (choose 2)
+## CORRECT: "Create an Amazon SQS queue and decouple the long-running API calls" is the correct answer.
 
 
-
-
-
+# A Solutions Architect is designing the system monitoring and deployment layers of a serverless application. The system monitoring layer will manage system visibility through recording logs and metrics and the deployment layer will deploy the application stack and manage workload changes through a release management process. The Architect needs to select the most appropriate AWS services for these functions. Which services and frameworks should be used for the system monitoring and deployment layers? (choose 2)
 
 Explanation
 AWS Serverless Application Model (AWS SAM) is an extension of AWS CloudFormation that is used to package, test, and deploy serverless applications.
 
 With Amazon CloudWatch, you can access system metrics on all the AWS services you use, consolidate system and application level logs, and create business key performance indicators (KPIs) as custom metrics for your specific needs.
 
-CORRECT: "Use AWS SAM to package, test, and deploy the serverless application stack" is a correct answer.
+## CORRECT: "Use AWS SAM to package, test, and deploy the serverless application stack" is a correct answer.
 
-CORRECT: "Use Amazon CloudWatch for consolidating system and application logs and monitoring custom metrics" is also a correct answer.
-
-INCORRECT: "Use AWS CloudTrail for consolidating system and application logs and monitoring custom metrics" is incorrect as CloudTrail is used for auditing not performance monitoring.
-
-INCORRECT: "Use AWS X-Ray to package, test, and deploy the serverless application stack" is incorrect. AWS X-Ray lets you analyze and debug serverless applications by providing distributed tracing and service maps to easily identify performance bottlenecks by visualizing a request end-to-end.
-
-INCORRECT: "Use AWS Lambda to package, test, and deploy the serverless application stack" is incorrect. AWS Lambda is used for executing your code as functions, it is not used for packaging, testing and deployment. AWS Lambda is used with AWS SAM.
-
-References:
-
-https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-cloudwatch/
-
-Question 56: Incorrect
-#An Auto Scaling group of Amazon EC2 instances behind an Elastic Load Balancer (ELB) is running in an Amazon VPC. Health checks are configured on the ASG to use EC2 status checks. The ELB has determined that an EC2 instance is unhealthy and has removed it from service. A Solutions Architect noticed that the instance is still running and has not been terminated by EC2 Auto Scaling.
-
-What would be an explanation for this behavior?
+## CORRECT: "Use Amazon CloudWatch for consolidating system and application logs and monitoring custom metrics" is also a correct answer.
 
 
-
+# An Auto Scaling group of Amazon EC2 instances behind an Elastic Load Balancer (ELB) is running in an Amazon VPC. Health checks are configured on the ASG to use EC2 status checks. The ELB has determined that an EC2 instance is unhealthy and has removed it from service. A Solutions Architect noticed that the instance is still running and has not been terminated by EC2 Auto Scaling. What would be an explanation for this behavior?
 
 
 Explanation
@@ -852,84 +699,31 @@ More information on ASG health checks:
 
 - The health check grace period allows a period of time for a new instance to warm up before performing a health check (300 seconds by default).
 
-CORRECT: "The ELB health check type has not been selected for the ASG and so it is unaware that the instance has been determined to be unhealthy by the ELB and has been removed from service" is the correct answer.
+## CORRECT: "The ELB health check type has not been selected for the ASG and so it is unaware that the instance has been determined to be unhealthy by the ELB and has been removed from service" is the correct answer.
 
 INCORRECT: "The ASG is waiting for the cooldown timer to expire before terminating the instance" is incorrect as the ASG does not wait for the cooldown time to expire.
 
-INCORRECT: "Connection draining is enabled and the ASG is waiting for in-flight requests to complete" is incorrect. Connection draining is not the correct answer as the ELB has taken the instance out of service so there are no active connections.
 
-INCORRECT: "The health check grace period has not yet expired" is incorrect. The health check grace period allows a period of time for a new instance to warm up before performing a health check.
-
-References:
-
-https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-ec2-auto-scaling/
-
-Question 57: Incorrect
-#A Solutions Architect has created an AWS account and selected the Asia Pacific (Sydney) region. Within the default VPC there is a default security group. What settings are configured within this security group by default? (choose 2)
-
-
-
-
-
+# A Solutions Architect has created an AWS account and selected the Asia Pacific (Sydney) region. Within the default VPC there is a default security group. What settings are configured within this security group by default? (choose 2)
 
 Explanation
 Default security groups have inbound allow rules (allowing traffic from within the group) whereas custom security groups do not have inbound allow rules (all inbound traffic is denied by default). All outbound traffic is allowed by default in custom and default security groups.
 
-CORRECT: "There is an inbound rule that allows all traffic from the security group itself" is a correct answer.
+## CORRECT: "There is an inbound rule that allows all traffic from the security group itself" is a correct answer.
 
-CORRECT: "There is an outbound rule that allows all traffic to all addresses" is also a correct answer.
-
-INCORRECT: "There is an inbound rule that allows all traffic from any address" is incorrect as explained above.
-
-INCORRECT: "There is an outbound rule that allows all traffic to the security group itself" is incorrect as explained above.
-
-INCORRECT: "There is an outbound rule that allows traffic to the VPC router" is incorrect as explained above.
-
-References:
-
-https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-vpc/
-
-Question 58: Incorrect
-An Amazon EBS-backed EC2 instance has been launched. A requirement has come up for some high-performance ephemeral storage.
-
-How can a Solutions Architect add a new instance store volume?
+## CORRECT: "There is an outbound rule that allows all traffic to all addresses" is also a correct answer.
 
 
-
-
+# An Amazon EBS-backed EC2 instance has been launched. A requirement has come up for some high-performance ephemeral storage. How can a Solutions Architect add a new instance store volume?
 
 Explanation
 You can specify the instance store volumes for your instance only when you launch an instance. You can’t attach instance store volumes to an instance after you’ve launched it.
 
-CORRECT: "You can specify the instance store volumes for your instance only when you launch an instance" is the correct answer.
-
-INCORRECT: "You must shutdown the instance in order to be able to add the instance store volume" is incorrect. You can use a block device mapping to specify additional EBS volumes when you launch your instance, or you can attach additional EBS volumes after your instance is running.
-
-INCORRECT: "You must use an Elastic Network Adapter (ENA) to add instance store volumes. First, attach an ENA, and then attach the instance store volume" is incorrect. An Elastic Network Adapter has nothing to do with adding instance store volumes.
-
-INCORRECT: "You can use a block device mapping to specify additional instance store volumes when you launch your instance, or you can attach additional instance store volumes after your instance is running" is incorrect. You can’t attach instance store volumes to an instance after you’ve launched it.
-
-References:
-
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/add-instance-store-volumes.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-ebs/
-
-Question 59: Incorrect
-#A company runs a streaming media service and the content is stored on Amazon S3. The media catalog server pulls updated content from S3 and can issue over 1 million read operations per second for short periods. Latency must be kept under 5ms for these updates. Which solution will provide the BEST performance for the media catalog updates?
+## CORRECT: "You can specify the instance store volumes for your instance only when you launch an instance" is the correct answer.
 
 
 
+# A company runs a streaming media service and the content is stored on Amazon S3. The media catalog server pulls updated content from S3 and can issue over 1 million read operations per second for short periods. Latency must be kept under 5ms for these updates. Which solution will provide the BEST performance for the media catalog updates?
 
 
 Explanation
@@ -945,28 +739,9 @@ ElastiCache for Redis is a fully managed, in-memory data store that provides sub
 
 In this example the media catalog is pulling updates from S3 so the performance between these components is what needs to be improved. Therefore, using ElastiCache to cache the content will dramatically increase the performance.
 
-CORRECT: "Update the application code to use an Amazon ElastiCache for Redis cluster" is the correct answer.
+## CORRECT: "Update the application code to use an Amazon ElastiCache for Redis cluster" is the correct answer.
 
-INCORRECT: "Implement Amazon CloudFront and cache the content at Edge Locations" is incorrect. CloudFront is good for getting media closer to users but in this case we’re trying to improve performance within the data center moving data from S3 to the media catalog server.
-
-INCORRECT: "Update the application code to use an Amazon DynamoDB Accelerator cluster" is incorrect. DynamoDB Accelerator (DAX) is used with DynamoDB but is unsuitable for use with Amazon S3.
-
-INCORRECT: "Implement an Instance store volume on the media catalog server" is incorrect. This will improve local disk performance but will not improve reads from Amazon S3.
-
-References:
-
-https://aws.amazon.com/blogs/storage/turbocharge-amazon-s3-with-amazon-elasticache-for-redis/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-elasticache/
-
-Question 60: Correct
-#A Solutions Architect has created a new Network ACL in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the Network ACL? (choose 2)
-
-
-
-
+# A Solutions Architect has created a new Network ACL in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the Network ACL? (choose 2)
 
 
 Explanation
@@ -976,109 +751,38 @@ Network ACL’s function at the subnet level and you can have permit and deny ru
 
 Network ACLs are stateless so responses are subject to the rules for the direction of traffic. NACLs only apply to traffic that is ingress or egress to the subnet not to traffic within the subnet.
 
-CORRECT: "There is a default inbound rule denying all traffic" is a correct answer.
+## CORRECT: "There is a default inbound rule denying all traffic" is a correct answer.
 
-CORRECT: "There is a default outbound rule denying all traffic" is also a correct answer.
-
-INCORRECT: "There is a default inbound rule allowing traffic from the VPC CIDR block" is incorrect as inbound traffic is not allowed from anywhere by default.
-
-INCORRECT: "There is a default outbound rule allowing traffic to the Internet Gateway" is incorrect as outbound traffic is not allowed to anywhere by default.
-
-INCORRECT: "There is a default outbound rule allowing all traffic" is incorrect as all traffic is denied.
-
-References:
-
-https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-vpc/
-
-Question 61: Incorrect
-#An Amazon DynamoDB table has a variable load, ranging from sustained heavy usage some days, to only having small spikes on others. The load is 80% read and 20% write. The provisioned throughput capacity has been configured to account for the heavy load to ensure throttling does not occur.
-
-#What would be the most efficient solution to optimize cost?
+## CORRECT: "There is a default outbound rule denying all traffic" is also a correct answer.
 
 
-
-
+# An Amazon DynamoDB table has a variable load, ranging from sustained heavy usage some days, to only having small spikes on others. The load is 80% read and 20% write. The provisioned throughput capacity has been configured to account for the heavy load to ensure throttling does not occur. What would be the most efficient solution to optimize cost?
 
 Explanation
 Amazon DynamoDB auto scaling uses the AWS Application Auto Scaling service to dynamically adjust provisioned throughput capacity on your behalf, in response to actual traffic patterns. This is the most efficient and cost-effective solution to optimizing for cost.
 
-CORRECT: "Create a DynamoDB Auto Scaling scaling policy" is the correct answer.
-
-INCORRECT: "Create a CloudWatch alarm that triggers an AWS Lambda function that adjusts the provisioned throughput" is incorrect. Using AWS Lambda to modify the provisioned throughput is possible but it would be more cost-effective to use DynamoDB Auto Scaling as there is no cost to using it.
-
-INCORRECT: "Create a CloudWatch alarm that notifies you of increased/decreased load, and manually adjust the provisioned throughput" is incorrect. Manually adjusting the provisioned throughput is not efficient.
-
-INCORRECT: "Use DynamoDB DAX to increase the performance of the database" is incorrect. DynamoDB DAX is an in-memory cache that increases the performance of DynamoDB. However, it costs money and there is no requirement to increase performance.
-
-References:
-
-https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-dynamodb/
-
-Question 62: Correct
-#The database layer of an on-premises web application is being migrated to AWS. The database currently uses an in-memory cache. A Solutions Architect must deliver a solution that supports high availability and replication for the caching layer.
-
-#Which service should the Solutions Architect recommend?
+## CORRECT: "Create a DynamoDB Auto Scaling scaling policy" is the correct answer.
 
 
-
-
+# The database layer of an on-premises web application is being migrated to AWS. The database currently uses an in-memory cache. A Solutions Architect must deliver a solution that supports high availability and replication for the caching layer. Which service should the Solutions Architect recommend?
 
 Explanation
 Amazon ElastiCache Redis is an in-memory database cache and supports high availability through replicas and multi-AZ. The table below compares ElastiCache Redis with Memcached:
 
+## CORRECT: "Amazon ElastiCache Redis" is the correct answer.
 
 
-CORRECT: "Amazon ElastiCache Redis" is the correct answer.
-
-INCORRECT: "Amazon ElastiCache Memcached" is incorrect as it does not support high availability or multi-AZ.
-
-INCORRECT: "Amazon RDS Multi-AZ" is incorrect. This is not an in-memory database and it not suitable for use as a caching layer.
-
-INCORRECT: "Amazon DynamoDB" is incorrect. DynamoDB is a non-relational database. You would not use it for a caching layer. Also, the in-memory, low-latency caching for DynamoDB is implemented using DynamoDB Accelerator (DAX).
-
-References:
-
-https://aws.amazon.com/elasticache/redis-vs-memcached/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-elasticache/
-
-Question 63: Incorrect
-#An organization in the agriculture sector is deploying sensors and smart devices around factory plants and fields. The devices will collect information and send it to cloud applications running on AWS.
-
-#Which AWS service will securely connect the devices to the cloud applications?
-
-
-
+# An organization in the agriculture sector is deploying sensors and smart devices around factory plants and fields. The devices will collect information and send it to cloud applications running on AWS. Which AWS service will securely connect the devices to the cloud applications?
 
 
 Explanation
 AWS IoT Core is a managed cloud service that lets connected devices easily and securely interact with cloud applications and other devices. AWS IoT Core can support billions of devices and trillions of messages, and can process and route those messages to AWS endpoints and to other devices reliably and securely.
 
 
-CORRECT: "AWS IoT Core" is the correct answer.
+## CORRECT: "AWS IoT Core" is the correct answer.
 
-INCORRECT: "AWS Glue" is incorrect. AWS Glue is a fully managed extract, transform, and load (ETL) service that makes it easy for customers to prepare and load their data for analytics.
 
-INCORRECT: "AWS DMS" is incorrect. AWS Database Migration Service helps you migrate databases to AWS quickly and securely.
-
-INCORRECT: "AWS Lambda" is incorrect. AWS Lambda lets you run code without provisioning or managing servers.
-
-References:
-
-https://aws.amazon.com/iot-core/
-
-Question 64: Incorrect
-#A distribution method is required for some static files. The requests will mainly be GET requests and a high volume of GETs is expected, often exceeding 2000 per second. The files are currently stored in an S3 bucket. According to AWS best practices, how can performance be optimized?
+# A distribution method is required for some static files. The requests will mainly be GET requests and a high volume of GETs is expected, often exceeding 2000 per second. The files are currently stored in an S3 bucket. According to AWS best practices, how can performance be optimized?
 
 
 
@@ -1089,27 +793,10 @@ Amazon S3 automatically scales to high request rates. For example, your applicat
 
 If your workload is mainly sending GET requests, in addition to the preceding guidelines, you should consider using Amazon CloudFront for performance optimization. By integrating CloudFront with Amazon S3, you can distribute content to your users with low latency and a high data transfer rate.
 
-CORRECT: "Integrate CloudFront with S3 to cache the content" is the correct answer.
-
-INCORRECT: "Use cross-region replication to spread the load across regions" is incorrect. Cross-region replication creates a replica copy in another region but should not be used for spreading read requests across regions. There will be 2 S3 endpoints and CRR is not designed for 2 way sync so this would not work well.
-
-INCORRECT: "Use ElastiCache to cache the content" is incorrect. CloudFront is a better fit for this use case than using ElastiCache.
-
-INCORRECT: "Use S3 Transfer Acceleration" is incorrect. Transfer Acceleration is used to accelerate object uploads to S3 over long distances (latency).
-
-References:
-
-https://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-s3-and-glacier/
-
-Question 65: Correct
-#A company requires an Elastic Load Balancer (ELB) for an application they are planning to deploy on AWS. The application requires extremely high throughput and extremely low latencies. The connections will be made using the TCP protocol and the ELB must support load balancing to multiple ports on an instance. Which ELB would should the company use?
+## CORRECT: "Integrate CloudFront with S3 to cache the content" is the correct answer.
 
 
-
+# A company requires an Elastic Load Balancer (ELB) for an application they are planning to deploy on AWS. The application requires extremely high throughput and extremely low latencies. The connections will be made using the TCP protocol and the ELB must support load balancing to multiple ports on an instance. Which ELB would should the company use?
 
 
 Explanation
@@ -1117,18 +804,4 @@ The Network Load Balancer operates at the connection level (Layer 4), routing co
 
 The NLB provides high throughput and extremely low latencies and is designed to handle traffic as it grows and can load balance millions of requests/second. NLB also supports load balancing to multiple ports on an instance.
 
-CORRECT: "Network Load Balancer" is the correct answer.
-
-INCORRECT: "Classic Load Balancer" is incorrect. The CLB operates using the TCP, SSL, HTTP and HTTPS protocols. It is not the best choice for requirements of extremely high throughput and low latency and does not support load balancing to multiple ports on an instance.
-
-INCORRECT: "Application Load Balancer" is incorrect. The ALB operates at the HTTP and HTTPS level only (does not support TCP load balancing).
-
-INCORRECT: "Route 53" is incorrect. Route 53 is a DNS service, it is not a type of ELB (though you can do some types of load balancing with it).
-
-References:
-
-https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
+## CORRECT: "Network Load Balancer" is the correct answer.
