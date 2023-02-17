@@ -2,7 +2,7 @@
 
 # A development team needs to run up a few lab servers on a weekend for a new project. The servers will need to run uninterrupted for a few hours. Which EC2 pricing option would be most suitable?   
 
-Explanation
+Explanation: 
 On-Demand pricing ensures that instances will not be terminated and is the most economical option. Use on-demand for ad-hoc requirements where you cannot tolerate interruption.
 
 ## CORRECT: "On-Demand" is the correct answer.
@@ -14,7 +14,7 @@ How can this be achieved with Amazon EFS? (choose 2)
 
 
 
-Explanation
+Explanation: 
 You can control who can administer your file system using IAM. You can control access to files and directories with POSIX-compliant user and group-level permissions. POSIX permissions allows you to restrict access from hosts by user and group. EFS Security Groups act as a firewall, and the rules you add define the traffic flow.
 
 ## CORRECT: "Use POSIX permissions to control access from hosts by user or group" is the correct answer.
@@ -28,7 +28,7 @@ Which DR strategy should a Solutions Architect recommend?
 
 
 
-Explanation
+Explanation:
 A multi-site solution runs on AWS as well as on your existing on-site infrastructure in an active- active configuration. The data replication method that you employ will be determined by the recovery point that you choose. This is either Recovery Time Objective (the maximum allowable downtime before degraded operations are restored) or Recovery Point Objective (the maximum allowable time window whereby you will accept the loss of transactions during the DR process).
 
 ## CORRECT: "Multi-site" is the correct answer.
@@ -37,7 +37,7 @@ A multi-site solution runs on AWS as well as on your existing on-site infrastruc
 # An Amazon EC2 instance has been launched into an Amazon VPC. A Solutions Architect needs to ensure that instances have both a private and public DNS hostnames. Assuming settings were not changed during creation of the VPC, how will DNS hostnames be assigned by default? (choose 2)
 
 
-Explanation
+Explanation:
 When you launch an instance into a default VPC, we provide the instance with public and private DNS hostnames that correspond to the public IPv4 and private IPv4 addresses for the instance.
 
 When you launch an instance into a nondefault VPC, we provide the instance with a private DNS hostname and we might provide a public DNS hostname, depending on the DNS attributes you specify for the VPC and if your instance has a public IPv4 address.
@@ -50,11 +50,11 @@ When you launch an instance into a nondefault VPC, we provide the instance with 
 # Several Amazon EC2 Spot instances are being used to process messages from an Amazon SQS queue and store results in an Amazon DynamoDB table. Shortly after picking up a message from the queue AWS terminated the Spot instance. The Spot instance had not finished processing the message. What will happen to the message?
 
 
-Explanation
+Explanation: 
 The visibility timeout is the amount of time a message is invisible in the queue after a reader picks up the message. If a job is processed within the visibility timeout the message will be deleted. If a job is not processed within the visibility timeout the message will become visible again (could be delivered twice). The maximum visibility timeout for an Amazon SQS message is 12 hours.
 
 
-CORRECT: "The message will become available for processing again after the visibility timeout expires" is the correct answer.
+## CORRECT: "The message will become available for processing again after the visibility timeout expires" is the correct answer.
 
 
 # An application uses an Amazon RDS database and Amazon EC2 instances in a web tier. The web tier instances must not be directly accessible from the internet to improve security.
@@ -62,15 +62,15 @@ CORRECT: "The message will become available for processing again after the visib
 How can a Solutions Architect meet these requirements?
 
 
-Explanation
+Explanation: 
 To prevent direct connectivity to the EC2 instances from the internet you can deploy your EC2 instances in a private subnet and have the ELB in a public subnet. To configure this you must enable a public subnet in the ELB that is in the same AZ as the private subnet.
 
 
 
-CORRECT: "Launch the EC2 instances in a private subnet and create an Application Load Balancer in a public subnet" is the correct answer.
+## CORRECT: "Launch the EC2 instances in a private subnet and create an Application Load Balancer in a public subnet" is the correct answer.
 
 
-Question 7: Incorrect
+Question: 
 # A company is investigating ways to analyze and process large amounts of data in the cloud faster, without needing to load or transform the data in a data warehouse. The data resides in Amazon S3.
 
 Which AWS services would allow the company to query the data in place? (choose 2)
@@ -81,14 +81,12 @@ Amazon S3 Select is designed to help analyze and process data within an object i
 
 Amazon Redshift Spectrum allows you to directly run SQL queries against exabytes of unstructured data in Amazon S3. No loading or transformation is required.
 
-CORRECT: "Amazon S3 Select" is a correct answer.
+## CORRECT: "Amazon S3 Select" is a correct answer.
 
-CORRECT: "Amazon RedShift Spectrum" is also a correct answer.
+## CORRECT: "Amazon RedShift Spectrum" is also a correct answer.
 
  
-# Three AWS accounts are owned by the same company but in different regions. Account Z has two AWS Direct Connect connections to two separate company offices. Accounts A and B require the ability to route across account Z’s Direct Connect connections to each company office. A Solutions Architect has created an AWS Direct Connect gateway in account Z.
-
-How can the required connectivity be configured?
+# Three AWS accounts are owned by the same company but in different regions. Account Z has two AWS Direct Connect connections to two separate company offices. Accounts A and B require the ability to route across account Z’s Direct Connect connections to each company office. A Solutions Architect has created an AWS Direct Connect gateway in account Z. How can the required connectivity be configured?
 
 Explanation
 You can associate an AWS Direct Connect gateway with either of the following gateways:
@@ -103,16 +101,14 @@ In this case account Z owns the Direct Connect gateway so a VPG in accounts A an
 ## CORRECT: "Associate the Direct Connect gateway to a virtual private gateway in account A and B" is the correct answer.
 
 
-# A legacy application is being migrated into AWS. The application has a large amount of data that is rarely accessed. When files are accessed they are retrieved sequentially. The application will be migrated onto an Amazon EC2 instance.
-
-What is the LEAST expensive EBS volume type for this use case?
+# A legacy application is being migrated into AWS. The application has a large amount of data that is rarely accessed. When files are accessed they are retrieved sequentially. The application will be migrated onto an Amazon EC2 instance. What is the LEAST expensive EBS volume type for this use case?
 
 Explanation
 The cold HDD (sc1) EBS volume type is the lowest cost option that is suitable for this use case. The sc1 volume type is suitable for infrequently accessed data and use cases that are oriented towards throughput like sequential data access.
 
 
 
-CORRECT: "Cold HDD (sc1)" is the correct answer.
+## CORRECT: "Cold HDD (sc1)" is the correct answer.
 
 # A company is transitioning their web presence into the AWS cloud. As part of the migration the company will be running a web application both on-premises and in AWS for a period of time. During the period of co-existence the client would like 80% of the traffic to hit the AWS-based web servers and 20% to be directed to the on-premises web servers.
 
@@ -121,45 +117,36 @@ What method can a Solutions Architect use to distribute traffic as requested?
 Explanation
 Route 53 weighted routing policy is similar to simple but you can specify a weight per IP address. You create records that have the same name and type and assign each record a relative weight which is a numerical value that favours one IP over another (values must total 100). To stop sending traffic to a resource you can change the weight of the record to 0.
 
-CORRECT: "Use Route 53 with a weighted routing policy and configure the respective weights" is the correct answer.
+## CORRECT: "Use Route 53 with a weighted routing policy and configure the respective weights" is the correct answer.
 
 
-Question 11: Incorrect
-# A Solutions Architect is designing the disk configuration for an Amazon EC2 instance. The instance needs to support a MapReduce process that requires high throughput for a large dataset with large I/O sizes.
+Question: 
+# A Solutions Architect is designing the disk configuration for an Amazon EC2 instance. The instance needs to support a MapReduce process that requires high throughput for a large dataset with large I/O sizes. Which Amazon EBS volume is the MOST cost-effective solution for these requirements?
 
-Which Amazon EBS volume is the MOST cost-effective solution for these requirements?
-
-Explanation
+Explanation: 
 EBS Throughput Optimized HDD is good for the following use cases (and is the most cost-effective option:
 
 - Frequently accessed, throughput intensive workloads with large datasets and large I/O sizes, such as MapReduce, Kafka, log processing, data warehouse, and ETL workloads.
 
 Throughput is measured in MB/s, and includes the ability to burst up to 250 MB/s per TB, with a baseline throughput of 40 MB/s per TB and a maximum throughput of 500 MB/s per volume.
 
-CORRECT: "EBS Throughput Optimized HDD" is the correct answer.
+## CORRECT: "EBS Throughput Optimized HDD" is the correct answer.
 
-# A Solutions Architect has created an AWS Organization with several AWS accounts. Security policy requires that use of specific API actions are limited across all accounts. The Solutions Architect requires a method of centrally controlling these actions.
-
-What is the SIMPLEST method of achieving the requirements?
+# A Solutions Architect has created an AWS Organization with several AWS accounts. Security policy requires that use of specific API actions are limited across all accounts. The Solutions Architect requires a method of centrally controlling these actions. What is the SIMPLEST method of achieving the requirements?
 
 
-
-
-
-Explanation
+Explanation: 
 Service control policies (SCPs) offer central control over the maximum available permissions for all accounts in your organization, allowing you to ensure your accounts stay within your organization’s access control guidelines.
 
 In the example below, a policy in OU1 restricts all users from launching EC2 instance types other than a t2.micro:
 
-
-
-CORRECT: "Create a service control policy in the root organizational unit to deny access to the services or actions" is the correct answer.
+## CORRECT: "Create a service control policy in the root organizational unit to deny access to the services or actions" is the correct answer.
 
 
 # An Amazon EC2 instance behind an Elastic Load Balancer (ELB) is in the process of being de-registered. Which ELB feature is used to allow existing connections to close cleanly?
 
 
-Explanation
+Explanation: 
 Connection draining is enabled by default and provides a period of time for existing connections to close cleanly. When connection draining is in action an CLB will be in the status “InService: Instance deregistration currently in progress”.
 
 ## CORRECT: "Connection Draining" is the correct answer.
@@ -171,37 +158,33 @@ Connection draining is enabled by default and provides a period of time for exis
 Explanation
 In general, when your object size reaches 100 MB, you should consider using multipart uploads instead of uploading the object in a single operation.
 
-CORRECT: "Use Multipart Upload" is the correct answer.
+## CORRECT: "Use Multipart Upload" is the correct answer.
 
 
 
 # Some data has become corrupted in an Amazon RDS database. A Solutions Architect plans to use point-in-time restore to recover the data to the last known good configuration. Which of the following statements is correct about restoring an RDS database to a specific point-in-time? (choose 2)
 
 
-Explanation
+Explanation: 
 You can restore a DB instance to a specific point in time, creating a new DB instance. When you restore a DB instance to a point in time, the default DB security group is applied to the new DB instance. If you need custom DB security groups applied to your DB instance, you must apply them explicitly using the AWS Management Console, the AWS CLI modify-db-instance command, or the Amazon RDS API ModifyDBInstance operation after the DB instance is available.
 
 Restored DBs will always be a new RDS instance with a new DNS endpoint and you can restore up to the last 5 minutes.
 
-CORRECT: "You can restore up to the last 5 minutes" is a correct answer.
+## CORRECT: "You can restore up to the last 5 minutes" is a correct answer.
 
-CORRECT: "The default DB security group is applied to the new DB instance" is also a correct answer.
+## CORRECT: "The default DB security group is applied to the new DB instance" is also a correct answer.
 
 
-# A large multi-national client has requested a design for a multi-region database. The master database will be in the EU (Frankfurt) region and databases will be located in 4 other regions to service local read traffic. The database should be a managed service including the replication.
-
-The solution should be cost-effective and secure. Which AWS service can deliver these requirements?
+# A large multi-national client has requested a design for a multi-region database. The master database will be in the EU (Frankfurt) region and databases will be located in 4 other regions to service local read traffic. The database should be a managed service including the replication. The solution should be cost-effective and secure. Which AWS service can deliver these requirements?
 
 
 Explanation
 Amazon RDS Read replicas are used for read heavy databases and the replication is asynchronous. Read replicas are used for workload sharing and offloading. Read replicas can be in another region. This solution will enable better performance for users in the other AWS regions for database queries and is a managed service.
 
-CORRECT: "RDS with cross-region Read Replicas" is the correct answer.
+## CORRECT: "RDS with cross-region Read Replicas" is the correct answer.
 
 
-# A company runs a web-based application that uses Amazon EC2 instances for the web front-end and Amazon RDS for the database back-end. The web application writes transaction log files to an Amazon S3 bucket and the quantity of files is becoming quite large. It is acceptable to retain the most recent 60 days of log files and permanently delete the rest.
-
-Which action can a Solutions Architect take to enable this to happen automatically?
+# A company runs a web-based application that uses Amazon EC2 instances for the web front-end and Amazon RDS for the database back-end. The web application writes transaction log files to an Amazon S3 bucket and the quantity of files is becoming quite large. It is acceptable to retain the most recent 60 days of log files and permanently delete the rest. Which action can a Solutions Architect take to enable this to happen automatically?
 
 Explanation
 To manage your objects so that they are stored cost effectively throughout their lifecycle, configure their Amazon S3 Lifecycle. An S3 Lifecycle configuration is a set of rules that define actions that Amazon S3 applies to a group of objects. There are two types of actions:
@@ -210,27 +193,24 @@ To manage your objects so that they are stored cost effectively throughout their
 
 - Expiration actions—Define when objects expire. Amazon S3 deletes expired objects on your behalf.
 
-CORRECT: "Use an S3 lifecycle policy with object expiration configured to automatically remove objects that are more than 60 days old" is the correct answer.
+## CORRECT: "Use an S3 lifecycle policy with object expiration configured to automatically remove objects that are more than 60 days old" is the correct answer.
 
 
-# A customer is deploying services in a hybrid cloud model. The customer has mandated that data is transferred directly between cloud data centers, bypassing ISPs.
-
-#Which AWS service can be used to enable hybrid cloud connectivity?
+# A customer is deploying services in a hybrid cloud model. The customer has mandated that data is transferred directly between cloud data centers, bypassing ISPs. Which AWS service can be used to enable hybrid cloud connectivity?
 
 Explanation
 With AWS Direct Connect, you can connect to all your AWS resources in an AWS Region, transfer your business-critical data directly from your datacenter, office, or colocation environment into and from AWS, bypassing your Internet service provider and removing network congestion.
 
 
-CORRECT: "AWS Direct Connect" is the correct answer.
+## CORRECT: "AWS Direct Connect" is the correct answer.
 
-#A company has a fleet of Amazon EC2 instances behind an Elastic Load Balancer (ELB) that are a mixture of c4.2xlarge instance types and c5.large instances. The load on the CPUs on the c5.large instances has been very high, often hitting 100% utilization, whereas the c4.2xlarge instances have been performing well.
-What should a Solutions Architect recommend to resolve the performance issues?
+# A company has a fleet of Amazon EC2 instances behind an Elastic Load Balancer (ELB) that are a mixture of c4.2xlarge instance types and c5.large instances. The load on the CPUs on the c5.large instances has been very high, often hitting 100% utilization, whereas the c4.2xlarge instances have been performing well. What should a Solutions Architect recommend to resolve the performance issues?
 
 
-Explanation
+Explanation: 
 The 2xlarge instance type provides more CPUs. The best answer is to use this instance type for all instances as the CPU utilization has been lower.
 
-CORRECT: "Change the configuration to use only c4.2xlarge instance types" is the correct answer.
+## CORRECT: "Change the configuration to use only c4.2xlarge instance types" is the correct answer.
 
 # An application receives a high traffic load between 7:30am and 9:30am daily. The application uses an Auto Scaling group to maintain three instances most of the time but during the peak period it requires six instances. How can a Solutions Architect configure Auto Scaling to perform a daily scale-out event at 7:30am and a scale-in event at 9:30am to account for the peak load?
 
@@ -245,12 +225,12 @@ Dynamic (event based) – scale in response to an event/alarm.
 
 Step – configure multiple scaling steps in response to multiple alarms.
 
-CORRECT: "Use a Scheduled scaling policy" is the correct answer.
+## CORRECT: "Use a Scheduled scaling policy" is the correct answer.
 
 
 # A web application receives order processing information from customers and places the messages on an Amazon SQS queue. A fleet of Amazon EC2 instances are configured to pick up the messages, process them, and store the results in a DynamoDB table. The current configuration has been resulting in a large number of empty responses to ReceiveMessage API requests. A Solutions Architect needs to eliminate empty responses to reduce operational overhead. How can this be done? 
 
-Explanation
+Explanation: 
 The correct answer is to use Long Polling which will eliminate empty responses by allowing Amazon SQS to wait until a message is available in a queue before sending a response.
 
 The problem does not relate to the order in which the messages are processed in and there are no concerns over messages being delivered more than once so it doesn’t matter whether you use a FIFO or standard queue.
@@ -274,29 +254,29 @@ Short Polling:
 – ReceiveMessageWaitTime is set to 0.
 
 
-CORRECT: "Configure Long Polling to eliminate empty responses by allowing Amazon SQS to wait until a message is available in a queue before sending a response" is the correct answer.
+## CORRECT: "Configure Long Polling to eliminate empty responses by allowing Amazon SQS to wait until a message is available in a queue before sending a response" is the correct answer.
 
 
 # A Solutions Architect has logged into an Amazon EC2 Linux instance using SSH and needs to determine a few pieces of information including what IAM role is assigned, the instance ID and the names of the security groups that are assigned to the instance. From the options below, what would be the best source of this information?
 
-Explanation
+Explanation: 
 Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories, for example, host name, events, and security groups.
 
 Instance metadata is available at http://169.254.169.254/latest/meta-data.
 
-CORRECT: "Metadata" is the correct answer.
+## CORRECT: "Metadata" is the correct answer.
 
 # An application is generating a large amount of clickstream events data that is being stored on S3. The business needs to understand customer behaviour and want to run complex analytics queries against the data. Which AWS service can be used for this requirement?
 
 
-Explanation
+Explanation: 
 Amazon Redshift is a fast, fully managed data warehouse that makes it simple and cost-effective to analyze all your data using standard SQL and existing Business Intelligence (BI) tools.
 
 RedShift is used for running complex analytic queries against petabytes of structured data, using sophisticated query optimization, columnar storage on high-performance local disks, and massively parallel query execution.
 
 With RedShift you can load data from Amazon S3 and perform analytics queries. RedShift Spectrum can analyze data directly in Amazon S3, but was not presented as an option.
 
-CORRECT: "Amazon RedShift" is the correct answer.
+## CORRECT: "Amazon RedShift" is the correct answer.
 
 
 # An application uses a MySQL database running on an Amazon EC2 instance. The application generates high I/O and constant writes to a single table on the database. Which Amazon EBS volume type will provide the MOST consistent performance and low latency?
@@ -304,7 +284,7 @@ CORRECT: "Amazon RedShift" is the correct answer.
 Explanation
 The Provisioned IOPS SSD (io1) volume type will offer the most consistent performance and can be configured with the amount of IOPS required by the application. It will also provide the lowest latency of the options presented.
 
-CORRECT: "Provisioned IOPS SSD (io1)" is the correct answer.
+## CORRECT: "Provisioned IOPS SSD (io1)" is the correct answer.
 
 
 # A large quantity of data that is rarely accessed is being archived onto Amazon Glacier. Your CIO wants to understand the resilience of the service. Which of the statements below is correct about Amazon Glacier storage?  (choose 2) 
@@ -312,9 +292,9 @@ CORRECT: "Provisioned IOPS SSD (io1)" is the correct answer.
 Explanation
 Glacier is designed for durability of 99.999999999% of objects across multiple Availability Zones. Data is resilient in the event of one entire Availability Zone destruction. Glacier supports SSL for data in transit and encryption of data at rest. Glacier is extremely low cost and is ideal for long-term archival.
 
-CORRECT: "Provides 99.999999999% durability of archives" is the correct answer.
+## CORRECT: "Provides 99.999999999% durability of archives" is the correct answer.
 
-CORRECT: "Data is resilient in the event of one entire Availability Zone destruction" is the correct answer.
+## CORRECT: "Data is resilient in the event of one entire Availability Zone destruction" is the correct answer.
 
 # A Solutions Architect has created a new security group in an Amazon VPC. No rules have been created. Which of the statements below are correct regarding the default state of the security group? (choose 2)
 
@@ -323,9 +303,9 @@ Custom security groups do not have inbound allow rules (all inbound traffic is d
 
 Security groups act like a stateful firewall at the instance level. Specifically security groups operate at the network interface level of an EC2 instance. You can only assign permit rules in a security group, you cannot assign deny rules and there is an implicit deny rule at the end of the security group. All rules are evaluated until a permit is encountered or continues until the implicit deny. You can create ingress and egress rules.
 
-CORRECT: "There is an outbound rule that allows all traffic to all IP addresses" is the correct answer.
+## CORRECT: "There is an outbound rule that allows all traffic to all IP addresses" is the correct answer.
 
-CORRECT: "There are no inbound rules and traffic will be implicitly denied" is the correct answer.
+## CORRECT: "There are no inbound rules and traffic will be implicitly denied" is the correct answer.
 
 
 # A company needs to capture detailed information about all HTTP requests that are processed by their Internet facing Application Load Balancer (ALB). The company requires information on the requester, IP address, and request type for analyzing traffic patterns to better understand their customer base.
@@ -335,7 +315,7 @@ CORRECT: "There are no inbound rules and traffic will be implicitly denied" is t
 Explanation
 You can enable access logs on the ALB and this will provide the information required including requester, IP, and request type. Access logs are not enabled by default. You can optionally store and retain the log files on S3.
 
-CORRECT: "Enable Access Logs and store the data on S3" is the correct answer.
+## CORRECT: "Enable Access Logs and store the data on S3" is the correct answer.
 
 
 # A customer has requested some advice on how to implement security measures in their Amazon VPC. The client has recently been the victim of some hacking attempts. The client wants to implement measures to mitigate further threats. The client has explained that the attacks always come from the same small block of IP addresses. What would be a quick and easy measure to help prevent further attacks?
@@ -345,7 +325,7 @@ With NACLs you can have permit and deny rules. Network ACLs contain a numbered l
 
 
 
-CORRECT: "Use a Network ACL rule that denies connections from the block of IP addresses" is the correct answer.
+## CORRECT: "Use a Network ACL rule that denies connections from the block of IP addresses" is the correct answer.
 
 
 # An on-premise data center will be connected to an Amazon VPC by a hardware VPN that has public and VPN-only subnets. The security team has requested that traffic hitting public subnets on AWS that’s destined to on-premise applications must be directed over the VPN to the corporate firewall. How can this be achieved?
@@ -353,7 +333,7 @@ CORRECT: "Use a Network ACL rule that denies connections from the block of IP ad
 Explanation
 Route tables determine where network traffic is directed. In your route table, you must add a route for your remote network and specify the virtual private gateway as the target. This enables traffic from your VPC that’s destined for your remote network to route via the virtual private gateway and over one of the VPN tunnels. You can enable route propagation for your route table to automatically propagate your network routes to the table for you.
 
-CORRECT: "In the public subnet route table, add a route for your remote network and specify the virtual private gateway as the target" is the correct answer.
+## CORRECT: "In the public subnet route table, add a route for your remote network and specify the virtual private gateway as the target" is the correct answer.
 
 
 # A fleet of Amazon EC2 instances running Linux will be launched in an Amazon VPC. An application development framework and some custom software must be installed on the instances. The installation will be initiated using some scripts. What feature enables a Solutions Architect to specify the scripts the software can be installed during the EC2 instance launch?
@@ -363,7 +343,7 @@ When you launch an instance in Amazon EC2, you have the option of passing user d
 
 User data is data that is supplied by the user at instance launch in the form of a script and is limited to 16KB.
 
-CORRECT: "User Data" is the correct answer.
+## CORRECT: "User Data" is the correct answer.
 
 
 # A Solutions Architect needs to capture information about the traffic that reaches an Amazon Elastic Load Balancer. The information should include the source, destination, and protocol. What is the most secure and reliable method for gathering this data?
@@ -371,7 +351,7 @@ CORRECT: "User Data" is the correct answer.
 Explanation
 You can use VPC Flow Logs to capture detailed information about the traffic going to and from your Elastic Load Balancer. Create a flow log for each network interface for your load balancer. There is one network interface per load balancer subnet.
 
-CORRECT: "Create a VPC flow log for each network interface associated with the ELB" is the correct answer.
+## CORRECT: "Create a VPC flow log for each network interface associated with the ELB" is the correct answer.
 
 
 # A company has launched a multi-tier application architecture. The web tier and database tier run on Amazon EC2 instances in private subnets within the same Availability Zone. Which combination of steps should a Solutions Architect take to add high availability to this architecture? (Select TWO.)
@@ -379,9 +359,9 @@ CORRECT: "Create a VPC flow log for each network interface associated with the E
 Explanation
 The Solutions Architect can use Auto Scaling group across multiple AZs with an ALB in front to create an elastic and highly available architecture. Then, migrate the database to an Amazon RDS multi-AZ deployment to create HA for the database tier. This results in a fully redundant architecture that can withstand the failure of an availability zone.
 
-CORRECT: "Create an Amazon EC2 Auto Scaling group and Application Load Balancer (ALB) spanning multiple AZs" is a correct answer.
+## CORRECT: "Create an Amazon EC2 Auto Scaling group and Application Load Balancer (ALB) spanning multiple AZs" is a correct answer.
 
-CORRECT: "Create new private subnets in the same VPC but in a different AZ. Migrate the database to an Amazon RDS multi-AZ deployment" is also a correct answer.
+## CORRECT: "Create new private subnets in the same VPC but in a different AZ. Migrate the database to an Amazon RDS multi-AZ deployment" is also a correct answer.
 
 
 # An on-premises server runs a MySQL database and will be migrated to the AWS Cloud. The company require a managed solution that supports high availability and automatic failover in the event of the outage of an Availability Zone (AZ). Which solution is the BEST fit for these requirements?
@@ -392,7 +372,7 @@ The AWS DMS service can be used to directly migrate the MySQL database to an Ama
 
 
 
-CORRECT: "Use the AWS Database Migration Service (DMS) to directly migrate the database to an Amazon RDS MySQL Multi-AZ deployment" is the correct answer.
+## CORRECT: "Use the AWS Database Migration Service (DMS) to directly migrate the database to an Amazon RDS MySQL Multi-AZ deployment" is the correct answer.
 
 
 # A tool needs to analyze data stored in an Amazon S3 bucket. Processing the data takes a few seconds and results are then written to another S3 bucket. Less than 256 MB of memory is needed to run the process. What would be the MOST cost-effective compute solutions for this use case?
@@ -400,7 +380,7 @@ CORRECT: "Use the AWS Database Migration Service (DMS) to directly migrate the d
 Explanation
 AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume. Lambda has a maximum execution time of 900 seconds and memory can be allocated up to 3008 MB. Therefore, the most cost-effective solution will be AWS Lambda.
 
-CORRECT: "AWS Lambda functions" is the correct answer.
+## CORRECT: "AWS Lambda functions" is the correct answer.
 
 
 # The load on a MySQL database running on Amazon EC2 is increasing and performance has been impacted. Which of the options below would help to increase storage performance? (choose 2)
@@ -418,9 +398,9 @@ RAID can be used to increase IOPS, however RAID 1 does not. For example:
 
 HDD, Cold – (SC1) provides the lowest cost storage and low performance
 
-CORRECT: "Use Provisioned IOPS (I01) EBS volumes" is a correct answer.
+## CORRECT: "Use Provisioned IOPS (I01) EBS volumes" is a correct answer.
 
-CORRECT: "Use EBS optimized instances" is also a correct answer.
+## CORRECT: "Use EBS optimized instances" is also a correct answer.
 
 
 # A Solutions Architect is deploying a production application that will use several Amazon EC2 instances and run constantly on an ongoing basis. The application cannot be interrupted or restarted. Which EC2 pricing model would be best for this workload?
@@ -430,13 +410,10 @@ In this scenario for a stable process that will run constantly on an ongoing bas
 
 RIs provide you with a significant discount (up to 75%) compared to On-Demand instance pricing. You have the flexibility to change families, OS types, and tenancies while benefitting from RI pricing when you use Convertible RIs.
 
-CORRECT: "Reserved instances" is the correct answer.
+## CORRECT: "Reserved instances" is the correct answer.
 
 
 # A Solutions Architect created a new IAM user account for a temporary employee who recently joined the company. The user does not have permissions to perform any actions, which statement is true about newly created users in IAM?
-
-
-
 
 
 Explanation
@@ -457,7 +434,7 @@ AWS Batch eliminates the need to operate third-party commercial or open source b
 # A Solutions Architect enabled Access Logs on an Application Load Balancer (ALB) and needs to process the log files using a hosted Hadoop service. What configuration changes and services can be leveraged to deliver this requirement?
 
 
-Explanation
+Explanation:
 Access Logs can be enabled on ALB and configured to store data in an S3 bucket. Amazon EMR is a web service that enables businesses, researchers, data analysts, and developers to easily and cost-effectively process vast amounts of data. EMR utilizes a hosted Hadoop framework running on Amazon EC2 and Amazon S3.
 
 ## CORRECT: "Configure Access Logs to be delivered to S3 and use EMR for processing the log files" is the correct answer.
@@ -467,7 +444,7 @@ Access Logs can be enabled on ALB and configured to store data in an S3 bucket. 
 
 
 
-Explanation
+Explanation: 
 With ALB and NLB IP addresses can be used to register:
 
 - Instances in a peered VPC.
@@ -508,7 +485,7 @@ Note that on the web server security group you’d want to add an Inbound rule a
 # A Solutions Architect is launching an Amazon EC2 instance with multiple attached volumes by modifying the block device mapping. Which block device can be specified in a block device mapping to be used with an EC2 instance? (choose 2)
 
 
-Explanation
+Explanation: 
 Each instance that you launch has an associated root device volume, either an Amazon EBS volume or an instance store volume.
 
 You can use block device mapping to specify additional EBS volumes or instance store volumes to attach to an instance when it’s launched. You can also attach additional EBS volumes to a running instance.
@@ -582,10 +559,7 @@ The route tables in the private subnets must then be configured with a route to 
 
 
 
-
-
-
-Explanation
+Explanation: 
 All EBS types and all instance families support encryption but not all instance types support encryption. There is no direct way to change the encryption state of a volume. Data in transit between an instance and an encrypted volume is also encrypted.
 
 ## CORRECT: "Data in transit between an instance and an encrypted volume is also encrypted" is the correct answer.
@@ -701,7 +675,6 @@ More information on ASG health checks:
 
 ## CORRECT: "The ELB health check type has not been selected for the ASG and so it is unaware that the instance has been determined to be unhealthy by the ELB and has been removed from service" is the correct answer.
 
-INCORRECT: "The ASG is waiting for the cooldown timer to expire before terminating the instance" is incorrect as the ASG does not wait for the cooldown time to expire.
 
 
 # A Solutions Architect has created an AWS account and selected the Asia Pacific (Sydney) region. Within the default VPC there is a default security group. What settings are configured within this security group by default? (choose 2)
@@ -726,7 +699,7 @@ You can specify the instance store volumes for your instance only when you launc
 # A company runs a streaming media service and the content is stored on Amazon S3. The media catalog server pulls updated content from S3 and can issue over 1 million read operations per second for short periods. Latency must be kept under 5ms for these updates. Which solution will provide the BEST performance for the media catalog updates?
 
 
-Explanation
+Explanation: 
 Some applications, such as media catalog updates require high frequency reads, and consistent throughput. For such applications, customers often complement S3 with an in-memory cache, such as Amazon ElastiCache for Redis, to reduce the S3 retrieval cost and to improve performance.
 
 ElastiCache for Redis is a fully managed, in-memory data store that provides sub-millisecond latency performance with high throughput. ElastiCache for Redis complements S3 in the following ways:
@@ -783,8 +756,6 @@ AWS IoT Core is a managed cloud service that lets connected devices easily and s
 
 
 # A distribution method is required for some static files. The requests will mainly be GET requests and a high volume of GETs is expected, often exceeding 2000 per second. The files are currently stored in an S3 bucket. According to AWS best practices, how can performance be optimized?
-
-
 
 
 
