@@ -442,78 +442,28 @@ CORRECT: "Reserved instances" is the correct answer.
 Explanation
 Every IAM user starts with no permissions.. In other words, by default, users can do nothing, not even view their own access keys. To give a user permission to do something, you can add the permission to the user (that is, attach a policy to the user). Or you can add the user to a group that has the intended permission.
 
-CORRECT: "They are created with no permissions" is the correct answer.
+## CORRECT: "They are created with no permissions" is the correct answer.
 
-INCORRECT: "They are created with limited permissions" is incorrect as they are created with no permissions.
-
-INCORRECT: "They are created with full permissions" is incorrect as they are created with no permissions.
-
-INCORRECT: "They are created with user privileges" is incorrect as they are created with no permissions.
-
-References:
-
-https://docs.aws.amazon.com/IAM/latest/UserGuide/access_controlling.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-directory-services/
-
-Question 38: Incorrect
-#A financial services company regularly runs an analysis of the day’s transaction costs, execution reporting, and market performance. The company currently uses third-party commercial software for provisioning, managing, monitoring, and scaling the computing jobs which utilize a large fleet of EC2 instances.
-
-The company is seeking to reduce costs and utilize AWS services. Which AWS service could be used in place of the third-party software?
-
-
-
+ 
+# A financial services company regularly runs an analysis of the day’s transaction costs, execution reporting, and market performance. The company currently uses third-party commercial software for provisioning, managing, monitoring, and scaling the computing jobs which utilize a large fleet of EC2 instances. The company is seeking to reduce costs and utilize AWS services. Which AWS service could be used in place of the third-party software?
 
 
 Explanation
 AWS Batch eliminates the need to operate third-party commercial or open source batch processing solutions. There is no batch software or servers to install or manage. AWS Batch manages all the infrastructure for you, avoiding the complexities of provisioning, managing, monitoring, and scaling your batch computing jobs.
 
-CORRECT: "AWS Batch" is the correct answer.
-
-INCORRECT: "Amazon Athena" is incorrect. Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL.
-
-INCORRECT: "AWS Systems Manager" is incorrect. AWS Systems Manager gives you visibility and control of your infrastructure on AWS.
-
-INCORRECT: "Amazon Lex" is incorrect. Amazon Lex is a service for building conversational interfaces into any application using voice and text.
-
-References:
-
-https://aws.amazon.com/batch/
-
-Question 39: Correct
-#A Solutions Architect enabled Access Logs on an Application Load Balancer (ALB) and needs to process the log files using a hosted Hadoop service. What configuration changes and services can be leveraged to deliver this requirement?
+## CORRECT: "AWS Batch" is the correct answer.
 
 
-
+# A Solutions Architect enabled Access Logs on an Application Load Balancer (ALB) and needs to process the log files using a hosted Hadoop service. What configuration changes and services can be leveraged to deliver this requirement?
 
 
 Explanation
 Access Logs can be enabled on ALB and configured to store data in an S3 bucket. Amazon EMR is a web service that enables businesses, researchers, data analysts, and developers to easily and cost-effectively process vast amounts of data. EMR utilizes a hosted Hadoop framework running on Amazon EC2 and Amazon S3.
 
-CORRECT: "Configure Access Logs to be delivered to S3 and use EMR for processing the log files" is the correct answer.
-
-INCORRECT: "Configure Access Logs to be delivered to EC2 and install Hadoop for processing the log files" is incorrect. EC2 does not provide a hosted Hadoop service.
-
-INCORRECT: "Configure Access Logs to be delivered to DynamoDB and use EMR for processing the log files" is incorrect. You cannot configure access logs to be delivered to DynamoDB.
-
-INCORRECT: "Configure Access Logs to be delivered to S3 and use Kinesis for processing the log files" is incorrect. Kinesis does not provide a hosted Hadoop service.
-
-References:
-
-https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-emr/
-
-https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
-
-Question 40: Correct
-#A company has multiple Amazon VPCs that are peered with each other. The company would like to use a single Elastic Load Balancer (ELB) to route traffic to multiple EC2 instances in peered VPCs within the same region. How can this be achieved?
+## CORRECT: "Configure Access Logs to be delivered to S3 and use EMR for processing the log files" is the correct answer.
 
 
+# A company has multiple Amazon VPCs that are peered with each other. The company would like to use a single Elastic Load Balancer (ELB) to route traffic to multiple EC2 instances in peered VPCs within the same region. How can this be achieved?
 
 
 
@@ -526,27 +476,10 @@ With ALB and NLB IP addresses can be used to register:
 
 - On-premises resources linked to AWS through Direct Connect or a VPN connection.
 
-CORRECT: "This is possible using the Network Load Balancer (NLB) and Application Load Balancer (ALB) if using IP addresses as targets" is the correct answer.
-
-INCORRECT: "This is not possible, the instances that an ELB routes traffic to must be in the same VPC" is incorrect. Instances can be in peered VPCs.
-
-INCORRECT: "This is possible using the Classic Load Balancer (CLB) if using Instance IDs" is incorrect. This is not possible with the CLB.
-
-INCORRECT: "This is not possible with ELB, you would need to use Route 53" is incorrect. This is not true, as detailed above.
-
-References:
-
-https://aws.amazon.com/blogs/aws/new-application-load-balancing-via-ip-address-to-aws-on-premises-resources/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
-
-Question 41: Incorrect
-#A Solutions Architect needs to run a PowerShell script on a fleet of Amazon EC2 instances running Microsoft Windows. The instances have already been launched in an Amazon VPC. What tool can be run from the AWS Management Console that to execute the script on all target EC2 instances?
+## CORRECT: "This is possible using the Network Load Balancer (NLB) and Application Load Balancer (ALB) if using IP addresses as targets" is the correct answer.
 
 
-
+# A Solutions Architect needs to run a PowerShell script on a fleet of Amazon EC2 instances running Microsoft Windows. The instances have already been launched in an Amazon VPC. What tool can be run from the AWS Management Console that to execute the script on all target EC2 instances?
 
 
 Explanation
@@ -554,26 +487,10 @@ Run Command is designed to support a wide range of enterprise scenarios includin
 
 Run Command can be used to implement configuration changes across Windows instances on a consistent yet ad hoc basis and is accessible from the AWS Management Console, the AWS Command Line Interface (CLI), the AWS Tools for Windows PowerShell, and the AWS SDKs.
 
-CORRECT: "Run Command" is the correct answer.
-
-INCORRECT: "AWS CodeDeploy" is incorrect. AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances, serverless Lambda functions, or Amazon ECS services.
-
-INCORRECT: "AWS Config" is incorrect. AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. It is not used for ad-hoc script execution.
-
-INCORRECT: "AWS OpsWorks" is incorrect. AWS OpsWorks provides instances of managed Puppet and Chef.
-
-References:
-
-https://aws.amazon.com/blogs/aws/new-ec2-run-command-remote-instance-management-at-scale/
-
-Question 42: Correct
-#A company is deploying a new two-tier web application that uses EC2 web servers and a DynamoDB database backend. An Internet facing ELB distributes connections between the web servers.
-
-The Solutions Architect has created a security group for the web servers and needs to create a security group for the ELB. What rules should be added? (choose 2)
+## CORRECT: "Run Command" is the correct answer.
 
 
-
-
+# A company is deploying a new two-tier web application that uses EC2 web servers and a DynamoDB database backend. An Internet facing ELB distributes connections between the web servers. The Solutions Architect has created a security group for the web servers and needs to create a security group for the ELB. What rules should be added? (choose 2)
 
 
 Explanation
@@ -583,30 +500,12 @@ The outbound rule should forward the relevant protocols (HTTP/HTTPS) and the des
 
 Note that on the web server security group you’d want to add an Inbound rule allowing HTTP/HTTPS from the ELB security group.
 
-CORRECT: "Add an Outbound rule that allows HTTP/HTTPS, and specify the destination as the web server security group" is a correct answer.
+## CORRECT: "Add an Outbound rule that allows HTTP/HTTPS, and specify the destination as the web server security group" is a correct answer.
 
-CORRECT: "Add an Inbound rule that allows HTTP/HTTPS, and specify the source as 0.0.0.0/0" is also a correct answer.
-
-INCORRECT: "Add an Outbound rule that allows ALL TCP, and specify the destination as the Internet Gateway" is incorrect as the relevant protocol should be specified and the destination should be the web server security group.
-
-INCORRECT: "Add an Outbound rule that allows HTTP/HTTPS, and specify the destination as VPC CIDR" is incorrect. Using the VPC CIDR would not be secure and you cannot specify an Internet Gateway in a security group (not that you’d want to anyway).
-
-INCORRECT: "Add an Inbound rule that allows HTTP/HTTPS, and specify the source as 0.0.0.0/32" is incorrect. The address 0.0.0.0/32 is incorrect as the 32 mask means an exact match is required (0.0.0.0).
-
-References:
-
-https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
-
-Question 43: Incorrect
-#A Solutions Architect is launching an Amazon EC2 instance with multiple attached volumes by modifying the block device mapping. Which block device can be specified in a block device mapping to be used with an EC2 instance? (choose 2)
+## CORRECT: "Add an Inbound rule that allows HTTP/HTTPS, and specify the source as 0.0.0.0/0" is also a correct answer.
 
 
-
-
+# A Solutions Architect is launching an Amazon EC2 instance with multiple attached volumes by modifying the block device mapping. Which block device can be specified in a block device mapping to be used with an EC2 instance? (choose 2)
 
 
 Explanation
@@ -616,31 +515,14 @@ You can use block device mapping to specify additional EBS volumes or instance s
 
 You cannot use a block device mapping to specify a snapshot, EFS volume or S3 bucket.
 
-CORRECT: "EBS volume" is a correct answer.
+## CORRECT: "EBS volume" is a correct answer.
 
-CORRECT: "Instance store volume" is also a correct answer.
+## CORRECT: "Instance store volume" is also a correct answer.
 
-INCORRECT: "EFS volume" is incorrect as described above.
 
-INCORRECT: "Snapshot" is incorrect as described above.
-
-INCORRECT: "S3 bucket" is incorrect as described above.
-
-References:
-
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-ebs/
-
-Question 44: Incorrect
-#A Solutions Architect has created a VPC and is in the process of formulating the subnet design. The VPC will be used to host a two-tier application that will include Internet facing web servers, and internal-only DB servers. Zonal redundancy is required.
+# A Solutions Architect has created a VPC and is in the process of formulating the subnet design. The VPC will be used to host a two-tier application that will include Internet facing web servers, and internal-only DB servers. Zonal redundancy is required.
 
 How many subnets are required to support this requirement?
-
-
-
 
 
 Explanation
@@ -648,25 +530,10 @@ Zonal redundancy indicates that the architecture should be split across multiple
 
 A public subnet should be used for the Internet-facing web servers and a separate private subnet should be used for the internal-only DB servers. Therefore you need 4 subnets – 2 (for redundancy) per public/private subnet.
 
-CORRECT: "4 subnets" is the correct answer.
-
-INCORRECT: "2 subnets" is incorrect as explained above.
-
-INCORRECT: "6 subnets" is incorrect as explained above.
-
-INCORRECT: "2 subnet" is incorrect as explained above.
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-vpc/
-
-Question 45: Correct
-#One of the departments in a company has been generating a large amount of data on Amazon S3 and costs are increasing. Data older than 90 days is rarely accessed but must be retained for several years. If this data does need to be accessed at least 24 hours notice is provided.
-
-How can a Solutions Architect optimize the costs associated with storage of this data whilst ensuring it is accessible if required?
+# CORRECT: "4 subnets" is the correct answer.
 
 
-
+# One of the departments in a company has been generating a large amount of data on Amazon S3 and costs are increasing. Data older than 90 days is rarely accessed but must be retained for several years. If this data does need to be accessed at least 24 hours notice is provided. How can a Solutions Architect optimize the costs associated with storage of this data whilst ensuring it is accessible if required?
 
 
 Explanation
@@ -682,32 +549,10 @@ GLACIER retrieval times:
 
 - You can use Bulk retrievals to access up to petabytes of data in approximately 5 – 12 hours.
 
-CORRECT: "Use S3 lifecycle policies to move data to GLACIER after 90 days" is the correct answer.
-
-INCORRECT: "Implement archival software that automatically moves the data to tape" is incorrect as this solution can be fully automated using lifecycle policies.
-
-INCORRECT: "Use S3 lifecycle policies to move data to the STANDARD_IA storage class" is incorrect. STANDARD_IA is good for infrequently accessed data and provides faster access times than GLACIER but is more expensive so not the best option here.
-
-INCORRECT: "Select the older data and manually migrate it to GLACIER" is incorrect as a lifecycle policy can automate the process.
-
-References:
-
-https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html
-
-https://aws.amazon.com/about-aws/whats-new/2016/11/access-your-amazon-glacier-data-in-minutes-with-new-retrieval-options/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-s3-and-glacier/
-
-Question 46: Incorrect
-#The Solutions Architect in charge of a critical application must ensure the Amazon EC2 instances are able to be launched in another AWS Region in the event of a disaster.
-
-What steps should the Solutions Architect take? (Select TWO.)
+# CORRECT: "Use S3 lifecycle policies to move data to GLACIER after 90 days" is the correct answer.
 
 
-
-
+# The Solutions Architect in charge of a critical application must ensure the Amazon EC2 instances are able to be launched in another AWS Region in the event of a disaster. What steps should the Solutions Architect take? (Select TWO.)
 
 
 Explanation
@@ -717,29 +562,12 @@ Once you’ve created AMIs of EC2 instances and copied them to the second Region
 
 This is a good DR strategy as you have moved stateful EC2 instances to another Region.
 
-CORRECT: "Create AMIs of the instances and copy them to another Region" is the correct answer.
+## CORRECT: "Create AMIs of the instances and copy them to another Region" is the correct answer.
 
-CORRECT: "Launch instances in the second Region from the AMIs" is also a correct answer.
-
-INCORRECT: "Launch instances in the second Region using the S3 API" is incorrect. Though snapshots (and EBS-backed AMIs) are stored on Amazon S3, you cannot actually access them using the S3 API. You must use the EC2 API.
-
-INCORRECT: "Enable cross-region snapshots for the Amazon EC2 instances" is incorrect. You cannot enable “cross-region snapshots” as this is not a feature that currently exists.
-
-INCORRECT: "Copy the snapshots using Amazon S3 cross-region replication" is incorrect. You cannot work with snapshots using Amazon S3 at all including leveraging the cross-region replication feature.
-
-References:
-
-https://aws.amazon.com/blogs/aws/ebs-snapshot-copy/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-ec2/
-
-Question 47: Incorrect
-#An application runs on EC2 instances in a private subnet behind an Application Load Balancer in a public subnet. The application is highly available and distributed across multiple AZs. The EC2 instances must make API calls to an internet-based service. How can the Solutions Architect enable highly available internet connectivity?
+## CORRECT: "Launch instances in the second Region from the AMIs" is also a correct answer.
 
 
-
+# An application runs on EC2 instances in a private subnet behind an Application Load Balancer in a public subnet. The application is highly available and distributed across multiple AZs. The EC2 instances must make API calls to an internet-based service. How can the Solutions Architect enable highly available internet connectivity?
 
 
 Explanation
@@ -747,24 +575,10 @@ The only solution presented that actually works is to create a NAT gateway in th
 
 The route tables in the private subnets must then be configured with a route to the NAT gateway and then the EC2 instances will be able to access the internet (subject to security group configuration).
 
-CORRECT: "Create a NAT gateway in the public subnet of each AZ. Update the route tables for each private subnet to direct internet-bound traffic to the NAT gateway" is the correct answer.
+# CORRECT: "Create a NAT gateway in the public subnet of each AZ. Update the route tables for each private subnet to direct internet-bound traffic to the NAT gateway" is the correct answer.
 
-INCORRECT: "Create a NAT gateway and attach it to the VPC. Add a route to the gateway to each private subnet route table" is incorrect. You do not attach NAT gateways to VPCs, you add them to public subnets.
 
-INCORRECT: "Configure an internet gateway. Add a route to the gateway to each private subnet route table" is incorrect. You cannot add a route to an internet gateway to a private subnet route table (private EC2 instances don’t even have public IP addresses).
-
-INCORRECT: "Create a NAT instance in the private subnet of each AZ. Update the route tables for each private subnet to direct internet-bound traffic to the NAT instance" is incorrect. You do not create NAT instances in private subnets, they must be created in public subnets.
-
-References:
-
-https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-vpc/
-
-Question 48: Incorrect
-#A security officer has requested that all data associated with a specific customer is encrypted. The data resides on Elastic Block Store (EBS) volumes. Which of the following statements about using EBS encryption are correct? (choose 2)     
+# A security officer has requested that all data associated with a specific customer is encrypted. The data resides on Elastic Block Store (EBS) volumes. Which of the following statements about using EBS encryption are correct? (choose 2)     
 
 
 
@@ -774,9 +588,9 @@ Question 48: Incorrect
 Explanation
 All EBS types and all instance families support encryption but not all instance types support encryption. There is no direct way to change the encryption state of a volume. Data in transit between an instance and an encrypted volume is also encrypted.
 
-CORRECT: "Data in transit between an instance and an encrypted volume is also encrypted" is the correct answer.
+## CORRECT: "Data in transit between an instance and an encrypted volume is also encrypted" is the correct answer.
 
-CORRECT: "There is no direct way to change the encryption state of a volume" is the correct answer.
+## CORRECT: "There is no direct way to change the encryption state of a volume" is the correct answer.
 
 INCORRECT: "Not all EBS types support encryption" is incorrect as all EBS volume types support encryption.
 
