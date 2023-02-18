@@ -1,0 +1,1999 @@
+AWS Certified Solutions Architect Associate Practice Test 5 - Results
+Chart
+
+Pie chart with 4 slices.
+End of interactive chart.
+Attempt 5
+Question 1: Correct
+A Solutions Architect needs a storage solution for a fleet of Linux web application servers. The solution should provide a file system interface and be able to support millions of files. Which AWS service should the Architect choose?
+
+
+
+
+
+Explanation
+The Amazon Elastic File System (EFS) is the only storage solution in the list that provides a file system interface. It also supports millions of files as requested.
+
+CORRECT: "Amazon EFS" is the correct answer.
+
+INCORRECT: "Amazon ElastiCache" is incorrect. Amazon ElastiCache is an in-memory caching solution for databases.
+
+INCORRECT: "Amazon EBS" is incorrect. Amazon EBS provides a block storage interface.
+
+INCORRECT: "Amazon S3" is incorrect. Amazon S3 is an object storage solution and does not provide a file system interface.
+
+References:
+
+https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-efs/
+
+Question 2: Correct
+The development team in a media organization is moving their SDLC processes into the AWS Cloud. Which AWS service can a Solutions Architect recommend that is primarily used for software version control?
+
+
+
+
+
+Explanation
+AWS CodeCommit is a fully-managed source control service that hosts secure Git-based repositories. It makes it easy for teams to collaborate on code in a secure and highly scalable ecosystem. CodeCommit eliminates the need to operate your own source control system or worry about scaling its infrastructure. You can use CodeCommit to securely store anything from source code to binaries, and it works seamlessly with your existing Git tools.
+
+CORRECT: "CodeCommit" is the correct answer.
+
+INCORRECT: "CloudHSM" is incorrect. AWS CloudHSM is a cloud-based hardware security module (HSM) that enables you to easily generate and use your own encryption keys on the AWS Cloud
+
+INCORRECT: "CodeStar" is incorrect. AWS CodeStar enables you to quickly develop, build, and deploy applications on AWS..
+
+INCORRECT: "Step Functions" is incorrect. AWS Step Functions lets you coordinate multiple AWS services into serverless workflows so you can build and update apps quickly.
+
+References:
+
+https://aws.amazon.com/codecommit/
+
+Question 3: Correct
+An application stack is being created which needs a message bus to decouple the application components from each other. The application will generate up to 300 messages per second without using batching. A Solutions Architect needs to ensure that a message is delivered only once and duplicates are not introduced into the queue. It is not necessary to maintain the order of the messages.
+
+Which SQS queue type should be used?
+
+
+
+
+
+Explanation
+The key fact you need to consider here is that duplicate messages cannot be introduced into the queue. For this reason alone you must use a FIFO queue. The statement about it not being necessary to maintain the order of the messages is meant to confuse you, as that might lead you to think you can use a standard queue, but standard queues don’t guarantee that duplicates are not introduced into the queue.
+
+FIFO (first-in-first-out) queues preserve the exact order in which messages are sent and received – note that this is not required in the question but exactly once processing is. FIFO queues provide exactly-once processing, which means that each message is delivered once and remains available until a consumer processes it and deletes it.
+
+CORRECT: "FIFO queues" is the correct answer.
+
+INCORRECT: "Standard queues" is incorrect. Standard queues provide a loose-FIFO capability that attempts to preserve the order of messages. Standard queues provide at-least-once delivery, which means that each message is delivered at least once.
+
+INCORRECT: "Long polling queues" is incorrect. Long polling is configuration you can apply to a queue, it is not a queue type.
+
+INCORRECT: "Auto Scaling queues" is incorrect. There is no such thing as an Auto Scaling queue.
+
+References:
+
+https://aws.amazon.com/sqs/features/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-application-integration-services/
+
+Question 4: Correct
+Encrypted Amazon Elastic Block Store (EBS) volumes are attached to some Amazon EC2 instances. Which statements are correct about using encryption with Amazon EBS volumes? (choose 2)
+
+
+
+
+
+
+Explanation
+Some facts about Amazon EBS encrypted volumes and snapshots:
+
+- All EBS types support encryption and all instance families now support encryption.
+
+- Not all instance types support encryption.
+
+- Data in transit between an instance and an encrypted volume is also encrypted (data is encrypted in trans.
+
+- You can have encrypted an unencrypted EBS volumes attached to an instance at the same time.
+
+- Snapshots of encrypted volumes are encrypted automatically.
+
+- EBS volumes restored from encrypted snapshots are encrypted automatically.
+
+- EBS volumes created from encrypted snapshots are also encrypted.
+
+CORRECT: "Encryption is supported on all Amazon EBS volume types" is a correct answer.
+
+CORRECT: "Data in transit between an instance and an encrypted volume is also encrypted" is also a correct answer.
+
+INCORRECT: "Data is only encrypted at rest" is incorrect. Please refer to the facts above.
+
+INCORRECT: "Volumes created from encrypted snapshots are unencrypted" is incorrect. Please refer to the facts above.
+
+INCORRECT: "You cannot mix encrypted with unencrypted volumes on an instance" is incorrect. Please refer to the facts above.
+
+References:
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ebs/
+
+Question 5: Incorrect
+A three-tier web application that is deployed in an Amazon VPC has been experiencing heavy load on the database layer. The database layer uses an Amazon RDS MySQL instance in a multi-AZ configuration. Customers have been complaining about poor response times. During troubleshooting it has been noted that the database layer is experiencing high read contention during peak hours of the day.
+
+What are two possible options that could be used to offload some of the read traffic from the database to resolve the performance issues? (choose 2)
+
+
+
+
+
+
+Explanation
+Amazon ElastiCache is a web service that makes it easy to deploy and run Memcached or Redis protocol-compliant server nodes in the cloud. The in-memory caching provided by ElastiCache can be used to significantly improve latency and throughput for many read-heavy application workloads or compute-intensive workloads.
+
+Read replicas are used for read heavy DBs and replication is asynchronous. They are for workload sharing and offloading and are created from a snapshot of the master instance
+
+CORRECT: "Add RDS read replicas in each AZ" is a correct answer.
+
+CORRECT: "Deploy ElastiCache in each AZ" is also a correct answer.
+
+INCORRECT: "Use an ELB to distribute load between RDS instances" is incorrect. You cannot use an ELB to distributed load between different RDS instances.
+
+INCORRECT: "Migrate to DynamoDB" is incorrect. Moving from a relational DB to a NoSQL DB (DynamoDB) is unlikely to be a viable solution.
+
+INCORRECT: "Use a larger RDS instance size" is incorrect. Using a larger instance size may alleviate the problems the question states that the solution should offload reads from the main DB, read replicas can do this.
+
+References:
+
+https://aws.amazon.com/rds/features/read-replicas/
+
+https://aws.amazon.com/elasticache/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-elasticache/
+
+https://digitalcloud.training/amazon-rds/
+
+Question 6: Correct
+Amazon CloudWatch is being used to monitor the performance of AWS Lambda. Which metrics does Lambda track? (choose 2)
+
+
+
+
+
+
+Explanation
+AWS Lambda automatically monitors Lambda functions and reports metrics through Amazon CloudWatch. Lambda tracks the number of requests, the latency per request, and the number of requests resulting in an error. You can view the request rates and error rates using the AWS Lambda Console, the CloudWatch console, and other AWS resources.
+
+CORRECT: "Total number of requests" is a correct answer.
+
+CORRECT: "Latency per request" is also a correct answer.
+
+INCORRECT: "Number of users" is incorrect as this is not returned.
+
+INCORRECT: "Total number of connections" is incorrect as this is not returned.
+
+INCORRECT: "Total number of transactions" is incorrect as this is not returned.
+
+References:
+
+https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-lambda/
+
+Question 7: Correct
+An application is running on EC2 instances in a private subnet of an Amazon VPC. A Solutions Architect would like to connect the application to Amazon API Gateway. For security reasons, it is necessary to ensure that no traffic traverses the Internet and to ensure all traffic uses private IP addresses only.
+
+How can this be achieved?
+
+
+
+
+
+Explanation
+An Interface endpoint uses AWS PrivateLink and is an elastic network interface (ENI) with a private IP address that serves as an entry point for traffic destined to a supported service. Using PrivateLink you can connect your VPC to supported AWS services, services hosted by other AWS accounts (VPC endpoint services), and supported AWS Marketplace partner services.
+
+CORRECT: "Create a private API using an interface VPC endpoint" is the correct answer.
+
+INCORRECT: "Create a NAT gateway" is incorrect. NAT Gateways are used to provide Internet access for EC2 instances in private subnets so are of no use in this solution.
+
+INCORRECT: "Create a public VIF on a Direct Connect connection" is incorrect. You do not need to implement Direct Connect and create a public VIF. Public IP addresses are used in public VIFs and the question requests that only private addresses are used.
+
+INCORRECT: "Add the API gateway to the subnet the EC2 instances are located in" is incorrect. You cannot add API Gateway to the subnet the EC2 instances are in, it is a public service with a public endpoint.
+
+References:
+
+https://aws.amazon.com/blogs/compute/introducing-amazon-api-gateway-private-endpoints/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-vpc/
+
+Question 8: Correct
+There is new requirement for a database that will store a large number of records for an online store. You are evaluating the use of DynamoDB. Which of the following are AWS best practices for DynamoDB? (choose 2)   
+
+
+
+
+
+
+Explanation
+DynamoDB best practices include:
+
+- Keep item sizes small.
+
+- If you are storing serial data in DynamoDB that will require actions based on data/time use separate tables for days, weeks, months.
+
+- Store more frequently and less frequently accessed data in separate tables.
+
+- If possible compress larger attribute values.
+
+- Store objects larger than 400KB in S3 and use pointers (S3 Object ID) in DynamoDB.
+
+CORRECT: "Store objects larger than 400KB in S3 and use pointers in DynamoDB" is the correct answer.
+
+CORRECT: "Store more frequently and less frequently accessed data in separate tables" is the correct answer.
+
+INCORRECT: "Use separate local secondary indexes for each item" is incorrect as this is not a best practice.
+
+INCORRECT: "Use for BLOB data use cases" is incorrect as this is not a best practice.
+
+INCORRECT: "Use large files" is incorrect as this is not a best practice.
+
+References:
+
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-dynamodb/
+
+Question 9: Incorrect
+An application running in an on-premise data center writes data to a MySQL database. A Solutions Architect is re-architecting the application and plans to move the database layer into the AWS cloud on Amazon RDS. The application layer will run in the on-premise data center.
+
+What must be done to connect the application to the RDS database via the Internet? (choose 2)
+
+
+
+
+
+
+Explanation
+When you create the RDS instance, you need to select the option to make it publicly accessible. A security group will need to be created and assigned to the RDS instance to allow access from the public IP address of your application (or firewall).
+
+CORRECT: "Choose to make the RDS instance publicly accessible and place it in a public subnet" is a correct answer.
+
+CORRECT: "Create a security group allowing access from the on-premise public IP to the RDS instance and assign to the RDS instance" is also a correct answer.
+
+INCORRECT: "Configure a NAT Gateway and attach the RDS database" is incorrect. NAT Gateways are used for enabling Internet connectivity for EC2 instances in private subnets.
+
+INCORRECT: "Select a public IP within the DB subnet group to assign to the RDS instance" is incorrect. The RDS instance does not require a public IP.
+
+INCORRECT: "Create a DB subnet group that is publicly accessible" is incorrect. A DB subnet group is a collection of subnets (typically private) that you create in a VPC and that you then designate for your DB instance. The DB subnet group cannot be made publicly accessible, even if the subnets are public subnets, it is the RDS DB that must be configured to be publicly accessible.
+
+References:
+
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Scenarios.html#USER_VPC.Scenario4
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-rds/
+
+Question 10: Incorrect
+A Solutions Architect is writing some code that uses an AWS Lambda function and would like to enable the function to connect to an Amazon ElastiCache cluster within an Amazon VPC in the same AWS account. What VPC-specific information must be included in the function to enable this configuration? (choose 2)
+
+
+
+
+
+
+Explanation
+To enable your Lambda function to access resources inside your private VPC, you must provide additional VPC-specific configuration information that includes VPC subnet IDs and security group IDs. AWS Lambda uses this information to set up elastic network interfaces (ENIs) that enable your function.
+
+Please see the AWS article linked below for more details on the requirements
+
+CORRECT: "VPC Subnet IDs" is the correct answer.
+
+CORRECT: "VPC Security Group IDs" is the correct answer.
+
+INCORRECT: "VPC Logical IDs" is incorrect as this is not required.
+
+INCORRECT: "VPC Peering IDs" is incorrect as this is not required.
+
+INCORRECT: "VPC Route Table IDs" is incorrect as this is not required.
+
+References:
+
+https://docs.aws.amazon.com/lambda/latest/dg/vpc.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-lambda/
+
+Question 11: Correct
+A Solutions Architect is building a small web application running on Amazon EC2 that will be serving static content. The user base is spread out globally and speed is important. Which AWS service can deliver the best user experience cost-effectively and reduce the load on the web server?
+
+
+
+
+
+Explanation
+This is a good use case for Amazon CloudFront as the user base is spread out globally and CloudFront can cache the content closer to users and also reduce the load on the web server running on EC2.
+
+CORRECT: "Amazon CloudFront" is the correct answer.
+
+INCORRECT: "Amazon RedShift" is incorrect. Amazon RedShift is a data warehouse and is not suitable in this solution.
+
+INCORRECT: "Amazon S3" is incorrect. Amazon S3 is very cost-effective however a bucket is located in a single region and therefore performance is not so great for users a long distance from the bucket.
+
+INCORRECT: "Amazon EBS volume" is incorrect. EBS is not the most cost-effective storage solution and the data would be located in a single region to latency could be an issue.
+
+References:
+
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-s3-and-glacier/
+
+Question 12: Skipped
+A Solutions Architect regularly deploys and manages infrastructure services for customers on AWS. The SysOps team are facing challenges in tracking changes that are made to the infrastructure services and rolling back when problems occur.
+
+How can a Solutions Architect BEST assist the SysOps team?
+
+
+
+
+
+Explanation
+When you provision your infrastructure with AWS CloudFormation, the AWS CloudFormation template describes exactly what resources are provisioned and their settings. Because these templates are text files, you simply track differences in your templates to track changes to your infrastructure, similar to the way developers control revisions to source code.
+
+For example, you can use a version control system with your templates so that you know exactly what changes were made, who made them, and when. If at any point you need to reverse changes to your infrastructure, you can use a previous version of your template.
+
+CORRECT: "Use CloudFormation templates to deploy and manage the infrastructure services" is the correct answer.
+
+INCORRECT: "Use AWS Systems Manager to manage all updates to the infrastructure services" is incorrect. AWS Systems Manager gives you visibility and control of your infrastructure on AWS. Systems Manager provides a unified user interface so you can view operational data from multiple AWS services and allows you to automate operational tasks across your AWS resources. However, CloudFormation would be the preferred method of maintaining the state of the overall architecture.
+
+INCORRECT: "Use CodeDeploy to manage version control for the infrastructure services" is incorrect. AWS CodeDeploy is a deployment service that automates application (not infrastructure) deployments to Amazon EC2 instances, on-premises instances, or serverless Lambda functions. This would be a good fit if we were talking about an application environment where code changes need to be managed but not for infrastructure services..
+
+INCORRECT: "Use Trusted Advisor to record updates made to the infrastructure services" is incorrect. AWS Trusted Advisor is an online resource to help you reduce cost, increase performance, and improve security by optimizing your AWS environment, Trusted Advisor provides real time guidance to help you provision your resources following AWS best practices.
+
+References:
+
+https://aws.amazon.com/cloudformation/resources/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-cloudfront/
+
+Question 13: Skipped
+A company has over 2000 users and is planning to migrate data into the AWS Cloud. Some of the data is user’s home folders on an existing file share and the plan is to move this data to Amazon S3. Each user will have a folder in a shared bucket under the folder structure: bucket/home/%username%.
+
+What steps should a Solutions Architect take to ensure that each user can access their own home folder and no one else’s? (choose 2)
+
+
+
+
+
+
+Explanation
+The AWS blog URL below explains how to construct an IAM policy for a similar scenario. Please refer to the article for detailed instructions.
+
+CORRECT: "Create an IAM policy that applies folder-level permissions" is a correct answer.
+
+CORRECT: "Create an IAM group and attach the IAM policy, add IAM users to the group" is also a correct answer.
+
+INCORRECT: "Create a bucket policy that applies access permissions based on username" is incorrect. An IAM policy rather than a bucket policy should be used.
+
+INCORRECT: "Create an IAM policy that applies object-level S3 ACLs" is incorrect as this cannot be done through an IAM policy.
+
+INCORRECT: "Attach an S3 ACL sub-resource that grants access based on the %username% variable" is incorrect as an IAM policy should be used to control access.
+
+References:
+
+https://aws.amazon.com/blogs/security/writing-iam-policies-grant-access-to-user-specific-folders-in-an-amazon-s3-bucket/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-iam/
+
+Question 14: Skipped
+An event in CloudTrail is the record of an activity in an AWS account. What are the two types of events that can be logged in CloudTrail? (choose 2)   
+
+
+
+
+
+
+Explanation
+Trails can be configured to log Data events and management events:
+
+Data events: These events provide insight into the resource operations performed on or within a resource. These are also known as data plane operations
+
+Management events: Management events provide insight into management operations that are performed on resources in your AWS account. These are also known as control plane operations. Management events can also include non-API events that occur in your account
+
+CORRECT: "Data Events which are also known as data plane operations" is a correct answer.
+
+CORRECT: "Management Events which are also known as control plane operations" is also a correct answer.
+
+INCORRECT: "Platform Events which are also known as hardware level operations" is incorrect as this not a valid event type.
+
+INCORRECT: "System Events which are also known as instance level operations" is incorrect as this not a valid event type.
+
+INCORRECT: "Control Events which are also known as data plane operations" is incorrect as this not a valid event type.
+
+References:
+
+https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-cloudtrail/
+
+Question 15: Skipped
+A Solutions Architect is designing the messaging and streaming layers of a serverless application. The messaging layer will manage communications between components and the streaming layer will manage real-time analysis and processing of streaming data.
+
+The Architect needs to select the most appropriate AWS services for these functions. Which services should be used for the messaging and streaming layers? (choose 2)
+
+
+
+
+
+
+Explanation
+Amazon Kinesis makes it easy to collect, process, and analyze real-time streaming data. With Amazon Kinesis Analytics, you can run standard SQL or build entire streaming applications using SQL
+
+Amazon Simple Notification Service (Amazon SNS) provides a fully managed messaging service for pub/sub patterns using asynchronous event notifications and mobile push notifications for microservices, distributed systems, and serverless applications.
+
+CORRECT: "Use Amazon Kinesis for collecting, processing and analyzing real-time streaming data" is the correct answer.
+
+CORRECT: "Use Amazon SNS for providing a fully managed messaging service" is the correct answer.
+
+INCORRECT: "Use Amazon SWF for providing a fully managed messaging service" is incorrect. Amazon Simple Workflow Service is used for executing tasks not sending messages.
+
+INCORRECT: "Use Amazon EMR for collecting, processing and analyzing real-time streaming data" is incorrect. Amazon Elastic Map Reduce runs on EC2 instances so is not serverless.
+
+INCORRECT: "Use AWS CloudTrail for collecting, processing and analyzing real-time streaming data" is incorrect. AWS CloudTrail is used for recording API activity on your account.
+
+References:
+
+https://aws.amazon.com/kinesis/
+
+https://aws.amazon.com/sns/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-kinesis/
+
+https://digitalcloud.training/aws-application-integration-services/
+
+Question 16: Skipped
+An application that is being installed on an Amazon EC2 instance requires a persistent block storage volume. The data must be encrypted at rest and regular volume-level backups must be automated.
+
+Which solution options should be used?
+
+
+
+
+
+Explanation
+For block storage the Solutions Architect should use either Amazon EBS or EC2 instance store. However, the instance store is non-persistent so EBS must be used. With EBS you can encrypt your volume and automate volume-level backups using snapshots that are run by Data Lifecycle Manager.
+
+CORRECT: "Use an encrypted Amazon EBS volume and use Data Lifecycle Manager to automate snapshots" is the correct answer.
+
+INCORRECT: "Use an encrypted Amazon EFS filesystem and use an Amazon CloudWatch Events rule to start a backup copy of data using AWS Lambda" is incorrect. EFS is not block storage, it is a file-level storage service.
+
+INCORRECT: "Use server-side encryption on an Amazon S3 bucket and use Cross-Region-Replication to backup on a schedule" is incorrect. Amazon S3 is an object-based storage system not a block-based storage system.
+
+INCORRECT: "Use an encrypted Amazon EC2 instance store and copy the data to another EC2 instance using a cron job and a batch script " is incorrect as the EC2 instance store is a non-persistent volume.
+
+References:
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ebs/
+
+Question 17: Skipped
+A company runs an API on a Linux server in their on-premises data center. The company are planning to migrate the API to the AWS cloud. The company require a highly available, scalable and cost-effective solution. What should a Solutions Architect recommend?
+
+
+
+
+
+Explanation
+The best option is to use a fully serverless solution. This will provide high availability, scalability and be cost-effective. The components for this would be Amazon API Gateway for hosting the API and AWS Lambda for running the backend.
+
+As you can see in the image below, API Gateway can be the frontend for multiple backend services:
+
+
+
+CORRECT: "Migrate the API to Amazon API Gateway and use AWS Lambda as the backend" is the correct answer.
+
+INCORRECT: "Migrate the API to Amazon API Gateway and migrate the backend to Amazon EC2" is incorrect. This is a less available and cost-effective solution for the backend compared to AWS Lambda.
+
+INCORRECT: "Migrate the API server to Amazon EC2 instances in an Auto Scaling group and attach an Application Load Balancer" is incorrect. Firstly, it may be difficult to load balance to an API. Additionally, this is a less cost-effective solution.
+
+INCORRECT: "Migrate the API to Amazon CloudFront and use AWS Lambda as the origin" is incorrect. You cannot migrate an API to CloudFront. You can use CloudFront in front of API Gateway but that is not what this answer specifies.
+
+References:
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-with-lambda-integration.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-lambda/
+
+Question 18: Skipped
+The AWS Acceptable Use Policy describes permitted and prohibited behavior on AWS and includes descriptions of prohibited security violations and network abuse. According to the policy, what is AWS’s position on penetration testing?
+
+
+
+
+
+Explanation
+AWS customers are welcome to carry out security assessments or penetration tests against their AWS infrastructure without prior approval for 8 services. Please check the AWS link below for the latest information.
+
+CORRECT: "AWS allow penetration for some resources without prior authorization" is the correct answer.
+
+INCORRECT: "AWS do not allow any form of penetration testing" is incorrect as explained above.
+
+INCORRECT: "AWS allow penetration testing by customers on their own VPC resources" is incorrect as explained above.
+
+INCORRECT: "AWS allow penetration testing for all resources" is incorrect as explained above.
+
+References:
+
+https://aws.amazon.com/security/penetration-testing/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-security-services/
+
+Question 19: Skipped
+A manager is concerned that the default service limits my soon be reached for several AWS services. Which AWS tool can a Solutions Architect use to display current usage and limits?
+
+
+
+
+
+Explanation
+Trusted Advisor is an online resource to help you reduce cost, increase performance, and improve security by optimizing your AWS environment. Trusted Advisor provides real time guidance to help you provision your resources following AWS best practices.
+
+AWS Trusted Advisor offers a Service Limits check (in the Performance category) that displays your usage and limits for some aspects of some services.
+
+CORRECT: "AWS Trusted Advisor" is the correct answer.
+
+INCORRECT: "AWS Systems Manager" is incorrect. AWS Systems Manager gives you visibility and control of your infrastructure on AWS. Systems Manager provides a unified user interface so you can view operational data from multiple AWS services and allows you to automate operational tasks across your AWS resources.
+
+INCORRECT: "AWS Dashboard" is incorrect. There is no service known as “AWS Dashboard”.
+
+INCORRECT: "Amazon CloudWatch" is incorrect. Amazon CloudWatch is used for performance monitoring not displaying usage limits..
+
+References:
+
+https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html
+
+https://aws.amazon.com/premiumsupport/technology/trusted-advisor/
+
+Question 20: Skipped
+An operations team would like to be notified if an RDS database exceeds certain metric thresholds. How can a Solutions Architect automate this process for the operations team?
+
+
+
+
+
+Explanation
+You can create a CloudWatch alarm that watches a single CloudWatch metric or the result of a math expression based on CloudWatch metrics. The alarm performs one or more actions based on the value of the metric or expression relative to a threshold over a number of time periods.
+
+The action can be an Amazon EC2 action, an Amazon EC2 Auto Scaling action, or a notification sent to an Amazon SNS topic. SNS can be configured to send an email notification
+
+CORRECT: "Create a CloudWatch alarm and associate an SNS topic with it that sends an email notification" is the correct answer.
+
+INCORRECT: "Create a CloudWatch alarm and associate an SQS queue with it that delivers a message to SES" is incorrect. You cannot associate an SQS queue with a CloudWatch alarm.
+
+INCORRECT: "Setup an RDS alarm and associate an SNS topic with it that sends an email" is incorrect. CloudWatch performs performance monitoring so you don’t setup alarms in RDS itself.
+
+INCORRECT: "Create a CloudTrail alarm and configure a notification event to send an SMS" is incorrect. CloudTrail is used for auditing API access, not for performance monitoring.
+
+References:
+
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-cloudwatch/
+
+Question 21: Skipped
+A company runs an application on-premises that must consume a REST API running on Amazon API Gateway. The company has an AWS Direct Connect connection to their Amazon VPC. The solutions architect wants all API calls to use private addressing only and avoid the internet. How can this be achieved?
+
+
+
+
+
+Explanation
+The requirements are to avoid the internet and use private IP addresses only. The best solution is to use a private virtual interface across the Direct Connect connection to connect to the VPC using private IP addresses. A VPC endpoint for Amazon API Gateway can be created and this will provide access to API Gateway using private IP addresses and avoids the internet completely.
+
+CORRECT: "Use a private virtual interface and create a VPC Endpoint for Amazon API Gateway" is the correct answer.
+
+INCORRECT: "Use a hosted virtual interface and create a VPC Endpoint for Amazon API Gateway" is incorrect. A hosted virtual interface is used to allow another account to access your Direct Connect link.
+
+INCORRECT: "Use a transit virtual interface and an AWS VPN to create a secure tunnel to Amazon API Gateway" is incorrect. A transit virtual interface is used to access Amazon VPC Transit Gateways which are not included in the solution.
+
+INCORRECT: "Use a public virtual interface and an AWS VPN to create a secure tunnel to Amazon API Gateway" is incorrect. This will use the public internet so it is not allowed in this scenario.
+
+References:
+
+https://docs.aws.amazon.com/directconnect/latest/UserGuide/WorkingWithVirtualInterfaces.html
+
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-vpc/
+
+Question 22: Skipped
+An Amazon VPC contains a mixture of Amazon EC2 instances in production and non-production environments. A Solutions Architect needs to devise a way to segregate access permissions to different sets of users for instances in different environments.
+
+How can this be achieved? (choose 2)
+
+
+
+
+
+
+Explanation
+You can use the condition checking in IAM policies to look for a specific tag. IAM checks that the tag attached to the principal making the request matches the specified key name and value.
+
+CORRECT: "Create an IAM policy that grants access to any instances with the specific tag and attach to the users and groups" is the correct answer.
+
+CORRECT: "Add a specific tag to the instances you want to grant the users or groups access to" is the correct answer.
+
+INCORRECT: "Attach an Identity Provider (IdP) and delegate access to the instances to the relevant groups" is incorrect. You cannot use an IdP for this solution.
+
+INCORRECT: "Create an IAM policy with a conditional statement that matches the environment variables" is incorrect as the statement should be checking for the tag.
+
+INCORRECT: "Add an environment variable to the instances using user data" is incorrect. You cannot achieve this outcome using environment variables stored in user data and conditional statements in a policy. You must use an IAM policy that grants access to instances based on the tag.
+
+References:
+
+https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/
+
+https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html
+
+Question 23: Skipped
+A client has requested a design for a fault tolerant database that can failover between AZs. You have decided to use RDS in a multi-AZ configuration. What type of replication will the primary database use to replicate to the standby instance?   
+
+
+
+
+
+Explanation
+Multi-AZ RDS creates a replica in another AZ and synchronously replicates to it (DR only). Multi-AZ deployments for the MySQL, MariaDB, Oracle and PostgreSQL engines utilize synchronous physical replication. Multi-AZ deployments for the SQL Server engine use synchronous logical replication (SQL Server-native Mirroring technology).
+
+
+
+CORRECT: "Synchronous replication" is the correct answer.
+
+INCORRECT: "Continuous replication" is incorrect. Continuous replication is not a replication type that is supported by RDS.
+
+INCORRECT: "Asynchronous replication" is incorrect. Asynchronous replication is used by RDS for Read Replicas.
+
+INCORRECT: "Scheduled replication" is incorrect. Scheduled replication is not a replication type that is supported by RDS.
+
+References:
+
+https://aws.amazon.com/rds/features/multi-az/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-rds/
+
+Question 24: Skipped
+An application analyzes images of people that are uploaded to an Amazon S3 bucket. The application determines demographic data which is then saved to a .CSV file in another S3 bucket. The data must be encrypted at rest and then queried using SQL. The solution should be fully serverless.
+
+Which actions should a Solutions Architect take to encrypt and query the data?
+
+
+
+
+
+Explanation
+Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run. Amazon Athena supports encrypted data for both the source data and query results, for example, using Amazon S3 with AWS KMS.
+
+CORRECT: "Use AWS KMS encryption keys for the S3 bucket and use Amazon Athena to query the data" is the correct answer.
+
+INCORRECT: "Use Amazon S3 server-side encryption and use Amazon RedShift Spectrum to query the data" is incorrect. RedShift Spectrum is not serverless as it requires a RedShift cluster which is based on EC2 instances.
+
+INCORRECT: "Use AWS KMS encryption keys for the S3 bucket and use Amazon Kinesis Data Analytics to query the data" is incorrect. Kinesis Data Analytics is used for analyzing real-time streaming data in Kinesis streams.
+
+INCORRECT: "Use Amazon S3 server-side encryption and Amazon QuickSight to query the data" is incorrect. Amazon QuickSight is an interactive dashboard, it is not a service for running queries on data.
+
+References:
+
+https://d1.awsstatic.com/whitepapers/architecture/wellarchitected-Machine-Learning-Lens.pdf
+
+https://aws.amazon.com/athena/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-athena/
+
+Question 25: Skipped
+The application development team in a company have created a new application written in .NET. A Solutions Architect is looking for a way to easily deploy the application whilst maintaining full control of the underlying resources.
+
+Which PaaS service provided by AWS would BEST suit this requirement?
+
+
+
+
+
+Explanation
+AWS Elastic Beanstalk can be used to quickly deploy and manage applications in the AWS Cloud. Developers upload applications and Elastic Beanstalk handles the deployment details of capacity provisioning, load balancing, auto-scaling, and application health monitoring. It is considered to be a Platform as a Service (PaaS) solution and allows full control of the underlying resources.
+
+CORRECT: "Elastic Beanstalk" is the correct answer.
+
+INCORRECT: "CloudFront" is incorrect. CloudFront is a content delivery network for caching content to improve performance.
+
+INCORRECT: "EC2 Placement Groups" is incorrect. EC2 Placement Groups are used to control how instances are launched to enable low-latency connectivity or to be spread across distinct hardware.
+
+INCORRECT: "CloudFormation" is incorrect. CloudFormation uses templates to provision infrastructure.
+
+References:
+
+https://aws.amazon.com/elasticbeanstalk/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-elastic-beanstalk/
+
+Question 26: Skipped
+A Solutions Architect is creating an application design with several components that will be publicly addressable. The Architect would like to use Alias records. Using Route 53 Alias records what targets can you specify? (choose 2)   
+
+
+
+
+
+
+Explanation
+Alias records are used to map resource record sets in your hosted zone to Amazon Elastic Load Balancing load balancers, API Gateway custom regional APIs and edge-optimized APIs, CloudFront Distributions, AWS Elastic Beanstalk environments, Amazon S3 buckets that are configured as website endpoints, Amazon VPC interface endpoints, and to other records in the same Hosted Zone.
+
+CORRECT: "CloudFront distribution" is the correct answer.
+
+CORRECT: "Elastic Beanstalk environment" is the correct answer.
+
+INCORRECT: "ElastiCache cluster" is incorrect. You cannot use an Alias to point at an ElastiCache cluster or VPC endpoint.
+
+INCORRECT: "EFS filesystems" is incorrect. You cannot use an Alias to point to an EFS filesystem.
+
+INCORRECT: "On-premise web server" is incorrect. You cannot point an Alias record directly at an on-premises web server (you can point to another record in a hosted zone, which could point to an on-premises web server though I’m not sure if this is supported).
+
+References:
+
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-route-53/
+
+Question 27: Skipped
+A Solutions Architect needs to create a file system that can be concurrently accessed by multiple Amazon EC2 instances across multiple availability zones. The file system needs to support high throughput and the ability to burst. As the data that will be stored on the file system will be sensitive, it must be encrypted at rest and in transit.
+
+Which storage solution should the Solutions Architect use for the shared file system?
+
+
+
+
+
+Explanation
+EFS is a fully-managed service that makes it easy to set up and scale file storage in the Amazon Cloud. EFS file systems are mounted using the NFSv4.1 protocol. EFS is designed to burst to allow high throughput levels for periods of time. EFS also offers the ability to encrypt data at rest and in transit.
+
+CORRECT: "Use the Elastic File System (EFS) and mount the file system using NFS" is the correct answer.
+
+INCORRECT: "Add EBS volumes to each EC2 instance and configure data replication" is incorrect. Adding EBS volumes to each instance and configuring data replication is not the best solution for this scenario and there is no native capability within AWS for performing the replication. Some 3rd party data management software does use this model, however.
+
+INCORRECT: "Use the Elastic Block Store (EBS) and mount the file system at the block level" is incorrect. EBS is a block-level storage system not a file-level storage system. You cannot mount EBS volumes from multiple instances across AZs.
+
+INCORRECT: "Add EBS volumes to each EC2 instance and use an ELB to distribute data evenly between the volumes" is incorrect. You cannot use an ELB to distribute data between EBS volumes.
+
+References:
+
+https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-efs/
+
+Question 28: Skipped
+An application regularly uploads files from an Amazon EC2 instance to an Amazon S3 bucket. The files can be a couple of gigabytes in size and sometimes the uploads are slower than desired. What method can be used to increase throughput and reduce upload times?
+
+
+
+
+
+Explanation
+Multipart upload can be used to speed up uploads to S3. Multipart upload uploads objects in parts independently, in parallel and in any order. It is performed using the S3 Multipart upload API and is recommended for objects of 100MB or larger. It can be used for objects from 5MB up to 5TB and must be used for objects larger than 5GB.
+
+CORRECT: "Use Amazon S3 multipart upload" is the correct answer.
+
+INCORRECT: "Turn off versioning on the destination bucket" is incorrect. Turning off versioning will not speed up the upload.
+
+INCORRECT: "Randomize the object names when uploading" is incorrect. Randomizing object names provides no value in this context, random prefixes are used for intensive read requests.
+
+INCORRECT: "Upload the files using the S3 Copy SDK or REST API" is incorrect. Copy is used for copying, moving and renaming objects within S3 not for uploading to S3.
+
+References:
+
+https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-s3-and-glacier/
+
+Question 29: Skipped
+An existing Auto Scaling group is running with eight Amazon EC2 instances. A Solutions Architect has attached an Elastic Load Balancer (ELB) to the Auto Scaling group by connecting a Target Group. The ELB is in the same region and already has ten EC2 instances running in the Target Group.
+
+When attempting to attach the ELB the request immediately fails, what is the MOST likely cause?
+
+
+
+
+
+Explanation
+You can attach one or more Target Groups to your ASG to include instances behind an ALB and the ELBs must be in the same region. Once you do this any EC2 instance existing or added by the ASG will be automatically registered with the ASG defined ELBs. If adding an instance to an ASG would result in exceeding the maximum capacity of the ASG the request will fail.
+
+CORRECT: "Adding the 10 EC2 instances to the ASG would exceed the maximum capacity configured" is the correct answer.
+
+INCORRECT: "One or more of the instances are unhealthy" is incorrect. After the load balancer enters the InService state, Amazon EC2 Auto Scaling terminates and replaces any instances that are reported as unhealthy. However, in this case the request immediately failed so having one or more unhealthy instances is not the issue.
+
+INCORRECT: "ASGs cannot be edited once defined, you would need to recreate it" is incorrect. Auto Scaling Groups can be edited once created (however launch configurations cannot be edited).
+
+INCORRECT: "You cannot attach running EC2 instances to an ASG" is incorrect. You can attach running EC2 instances to an ASG.
+
+References:
+
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ec2-auto-scaling/
+
+Question 30: Skipped
+A Solutions Architect has deployed a number of AWS resources using CloudFormation. Some changes must be made to a couple of resources within the stack. Due to recent failed updates, the Solutions Architect is a little concerned about the effects that implementing updates to the resources might have on other resources in the stack.
+
+What is the easiest way to proceed cautiously?
+
+
+
+
+
+Explanation
+AWS CloudFormation provides two methods for updating stacks: direct update or creating and executing change sets. When you directly update a stack, you submit changes and AWS CloudFormation immediately deploys them.
+
+Use direct updates when you want to quickly deploy your updates. With change sets, you can preview the changes AWS CloudFormation will make to your stack, and then decide whether to apply those changes.
+
+CORRECT: "Create and execute a change set" is the correct answer.
+
+INCORRECT: "Use OpsWorks to manage the configuration changes" is incorrect. You cannot use OpsWorks to manage the configuration changes. OpsWorks is used for implementing managed Chef and Puppet services.
+
+INCORRECT: "Use a direct update" is incorrect. Direct updates will not provide the safeguard of being able to preview the changes as changes sets do.
+
+INCORRECT: "Deploy a new stack to test the changes" is incorrect. You do not need to go to the trouble and cost of deploying a new stack.
+
+References:
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-cloudformation/
+
+Question 31: Skipped
+A Solutions Architect is deploying a high performance computing (HPC) application on Amazon EC2 instances. The application requires extremely low inter-instance latency. How should the instances be deployed for BEST performance?
+
+
+
+
+
+Explanation
+It is recommended to use either enhanced networking or an Elastic Fabric Adapter (EFA) for the nodes of an HPC application. This will assist with decreasing latency. Additionally, a cluster placement group packs instances close together inside an Availability Zone.
+
+Using a cluster placement group enables workloads to achieve the low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of HPC applications.
+
+The table below helps you to understand the key differences between the different placement group options:
+
+
+
+CORRECT: "Use an Elastic Fabric Adapter (EFA) and deploy instances in a cluster placement group" is the correct answer.
+
+INCORRECT: "Use an instance with enhanced networking and deploy the instances in a partition placement group" is incorrect. A partition placement group protects instances from correlated hardware failures, it does not offer the best inter-instance network performance.
+
+INCORRECT: "Add multiple Elastic Network Adapters (ENAs) to each instance and create a NIC team" is incorrect. You cannot use NIC teaming methods on AWS to increase the bandwidth to your application. This will also not reduce latency.
+
+INCORRECT: "Use an EBS-optimized instance with 10 Gigabit networking and deploy to a single subnet" is incorrect. EBS optimization is related to storage, not to network performance. A 10 Gigabit adapter offers great bandwidth but for lowest latency enhanced networking with a cluster placement group should be used.
+
+References:
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ec2/
+
+Question 32: Skipped
+A Solutions Architect is conducting an audit and needs to query several properties of EC2 instances in a VPC. What two methods are available for accessing and querying the properties of an EC2 instance such as instance ID, public keys and network interfaces? (choose 2)   
+
+
+
+
+
+
+Explanation
+This information is stored in the instance metadata on the instance. You can access the instance metadata through a URI or by using the Instance Metadata Query tool.
+
+The instance metadata is available at http://169.254.169.254/latest/meta-data.
+
+The Instance Metadata Query tool allows you to query the instance metadata without having to type out the full URI or category names.
+
+CORRECT: "Run the command “curl http://169.254.169.254/latest/meta-data/”" is a correct answer.
+
+CORRECT: "Download and run the Instance Metadata Query Tool" is also a correct answer.
+
+INCORRECT: "Use the EC2 Config service" is incorrect. The EC2 config is not suitable for accessing this information.
+
+INCORRECT: "Run the command “curl http://169.254.169.254/latest/dynamic/instance-identity/”" is incorrect. The correct command is provided above.
+
+INCORRECT: "Use the Batch command" is incorrect. The batch command is not suitable for accessing this information.
+
+References:
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ec2/
+
+Question 33: Skipped
+A Solutions Architect needs to migrate an Oracle database running on RDS onto Amazon RedShift to improve performance and reduce cost. Which combination of tasks using AWS services should be used to execute the migration? (choose 2)   
+
+
+
+
+
+
+Explanation
+Convert the data warehouse schema and code from the Oracle database running on RDS using the AWS Schema Conversion Tool (AWS SCT) then migrate data from the Oracle database to Amazon Redshift using the AWS Database Migration Service (AWS DMS)
+
+CORRECT: "Migrate the database using the AWS Database Migration Service (DMS)" is the correct answer.
+
+CORRECT: "Convert the schema using the AWS Schema Conversion Tool" is the correct answer.
+
+INCORRECT: "Take a snapshot of the Oracle database and restore the snapshot onto RedShift" is incorrect. Snapshots are not a supported migration method from RDS to RedShift.
+
+INCORRECT: "Configure API Gateway to extract, transform and load the data into RedShift" is incorrect. API Gateway is not used for ETL functions.
+
+INCORRECT: "Enable log shipping from the Oracle database to RedShift" is incorrect. Log shipping is not a supported migration method from RDS to RedShift.
+
+References:
+
+https://aws.amazon.com/getting-started/projects/migrate-oracle-to-amazon-redshift/
+
+Question 34: Skipped
+A Solutions Architect must enable an application to download software updates from the internet. The application runs on a series of EC2 instances in an Auto Scaling group running in a private subnet. The solution must involve minimal ongoing systems management effort. How should the Solutions Architect proceed?
+
+
+
+
+
+Explanation
+Both a NAT gateway or a NAT instance can be used for this use case. Both services enable internet access for instances in private subnets. However, the NAT instance runs on an EC2 instance you must launch, configure and manage and therefore involves more ongoing systems management effort.
+
+CORRECT: "Implement a NAT gateway" is the correct answer.
+
+INCORRECT: "Launch a NAT instance" is incorrect as this service involves more ongoing systems management effort.
+
+INCORRECT: "Create a Virtual Private Gateway" is incorrect. A VPG is used as part of a VPN connection (AWS side of the connection). It is not used to enable internet access.
+
+INCORRECT: "Attach Elastic IP addresses" is incorrect. You cannot use Elastic IP addresses with instances in private subnets.
+
+References:
+
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-vpc/
+
+Question 35: Skipped
+A Solutions Architect is designing the compute layer of a serverless application. The compute layer will manage requests from external systems, orchestrate serverless workflows, and execute the business logic.
+
+The Architect needs to select the most appropriate AWS services for these functions. Which services should be used for the compute layer? (choose 2)
+
+
+
+
+
+
+Explanation
+With Amazon API Gateway, you can run a fully managed REST API that integrates with Lambda to execute your business logic and includes traffic management, authorization and access control, monitoring, and API versioning.
+
+AWS Step Functions orchestrates serverless workflows including coordination, state, and function chaining as well as combining long-running executions not supported within Lambda execution limits by breaking into multiple steps or by calling workers running on Amazon Elastic Compute Cloud (Amazon EC2) instances or on-premises.
+
+CORRECT: "Use AWS Step Functions for orchestrating serverless workflows" is the correct answer.
+
+CORRECT: "Use Amazon API Gateway with AWS Lambda for executing the business logics" is the correct answer.
+
+INCORRECT: "Use Amazon ECS for executing the business logic" is incorrect. The Amazon Elastic Container Service (ECS) is not a serverless application stack, containers run on EC2 instances.
+
+INCORRECT: "Use AWS CloudFormation for orchestrating serverless workflows" is incorrect. AWS CloudFormation is used for describing and provisioning resources not actually performing workflow functions within the application.
+
+INCORRECT: "Use AWS Elastic Beanstalk for executing the business logic" is incorrect. AWS Elastic Beanstalk is used for describing and provisioning resources not actually performing workflow functions within the application.
+
+References:
+
+https://aws.amazon.com/step-functions/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-api-gateway/
+
+Question 36: Skipped
+A Solutions Architect just completed the implementation of a 2-tier web application for a client. The application uses Amazon EC2 instances, Amazon ELB and Auto Scaling across two subnets. After deployment the Solutions Architect noticed that only one subnet has EC2 instances running in it. What might be the cause of this situation?
+
+
+
+
+
+Explanation
+You can specify which subnets Auto Scaling will launch new instances into. Auto Scaling will try to distribute EC2 instances evenly across AZs. If only one subnet has EC2 instances running in it the first thing to check is that you have added all relevant subnets to the configuration.
+
+CORRECT: "The Auto Scaling Group has not been configured with multiple subnets" is the correct answer.
+
+INCORRECT: "The ELB is configured as an internal-only load balancer" is incorrect. The type of ELB deployed is not relevant here as Auto Scaling is responsible for launching instances into subnets whereas ELB is responsible for distributing connections to the instances.
+
+INCORRECT: "Cross-zone load balancing is not enabled on the ELB" is incorrect. Cross-zone load balancing is an ELB feature and ELB is not the issue here as it is not responsible for launching instances into subnets.
+
+INCORRECT: "The AMI is missing from the ASG’s launch configuration" is incorrect. If the AMI was missing from the launch configuration no instances would be running.
+
+References:
+
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ec2-auto-scaling/
+
+Question 37: Skipped
+A new application runs on Amazon EC2 instances and uses API Gateway and AWS Lambda. The company is planning on running an advertising campaign that will likely result in significant hits to the application after each ad is run.
+
+A Solutions Architect is concerned about the impact this may have on the application and would like to put in place some controls to limit the number of requests per second that hit the application.
+
+What controls should the Solutions Architect implement?
+
+
+
+
+
+Explanation
+The key requirement is to limit the number of requests per second that hit the application. This can only be done by implementing throttling rules on the API Gateway. Throttling enables you to throttle the number of requests to your API which in turn means less traffic will be forwarded to your application server.
+
+CORRECT: "Implement throttling rules on the API Gateway" is the correct answer.
+
+INCORRECT: "Enable caching on the API Gateway and specify a size in gigabytes" is incorrect. Caching can improve performance but does not limit the amount of requests coming in.
+
+INCORRECT: "Enable Lambda continuous scaling" is incorrect. Lambda continuous scaling does not resolve the scalability concerns with the EC2 application server.
+
+INCORRECT: "API Gateway and Lambda scale automatically to handle any load so there’s no need to implement controls" is incorrect. API Gateway and Lambda both scale up to their default limits however the bottleneck is with the application server running on EC2 which may not be able to scale to keep up with demand.
+
+References:
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-api-gateway/
+
+Question 38: Skipped
+A Python application is currently running on Amazon ECS containers using the Fargate launch type. An ALB has been created with a Target Group that routes incoming connections to the ECS-based application. The application will be used by consumers who will authenticate using federated OIDC compliant Identity Providers such as Google and Facebook. The users must be securely authenticated on the front-end before they access the secured portions of the application.
+
+How can this be configured using an ALB?
+
+
+
+
+
+Explanation
+ALB supports authentication from OIDC compliant identity providers such as Google, Facebook and Amazon. It is implemented through an authentication action on a listener rule that integrates with Amazon Cognito to create user pools.
+
+SAML can be used with Amazon Cognito but this is not the only option.
+
+CORRECT: "This can be done on the ALB by creating an authentication action on a listener rule that configures an Amazon Cognito user pool with the social IdP" is the correct answer.
+
+INCORRECT: "The only option is to use SAML with Amazon Cognito on the ALB" is incorrect as explained above.
+
+INCORRECT: "This cannot be done on an ALB; you’ll need to authenticate users on the back-end with AWS Single Sign-On (SSO) integration" is incorrect as explained above.
+
+INCORRECT: "This cannot be done on an ALB; you’ll need to use another layer in front of the ALB" is incorrect as explained above.
+
+References:
+
+https://aws.amazon.com/blogs/aws/built-in-authentication-in-alb/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-elastic-load-balancing-aws-elb/
+
+Question 39: Skipped
+A company has multiple AWS accounts for several environments (Prod, Dev, Test etc.). A Solutions Architect would like to copy an Amazon EBS snapshot from DEV to PROD. The snapshot is from an EBS volume that was encrypted with a custom key.
+
+What steps must be performed to share the encrypted EBS snapshot with the Prod account? (choose 2)
+
+
+
+
+
+
+Explanation
+When an EBS volume is encrypted with a custom key you must share the custom key with the PROD account. You also need to modify the permissions on the snapshot to share it with the PROD account. The PROD account must copy the snapshot before they can then create volumes from the snapshot
+
+Note that you cannot share encrypted volumes created using a default CMK key and you cannot change the CMK key that is used to encrypt a volume.
+
+CORRECT: "Share the custom key used to encrypt the volume" is a correct answer.
+
+CORRECT: "Modify the permissions on the encrypted snapshot to share it with the Prod account" is also a correct answer.
+
+INCORRECT: "Make a copy of the EBS volume and unencrypt the data in the process" is incorrect. You do not need to decrypt the data as there is a workable solution that keeps the data secure at all times.
+
+INCORRECT: "Create a snapshot of the unencrypted volume and share it with the Prod account" is incorrect as the volume is already encrypted as security should be maintained.
+
+INCORRECT: "Use CloudHSM to distribute the encryption keys use to encrypt the volume" is incorrect. CloudHSM is used for key management and storage but not distribution..
+
+References:
+
+https://aws.amazon.com/blogs/aws/new-cross-account-copying-of-encrypted-ebs-snapshots/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ebs/
+
+Question 40: Skipped
+A Solutions Architect has deployed an API using Amazon API Gateway and created usage plans and API keys for several customers. Requests from one particular customer have been excessive and the solutions architect needs to limit the rate of requests. Other customers should not be affected. How should the solutions architect proceed?
+
+
+
+
+
+Explanation
+Per-client throttling limits are applied to clients that use API keys associated with your usage policy as client identifier. This can be applied to the single customer that is issuing excessive API requests. This is the best option to ensure that only one customer is affected.
+
+In the diagram below, per-client throttling limits are set in a usage plan:
+
+
+
+CORRECT: "Configure per-client throttling limits" is the correct answer.
+
+INCORRECT: "Configure a server-side throttling limit" is incorrect. Server-side throttling limits are applied across all clients. These limit settings exist to prevent your API—and your account—from being overwhelmed by too many requests. In this case, the solutions architect need to apply the throttling to a single client.
+
+INCORRECT: "Configure the per-method throttling limits" is incorrect. Per-method throttling limits apply to all customers using the same method. This will affect all customers who are using the API.
+
+INCORRECT: "Configure the account-level throttling limits" is incorrect. Account-level throttling limits define the maximum steady-state request rate and burst limits for the account. This does not apply to individual customers.
+
+References:
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-api-gateway/
+
+Question 41: Skipped
+A new department will begin using AWS services an AWS account and a Solutions Architect needs to create an authentication and authorization strategy. Select the correct statements regarding IAM groups? (choose 2)
+
+
+
+
+
+
+Explanation
+An IAM group is a collection of IAM users. Groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users.
+
+The following facts apply to IAM Groups:
+
+- Groups are collections of users and have policies attached to them.
+
+- A group is not an identity and cannot be identified as a principal in an IAM policy.
+
+- Use groups to assign permissions to users.
+
+- IAM groups cannot be used to group EC2 instances.
+
+- Only users and services can assume a role to take on permissions (not groups).
+
+CORRECT: "IAM groups can be used to assign permissions to users" is a correct answer.
+
+CORRECT: "An IAM group is not an identity and cannot be identified as a principal in an IAM policy" is also a correct answer.
+
+INCORRECT: "IAM groups can be nested up to 4 levels" is incorrect as this not possible.
+
+INCORRECT: "IAM groups can be used to group EC2 instances" is incorrect as they can only be used to group user accounts.
+
+INCORRECT: "IAM groups can temporarily assume a role to take on permissions for a specific task" is incorrect as this is not possible.
+
+References:
+
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-iam/
+
+Question 42: Skipped
+A large quantity of data is stored on a NAS device on-premises and accessed using the SMB protocol. The company require a managed service for hosting the filesystem and a tool to automate the migration.
+
+Which actions should a Solutions Architect take?
+
+
+
+
+
+Explanation
+Amazon FSx for Windows File Server provides fully managed, highly reliable, and scalable file storage that is accessible over the industry-standard Server Message Block (SMB) protocol. This is the most suitable destination for this use case.
+
+AWS DataSync can be used to move large amounts of data online between on-premises storage and Amazon S3, Amazon EFS, or Amazon FSx for Windows File Server. The source datastore can be Server Message Block (SMB) file servers.
+
+
+
+CORRECT: "Migrate the data to Amazon FSx for Windows File Server using AWS DataSync" is the correct answer.
+
+INCORRECT: "Migrate the data to Amazon EFS using the AWS Server Migration Service (SMS)" is incorrect. EFS is used for hosting filesystems accessed over NFS from Linux (not Windows). The SMS service is used for migrating virtual machines, not data.
+
+INCORRECT: "Migrate the data to Amazon FSx for Lustre using AWS DataSync" is incorrect. Amazon FSx for Windows File Server should be used for hosting SMB shares.
+
+INCORRECT: "Migrate the data to Amazon S3 using and AWS Snowball Edge device" is incorrect. Amazon S3 is an object store and unsuitable for hosting an SMB filesystem. Snowball is not required in this case as the data is not going to S3 and there are no time or bandwidth limitations mentioned in the scenario.
+
+References:
+
+https://aws.amazon.com/fsx/windows/
+
+https://aws.amazon.com/datasync/features/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-fsx/
+
+https://digitalcloud.training/aws-migration-services/
+
+Question 43: Skipped
+An application is running in a private subnet of an Amazon VPC and must have outbound internet access for downloading updates. The Solutions Architect does not want the application exposed to inbound connection attempts. Which steps should be taken?
+
+
+
+
+
+Explanation
+To enable outbound connectivity for instances in private subnets a NAT gateway can be created. The NAT gateway is created in a public subnet and a route must be created in the private subnet pointing to the NAT gateway for internet-bound traffic. An internet gateway must be attached to the VPC to facilitate outbound connections.
+
+
+
+You cannot directly connect to an instance in a private subnet from the internet. You would need to use a bastion/jump host. Therefore, the application will not be exposed to inbound connection attempts.
+
+CORRECT: "Create a NAT gateway and attach an internet gateway to the VPC" is the correct answer.
+
+INCORRECT: "Create a NAT gateway but do not create attach an internet gateway to the VPC" is incorrect. An internet gateway must be attached to the VPC for any outbound connections to work.
+
+INCORRECT: "Attach an internet gateway to the private subnet and create a NAT gateway" is incorrect. You do not attach internet gateways to subnets, you attach them to VPCs.
+
+INCORRECT: "Attach an internet gateway to the VPC but do not create a NAT gateway" is incorrect. Without a NAT gateway the instances in the private subnet will not be able to download updates from the internet.
+
+References:
+
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-vpc/
+
+Question 44: Skipped
+The database layer of an on-premises web application is being migrated to AWS. The database uses a multi-threaded, in-memory caching layer to improve performance for repeated queries. Which service would be the most suitable replacement for the database cache?
+
+
+
+
+
+Explanation
+Amazon ElastiCache with the Memcached engine is an in-memory database that can be used as a database caching layer. The memached engine supports multiple cores and threads and large nodes.
+
+
+
+CORRECT: "Amazon ElastiCache Memcached" is the correct answer.
+
+INCORRECT: "Amazon ElastiCache Redis" is incorrect. The Redis engine does not support multiple CPU cores or threads.
+
+INCORRECT: "Amazon DynamoDB DAX" is incorrect. Amazon DynamoDB Accelerator (DAX) is a database cache that should be used with DynamoDB only.
+
+INCORRECT: "Amazon RDS MySQL" is incorrect as this is not an example of an in-memory database that can be used as a database caching layer.
+
+References:
+
+https://aws.amazon.com/elasticache/redis-vs-memcached/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-elasticache/
+
+Question 45: Skipped
+A Solutions Architect is creating a solution for an application that must be deployed on Amazon EC2 hosts that are dedicated to the client. Instance placement must be automatic and billing should be per instance.
+
+Which type of EC2 deployment model should be used?
+
+
+
+
+
+Explanation
+Dedicated Instances are Amazon EC2 instances that run in a VPC on hardware that’s dedicated to a single customer. Your Dedicated instances are physically isolated at the host hardware level from instances that belong to other AWS accounts. Dedicated instances allow automatic instance placement and billing is per instance.
+
+CORRECT: "Dedicated Instance" is the correct answer.
+
+INCORRECT: "Reserved Instance" is incorrect. Reserved instances are a method of reducing cost by committing to a fixed contract term of 1 or 3 years..
+
+INCORRECT: "Dedicated Host" is incorrect. An Amazon EC2 Dedicated Host is a physical server with EC2 instance capacity fully dedicated to your use. Dedicated Hosts can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses. With dedicated hosts billing is on a per-host basis (not per instance).
+
+INCORRECT: "Cluster Placement Group" is incorrect. A Cluster Placement Group determines how instances are placed on underlying hardware to enable low-latency connectivity.
+
+References:
+
+https://aws.amazon.com/ec2/dedicated-hosts/
+
+https://aws.amazon.com/ec2/pricing/dedicated-instances/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ec2/
+
+Question 46: Skipped
+A company has several AWS accounts each with multiple Amazon VPCs. The company must establish routing between all private subnets. The architecture should be simple and allow transitive routing to occur.
+
+How should the network connectivity be configured?
+
+
+
+
+
+Explanation
+You can build a hub-and-spoke topology with AWS Transit Gateway that supports transitive routing. This simplifies the network topology and adds additional features over VPC peering. AWS Resource Access Manager can be used to share the connection with the other AWS accounts.
+
+
+
+CORRECT: "Create an AWS Transit Gateway and share it with each account using AWS Resource Access Manager" is the correct answer.
+
+INCORRECT: "Create a transitive VPC peering connection between each Amazon VPC and configure route tables" is incorrect. You cannot create transitive connections with VPC peering.
+
+INCORRECT: "Create an AWS Managed VPN between each Amazon VPC and configure route tables" is incorrect. This is a much more complex solution compared to AWS Transit Gateway so is not the best option.
+
+INCORRECT: "Create a hub-and-spoke topology with AWS App Mesh and use AWS Resource Access Manager to share route tables" is incorrect. AWS App Mesh is used for application-level networking for microservices applications.
+
+References:
+
+https://aws.amazon.com/blogs/aws/new-use-an-aws-transit-gateway-to-simplify-your-network-architecture/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-vpc/
+
+Question 47: Skipped
+A Solutions Architect manages multiple Amazon RDS MySQL databases. To improve security, the Solutions Architect wants to enable secure user access with short-lived credentials. How can these requirements be met?
+
+
+
+
+
+Explanation
+With MySQL, authentication is handled by AWSAuthenticationPlugin—an AWS-provided plugin that works seamlessly with IAM to authenticate your IAM users. Connect to the DB instance and issue the CREATE USER statement, as shown in the following example.
+
+CREATE USER jane_doe IDENTIFIED WITH AWSAuthenticationPlugin AS 'RDS';
+The IDENTIFIED WITH clause allows MySQL to use the AWSAuthenticationPlugin to authenticate the database account (jane_doe). The AS 'RDS' clause refers to the authentication method, and the specified database account should have the same name as the IAM user or role. In this example, both the database account and the IAM user or role are named jane_doe.
+
+CORRECT: "Create the MySQL user accounts to use the AWSAuthenticationPlugin with IAM" is the correct answer.
+
+INCORRECT: "Configure the MySQL databases to use the AWS Security Token Service (STS)" is incorrect. You cannot configure MySQL to directly use the AWS STS.
+
+INCORRECT: "Configure the application to use the AUTH command to send a unique password" is incorrect. This is used with Redis databases, not with RDS databases.
+
+INCORRECT: "Configure the MySQL databases to use AWS KMS data encryption keys" is incorrect. Data encryption keys are used for data encryption not management of connections strings.
+
+References:
+
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.DBAccounts.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-rds/
+
+Question 48: Skipped
+A company has deployed an API using Amazon API Gateway. There are many repeat requests and a solutions architect has been asked to implement measures to reduce request latency and the number of calls to the Amazon EC2 endpoint.
+
+How can this be most easily achieved?
+
+
+
+
+
+Explanation
+You can enable API caching in Amazon API Gateway to cache your endpoint's responses. With caching, you can reduce the number of calls made to your endpoint and also improve the latency of requests to your API.
+
+When you enable caching for a stage, API Gateway caches responses from your endpoint for a specified time-to-live (TTL) period, in seconds. API Gateway then responds to the request by looking up the endpoint response from the cache instead of making a request to your endpoint. The default TTL value for API caching is 300 seconds. The maximum TTL value is 3600 seconds. TTL=0 means caching is disabled.
+
+
+
+CORRECT: "Create a cache for a stage and configure a TTL" is the correct answer.
+
+INCORRECT: "Create a cache for a method and configure a TTL" is incorrect. An API cache is not enabled for a method, it is enabled for a stage.
+
+INCORRECT: "Configure an edge-optimized endpoint with CloudFront" is incorrect. This is the default endpoint type with API Gateway so there’s no reason to believe the solution architect needs to configure this. Users are routed to the nearest CloudFront point of presence (POP). However, caching still takes place within API gateway using a stage cache.
+
+INCORRECT: "Configure a private endpoint place ElastiCache in front" is incorrect. You cannot use Amazon ElastiCache to cache API requests.
+
+References:
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-api-gateway/
+
+Question 49: Skipped
+A Solutions Architect is creating a multi-tier application that includes loosely-coupled, distributed application components and needs to determine a method of sending notifications instantaneously. Using Amazon SNS which transport protocols are supported? (choose 2)
+
+
+
+
+
+
+Explanation
+Note that the questions asks you which transport protocols are supported, NOT which subscribers – therefore AWS Lambda is not supported.
+
+Amazon SNS supports notifications over multiple transport protocols:
+
+- HTTP/HTTPS – subscribers specify a URL as part of the subscription registration.
+
+- Email/Email-JSON – messages are sent to registered addresses as email (text-based or JSON-object).
+
+- SQS – users can specify an SQS standard queue as the endpoint.
+
+- SMS – messages are sent to registered phone numbers as SMS text messages.
+
+CORRECT: "HTTPS" is the correct answer.
+
+CORRECT: "Email-JSON" is the correct answer.
+
+INCORRECT: "Amazon SWF" is incorrect as this is not a supported transport protocol.
+
+INCORRECT: "FTP" is incorrect as this is not a supported transport protocol.
+
+INCORRECT: "AWS Lambda" is incorrect as this is not a supported transport protocol.
+
+References:
+
+https://aws.amazon.com/sns/faqs/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-application-integration-services/
+
+Question 50: Skipped
+A Solutions Architect is creating a design for a two-tier application with a MySQL RDS back-end. The performance requirements of the database tier are hard to quantify until the application is running and the Architect is concerned about right-sizing the database.
+
+What methods of scaling are possible after the MySQL RDS database is deployed? (choose 2)
+
+
+
+
+
+
+Explanation
+To handle a higher load in your database, you can vertically scale up your master database with a simple push of a button. In addition to scaling your master database vertically, you can also improve the performance of a read-heavy database by using read replicas to horizontally scale your database.
+
+CORRECT: "Vertical scaling for read and write by choosing a larger instance size" is a correct answer.
+
+CORRECT: "Horizontal scaling for read capacity by creating a read-replica" is also a correct answer.
+
+INCORRECT: "Horizontal scaling for write capacity by enabling Multi-AZ" is incorrect. You cannot scale write capacity by enabling Multi-AZ as only one DB is active and can be written to.
+
+INCORRECT: "Vertical scaling for read and write by using Transfer Acceleration" is incorrect. Transfer Acceleration is a feature of S3 for fast uploads of objects.
+
+INCORRECT: "Horizontal scaling for read and write by enabling Multi-Master RDS DB" is incorrect. There is no such thing as a Multi-Master MySQL RDS DB (there is for Aurora).
+
+References:
+
+https://aws.amazon.com/blogs/database/scaling-your-amazon-rds-instance-vertically-and-horizontally/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-rds/
+
+Question 51: Skipped
+An Amazon EC2 instance running a video on demand web application has been experiencing high CPU utilization. A Solutions Architect needs to take steps to reduce the impact on the EC2 instance and improve performance for consumers. Which of the steps below would help?
+
+
+
+
+
+Explanation
+This is a good use case for CloudFront which is a content delivery network (CDN) that caches content to improve performance for users who are consuming the content. This will take the load off of the EC2 instances as CloudFront has a cached copy of the video files.
+
+An origin is the origin of the files that the CDN will distribute. Origins can be either an S3 bucket, an EC2 instance, and Elastic Load Balancer, or Route 53 – can also be external (non-AWS).
+
+CORRECT: "Create a CloudFront distribution and configure a custom origin pointing at the EC2 instance" is the correct answer.
+
+INCORRECT: "Use ElastiCache as the web front-end and forward connections to EC2 for cache misses" is incorrect. ElastiCache cannot be used as an Internet facing web front-end.
+
+INCORRECT: "Create an ELB and place it in front of the EC2 instance" is incorrect. Placing an ELB in front of a single EC2 instance does not help to reduce load.
+
+INCORRECT: "Create a CloudFront RTMP distribution and point it at the EC2 instance" is incorrect. For RTMP CloudFront distributions files must be stored in an S3 bucket.
+
+References:
+
+https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Origin.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-cloudfront/
+
+Question 52: Skipped
+An organization is planning their disaster recovery solution. They plan to run a scaled down version of a fully functional environment. In a DR situation the recovery time must be minimized.
+
+Which DR strategy should a Solutions Architect recommend?
+
+
+
+
+
+Explanation
+The term warm standby is used to describe a DR scenario in which a scaled-down version of a fully functional environment is always running in the cloud. A warm standby solution extends the pilot light elements and preparation.
+
+It further decreases the recovery time because some services are always running. By identifying your business-critical systems, you can fully duplicate these systems on AWS and have them always on.
+
+CORRECT: "Warm standby" is the correct answer.
+
+INCORRECT: "Backup and restore" is incorrect. This is the lowest cost DR approach that simply entails creating online backups of all data and applications.
+
+INCORRECT: Pilot light"" is incorrect. With a pilot light strategy a core minimum of services are running and the remainder are only brought online during a disaster recovery situation.
+
+INCORRECT: "Multi-site" is incorrect. A multi-site solution runs on AWS as well as on your existing on-site infrastructure in an active- active configuration.
+
+References:
+
+https://aws.amazon.com/blogs/publicsector/rapidly-recover-mission-critical-systems-in-a-disaster/
+
+Question 53: Skipped
+A Solutions Architect is designing an application for processing and extracting data from log files. The log files are generated by an application and the number and frequency of updates varies. The files are up to 1 GB in size and processing will take around 40 seconds for each file.
+
+Which solution is the most cost-effective?
+
+
+
+
+
+Explanation
+The question asks for the most cost-effective solution and therefor a serverless and automated solution will be the best choice.
+
+AWS Lambda can run custom code in response to Amazon S3 bucket events. You upload your custom code to AWS Lambda and create a function. When Amazon S3 detects an event of a specific type (for example, an object created event), it can publish the event to AWS Lambda and invoke your function in Lambda. In response, AWS Lambda executes your function.
+
+
+
+CORRECT: "Write the log files to an Amazon S3 bucket. Create an event notification to invoke an AWS Lambda function that will process the files" is the correct answer.
+
+INCORRECT: "Write the log files to an Amazon EC2 instance with an attached EBS volume. After processing, save the files to an Amazon S3 bucket" is incorrect. This is not cost effective as it is not serverless.
+
+INCORRECT: "Write the log files to an Amazon SQS queue. Use AWS Lambda to process the files from the queue and save to an Amazon S3 bucket" is incorrect. SQS has a maximum message size of 256 KB so the message body would need to be saved in S3 anyway. Using an event source mapping from S3 would be less complex and preferable.
+
+INCORRECT: "Write the log files to an Amazon S3 bucket. Create an event notification to invoke an Amazon ECS task to process the files and save to an Amazon S3 bucket" is incorrect. You cannot use event notifications to process Amazon ECS tasks.
+
+References:
+
+https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-s3-and-glacier/
+
+https://digitalcloud.training/aws-lambda/
+
+Question 54: Skipped
+A new financial platform has been re-architected to use Docker containers in a micro-services architecture. The new architecture will be implemented on AWS and a Solutions Architect must recommend the solution configuration. For operational reasons, it will be necessary to access the operating system of the instances on which the containers run.
+
+Which solution delivery option should the Architect select?
+
+
+
+
+
+Explanation
+Amazon Elastic Container Service (ECS) is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances
+
+The EC2 Launch Type allows you to run containers on EC2 instances that you manage so you will be able to access the operating system instances.
+
+CORRECT: "ECS with the EC2 launch type" is the correct answer.
+
+INCORRECT: "EKS with Kubernetes managed infrastructure" is incorrect. The EKS service is a managed Kubernetes service that provides a fully-managed control plane so you would not have access to the EC2 instances that the platform runs on.
+
+INCORRECT: "ECS with the Fargate launch type" is incorrect. The Fargate Launch Type is a serverless infrastructure managed by AWS so you do not have access to the operating system of the EC2 instances that the container platform runs on.
+
+INCORRECT: "ECS with a default cluster" is incorrect. You need to choose the launch type to ensure you get the access required, not the cluster configuration.
+
+References:
+
+https://aws.amazon.com/ecs/features/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ecs-and-eks/
+
+Question 55: Skipped
+A Solutions Architect created a new subnet in an Amazon VPC and launched an Amazon EC2 instance into it. The Solutions Architect needs to directly access the EC2 instance from the Internet and cannot connect. Which steps should be undertaken to troubleshoot the issue? (choose 2)
+
+
+
+
+
+
+Explanation
+A public subnet is a subnet that's associated with a route table that has a route to an Internet gateway.
+
+Public subnets are subnets that have:
+
+- “Auto-assign public IPv4 address” set to “Yes”.
+
+- The subnet route table has an attached Internet Gateway.
+
+CORRECT: "Check that the instance has a public IP address" is the correct answer.
+
+CORRECT: "Check that the route table associated with the subnet has an entry for an Internet Gateway" is the correct answer.
+
+INCORRECT: "Check that there is a NAT Gateway configured for the subnet" is incorrect. A NAT Gateway is used for providing outbound Internet access for EC2 instances in private subnets.
+
+INCORRECT: "Check that Security Group has a rule for outbound traffic" is incorrect. Security groups are stateful and do not need a rule for outbound traffic. For this solution you would only need to create an inbound rule that allows the relevant protocol.
+
+INCORRECT: "Check that you can ping the instance from another subnet" is incorrect. Checking you can ping from another subnet does not relate to being able to access the instance remotely as it uses different protocols and a different network path.
+
+References:
+
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-vpc/
+
+Question 56: Skipped
+An application has been migrated from on-premises to an Amazon EC2 instance. The migration has failed due to an unknown dependency that the application must communicate with an on-premises server using private IP addresses.
+
+Which action should a solutions architect take to quickly provision the necessary connectivity?
+
+
+
+
+
+Explanation
+A virtual private gateway is a logical, fully redundant distributed edge routing function that sits at the edge of your VPC. You must create a VPG in your VPC before you can establish an AWS Managed site-to-site VPN connection. The other end of the connection is the customer gateway which must be established on the customer side of the connection.
+
+
+
+CORRECT: "Configure a Virtual Private Gateway" is the correct answer.
+
+INCORRECT: "Setup an AWS Direct Connect connection" is incorrect as this would take too long to provision.
+
+INCORRECT: "Create an Amazon CloudFront distribution" is incorrect. This is not a solution for enabling connectivity using private addresses to an on-premises site. CloudFront is a content delivery network (CDN).
+
+INCORRECT: "Create an AWS Transit Gateway" is incorrect. AWS Transit Gateway connects VPCs and on-premises networks through a central hub which is not a requirement of this solution.
+
+References:
+
+https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-vpc/
+
+Question 57: Skipped
+An Amazon ElastiCache for Redis cluster runs across multiple Availability Zones. A solutions architect is concerned about the security of sensitive data as it is replicated between nodes. How can the solutions architect protect the sensitive data?
+
+
+
+
+
+Explanation
+Amazon ElastiCache in-transit encryption is an optional feature that allows you to increase the security of your data at its most vulnerable points—when it is in transit from one location to another. Because there is some processing needed to encrypt and decrypt the data at the endpoints, enabling in-transit encryption can have some performance impact. You should benchmark your data with and without in-transit encryption to determine the performance impact for your use cases.
+
+ElastiCache in-transit encryption implements the following features:
+
+- Encrypted connections—both the server and client connections are Secure Socket Layer (SSL) encrypted.
+
+- Encrypted replication—data moving between a primary node and replica nodes is encrypted.
+
+- Server authentication—clients can authenticate that they are connecting to the right server.
+
+- Client authentication—using the Redis AUTH feature, the server can authenticate the clients.
+
+CORRECT: "Enable in-transit encryption" is the correct answer.
+
+INCORRECT: "Issue a Redis AUTH command" is incorrect. This is used when using a password to access the database.
+
+INCORRECT: "Enable at-rest encryption" is incorrect. ElastiCache for Redis at-rest encryption is an optional feature to increase data security by encrypting on-disk data. This does not encrypt the data in-transit when it is being replicated between nodes.
+
+INCORRECT: "Set up MFA and API logging" is incorrect. Neither multi-factor authentication or API logging is going to assist with encrypting data.
+
+References:
+
+https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/at-rest-encryption.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-elasticache/
+
+Question 58: Skipped
+A customer runs an application on-premise that stores large media files. The data is mounted to different servers using either the SMB or NFS protocols. The customer is having issues with scaling the storage infrastructure on-premise and is looking for a way to offload the data set into the cloud whilst retaining a local cache for frequently accessed content.
+
+Which of the following is the best solution?
+
+
+
+
+
+Explanation
+File gateway provides a virtual on-premises file server, which enables you to store and retrieve files as objects in Amazon S3. It can be used for on-premises applications, and for Amazon EC2-resident applications that need file storage in S3 for object based workloads. Used for flat files only, stored directly on S3. File gateway offers SMB or NFS-based access to data in Amazon S3 with local caching.
+
+
+
+CORRECT: "Use the AWS Storage Gateway File Gateway" is the correct answer.
+
+INCORRECT: "Use the AWS Storage Gateway Volume Gateway in cached volume mode" is incorrect. The AWS Storage Gateway Volume Gateway in cached volume mode is a block-based (not file-based) solution so you cannot mount the storage with the SMB or NFS protocols With Cached Volume mode – the entire dataset is stored on S3 and a cache of the most frequently accessed data is cached on-site.
+
+INCORRECT: "Create a script that migrates infrequently used data to S3 using multi-part upload" is incorrect. Creating a script the migrates infrequently used data to S3 is possible but that data would then not be indexed on the primary filesystem so you wouldn’t have a method of retrieving it without developing some code to pull it back from S3. This is not the best solution.
+
+INCORRECT: "Establish a VPN and use the Elastic File System (EFS)" is incorrect. You could mount EFS over a VPN but it would not provide you a local cache of the data.
+
+References:
+
+https://aws.amazon.com/storagegateway/file/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-storage-gateway/
+
+Question 59: Skipped
+A Solutions Architect is attempting to clean up unused EBS volumes and snapshots to save some space and cost. How many of the most recent snapshots of an EBS volume need to be maintained to guarantee that you can recreate the full EBS volume from the snapshot?
+
+
+
+
+
+Explanation
+Snapshots capture a point-in-time state of an instance. If you make periodic snapshots of a volume, the snapshots are incremental, which means that only the blocks on the device that have changed after your last snapshot are saved in the new snapshot.
+
+Even though snapshots are saved incrementally, the snapshot deletion process is designed so that you need to retain only the most recent snapshot in order to restore the volume.
+
+CORRECT: "Only the most recent snapshot. Snapshots are incremental, but the deletion process will ensure that no data is lost" is the correct answer.
+
+INCORRECT: "You must retain all snapshots as the process is incremental and therefore data is required from each snapshot" is incorrect as explained above.
+
+INCORRECT: "Two snapshots, the oldest and most recent snapshots" is incorrect as explained above.
+
+INCORRECT: "The oldest snapshot, as this references data in all other snapshots" is incorrect as explained above.
+
+References:
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ebs/
+
+Question 60: Skipped
+A company has an eCommerce application that runs from multiple AWS Regions. Each region has a separate database running on Amazon EC2 instances. The company plans to consolidate the data to a columnar database and run analytics queries. Which approach should the company take?
+
+
+
+
+
+Explanation
+Amazon Redshift is an enterprise-level, petabyte scale, fully managed data warehousing service. It uses columnar storage to improve the performance of complex queries.
+
+You can use the COPY command to load data in parallel from one or more remote hosts, such Amazon EC2 instances or other computers. COPY connects to the remote hosts using SSH and executes commands on the remote hosts to generate text output.
+
+CORRECT: "Use the COPY command to load data into an Amazon RedShift data warehouse and run the analytics queries there" is the correct answer.
+
+INCORRECT: "Run an AWS Batch job to copy and process the data into a columnar Amazon RDS database. Use Amazon Athena to analyze the data" is incorrect. AWS Batch is used for running batch computing jobs across a fleet of EC2 instances. You cannot create a “columnar Amazon RDS database” as RDS is optimized for transactional workloads. Athena is used to analyze data on S3.
+
+INCORRECT: "Launch Amazon Kinesis Data Streams producers to load data into a Kinesis Data stream. Use Kinesis Data Analytics to analyze the data" is incorrect. Kinesis is a real-time streaming data service. It is not a columnar database so is unsuitable for this use case.
+
+INCORRECT: "Create an AWS Lambda function that copies the data onto Amazon S3. Use Amazon S3 Select to query the data" is incorrect. S3 is not a columnar database and S3 select does not run analytics queries, it simply selects data from an object to retrieve.
+
+References:
+
+https://docs.aws.amazon.com/redshift/latest/dg/loading-data-from-remote-hosts.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-redshift/
+
+Question 61: Skipped
+There has been an increase in traffic to an application that writes data to an Amazon DynamoDB database. Thousands of random tables reads occur per second and low-latency is required. What can a Solutions Architect do to improve performance for the reads without negatively impacting the rest of the application?
+
+
+
+
+
+Explanation
+DAX is a DynamoDB-compatible caching service that enables you to benefit from fast in-memory performance for demanding applications. DAX addresses three core scenarios:
+
+   1. As an in-memory cache, DAX reduces the response times of eventually consistent read workloads by an order of magnitude from single-digit milliseconds to microseconds.
+
+   2. DAX reduces operational and application complexity by providing a managed service that is API-compatible with DynamoDB. Therefore, it requires only minimal functional changes to use with an existing application.
+
+   3. For read-heavy or bursty workloads, DAX provides increased throughput and potential operational cost savings by reducing the need to overprovision read capacity units. This is especially beneficial for applications that require repeated reads for individual keys.
+
+DynamoDB accelerator is the best solution for caching the reads and delivering them at extremely low latency.
+
+CORRECT: "Use Amazon DynamoDB Accelerator to cache the reads" is the correct answer.
+
+INCORRECT: "Increase the number of Amazon DynamoDB write capacity units" is incorrect. This will not improve read performance as write capacity units affect write performance.
+
+INCORRECT: "Add an Amazon SQS queue to decouple the requests" is incorrect. You cannot decouple a database from the frontend with a queue in order to decrease read latency.
+
+INCORRECT: "Use an Amazon Kinesis Data Stream to decouple requests" is incorrect. You cannot increase read performance for a database by implementing a real-time streaming service.
+
+References:
+
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-dynamodb/
+
+Question 62: Skipped
+A large multinational retail company has a presence in AWS in multiple regions. The company has established a new office and needs to implement a high-bandwidth, low-latency connection to multiple VPCs in multiple regions within the same account. The VPCs each have unique CIDR ranges.
+
+What would be the optimum solution design using AWS technology? (choose 2)
+
+
+
+
+
+
+Explanation
+The company should implement an AWS Direct Connect connection to the closest region. A Direct Connect gateway can then be used to create private virtual interfaces (VIFs) to each AWS region.
+
+Direct Connect gateway provides a grouping of Virtual Private Gateways (VGWs) and Private Virtual Interfaces (VIFs) that belong to the same AWS account and enables you to interface with VPCs in any AWS Region (except AWS China Region).
+
+You can share a private virtual interface to interface with more than one Virtual Private Cloud (VPC) reducing the number of BGP sessions required.
+
+CORRECT: "Create a Direct Connect gateway, and create private VIFs to each region" is a correct answer.
+
+CORRECT: "Implement a Direct Connect connection to the closest AWS region" is also a correct answer.
+
+INCORRECT: "Configure AWS VPN CloudHub" is incorrect. AWS VPN CloudHub is not the best solution as you have been asked to implement high-bandwidth, low-latency connections and VPN uses the Internet so is not reliable.
+
+INCORRECT: "Provision an MPLS network" is incorrect. An MPLS network could be used to create a network topology that gets you closer to AWS in each region but you would still need use Direct Connect or VPN for the connectivity into AWS. Also, the question states that you should use AWS technology and MPLS is not offered as a service by AWS.
+
+INCORRECT: "Implement Direct Connect connections to each AWS region" is incorrect. You do not need to implement multiple Direct Connect connections to each region. This would be a more expensive option as you would need to pay for an international private connection.
+
+References:
+
+https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/aws-direct-connect/
+
+Question 63: Skipped
+A client has made some updates to their web application. The application uses an Auto Scaling Group to maintain a group of several EC2 instances. The application has been modified and a new AMI must be used for launching any new instances.
+
+What does a Solutions Architect need to do to add the new AMI?
+
+
+
+
+
+Explanation
+A launch configuration is the template used to create new EC2 instances and includes parameters such as instance family, instance type, AMI, key pair and security groups.
+
+You cannot edit a launch configuration once defined. In this case you can create a new launch configuration that uses the new AMI and any new instances that are launched by the ASG will use the new AMI.
+
+CORRECT: "Create a new launch configuration that uses the AMI and update the ASG to use the new launch configuration" is the correct answer.
+
+INCORRECT: "Create a new target group that uses a new launch configuration with the new AMI" is incorrect. A target group is a concept associated with an ELB not Auto Scaling.
+
+INCORRECT: "Modify the existing launch configuration to add the new AMI" is incorrect as you cannot modify an existing launch configuration.
+
+INCORRECT: "Suspend Auto Scaling and replace the existing AMI" is incorrect. Suspending scaling processes can be useful when you want to investigate a configuration problem or other issue with your web application and then make changes to your application, without invoking the scaling processes. It is not useful in this situation.
+
+References:
+
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ebs/
+
+Question 64: Skipped
+An application you manage runs a number of components using a micro-services architecture. Several ECS container instances in your ECS cluster are displaying as disconnected. The ECS instances were created from the Amazon ECS-Optimized AMI. What steps might you take to troubleshoot the issue? (choose 2)   
+
+
+
+
+
+
+Explanation
+The ECS container agent is included in the Amazon ECS optimized AMI and can also be installed on any EC2 instance that supports the ECS specification (only supported on EC2 instances). Therefore, you don’t need to verify that the agent is installed.
+
+You need to verify that the installed agent is running and that the IAM instance profile has the necessary permissions applied.
+
+Troubleshooting steps for containers include:
+
+- Verify that the Docker daemon is running on the container instance.
+
+- Verify that the Docker Container daemon is running on the container instance.
+
+- Verify that the container agent is running on the container instance.
+
+- Verify that the IAM instance profile has the necessary permissions.
+
+CORRECT: "Verify that the IAM instance profile has the necessary permissions" is the correct answer.
+
+CORRECT: "Verify that the container agent is running on the container instances" is the correct answer.
+
+INCORRECT: "Verify that the instances have the correct IAM group applied" is incorrect. You apply IAM roles (instance profile) to EC2 instances, not groups..
+
+INCORRECT: "Verify that the container instances have the container agent installed" is incorrect as the ECS-optimized AMI has the agent included.
+
+INCORRECT: "Verify that the container instances are using the Fargate launch type" is incorrect. This example is based on the EC2 launch type not the Fargate launch type. With Fargate the infrastructure is managed for you by AWS.
+
+References:
+
+https://aws.amazon.com/premiumsupport/knowledge-center/ecs-agent-disconnected/
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-ecs-and-eks/
+
+Question 65: Skipped
+A Solutions Architect is designing a migration strategy for a company moving to the AWS Cloud. The company use a shared Microsoft filesystem that uses Distributed File System Namespaces (DFSN). What will be the MOST suitable migration strategy for the filesystem?
+
+
+
+
+
+Explanation
+The destination filesystem should be Amazon FSx for Windows File Server. This supports DFSN and is the most suitable storage solution for Microsoft filesystems. AWS DataSync supports migrating to the Amazon FSx and automates the process.
+
+CORRECT: "Use AWS DataSync to migrate to Amazon FSx for Windows File Server" is the correct answer.
+
+INCORRECT: "Use the AWS Server Migration Service to migrate to Amazon FSx for Lustre" is incorrect. The server migration service is used to migrate virtual machines and FSx for Lustre does not support Windows filesystems.
+
+INCORRECT: "Use AWS DataSync to migrate to an Amazon EFS filesystem" is incorrect. You can migrate data to EFS using DataSync but it is the wrong destination for a Microsoft filesystem (Linux only).
+
+INCORRECT: "Use the AWS Server Migration Service to migrate to an Amazon S3 bucket" is incorrect. The server migration service is used to migrate virtual machines and Amazon S3 is an object-based storage system and unsuitable for hosting a Microsoft filesystem.
+
+References:
+
+https://aws.amazon.com/blogs/storage/migrate-to-amazon-fsx-for-windows-file-server-using-aws-datasync/
+
+https://docs.aws.amazon.com/fsx/latest/WindowsGuide/migrate-files-fsx.html
+
+Save time with our AWS cheat sheets:
+
+https://digitalcloud.training/amazon-fsx/
