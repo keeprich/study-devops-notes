@@ -211,365 +211,65 @@ CORRECT: "Implement throttling rules on the API Gateway" is the correct answer.
 CORRECT: "This can be done on the ALB by creating an authentication action on a listener rule that configures an Amazon Cognito user pool with the social IdP" is the correct answer.
 
 
-# A company has multiple AWS accounts for several environments (Prod, Dev, Test etc.). A Solutions Architect would like to copy an Amazon EBS snapshot from DEV to PROD. The snapshot is from an EBS volume that was encrypted with a custom key.
-
-What steps must be performed to share the encrypted EBS snapshot with the Prod account? (choose 2)
-
-
-
-
-
-
-Explanation
-When an EBS volume is encrypted with a custom key you must share the custom key with the PROD account. You also need to modify the permissions on the snapshot to share it with the PROD account. The PROD account must copy the snapshot before they can then create volumes from the snapshot
-
-Note that you cannot share encrypted volumes created using a default CMK key and you cannot change the CMK key that is used to encrypt a volume.
+# A company has multiple AWS accounts for several environments (Prod, Dev, Test etc.). A Solutions Architect would like to copy an Amazon EBS snapshot from DEV to PROD. The snapshot is from an EBS volume that was encrypted with a custom key. What steps must be performed to share the encrypted EBS snapshot with the Prod account? (choose 2)
 
 CORRECT: "Share the custom key used to encrypt the volume" is a correct answer.
-
 CORRECT: "Modify the permissions on the encrypted snapshot to share it with the Prod account" is also a correct answer.
 
-INCORRECT: "Make a copy of the EBS volume and unencrypt the data in the process" is incorrect. You do not need to decrypt the data as there is a workable solution that keeps the data secure at all times.
 
-INCORRECT: "Create a snapshot of the unencrypted volume and share it with the Prod account" is incorrect as the volume is already encrypted as security should be maintained.
-
-INCORRECT: "Use CloudHSM to distribute the encryption keys use to encrypt the volume" is incorrect. CloudHSM is used for key management and storage but not distribution..
-
-References:
-
-https://aws.amazon.com/blogs/aws/new-cross-account-copying-of-encrypted-ebs-snapshots/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-ebs/
-
-Question 40: Skipped
-A Solutions Architect has deployed an API using Amazon API Gateway and created usage plans and API keys for several customers. Requests from one particular customer have been excessive and the solutions architect needs to limit the rate of requests. Other customers should not be affected. How should the solutions architect proceed?
-
-
-
-
-
-Explanation
-Per-client throttling limits are applied to clients that use API keys associated with your usage policy as client identifier. This can be applied to the single customer that is issuing excessive API requests. This is the best option to ensure that only one customer is affected.
-
-In the diagram below, per-client throttling limits are set in a usage plan:
-
-
+# A Solutions Architect has deployed an API using Amazon API Gateway and created usage plans and API keys for several customers. Requests from one particular customer have been excessive and the solutions architect needs to limit the rate of requests. Other customers should not be affected. How should the solutions architect proceed?
 
 CORRECT: "Configure per-client throttling limits" is the correct answer.
 
-INCORRECT: "Configure a server-side throttling limit" is incorrect. Server-side throttling limits are applied across all clients. These limit settings exist to prevent your API—and your account—from being overwhelmed by too many requests. In this case, the solutions architect need to apply the throttling to a single client.
 
-INCORRECT: "Configure the per-method throttling limits" is incorrect. Per-method throttling limits apply to all customers using the same method. This will affect all customers who are using the API.
-
-INCORRECT: "Configure the account-level throttling limits" is incorrect. Account-level throttling limits define the maximum steady-state request rate and burst limits for the account. This does not apply to individual customers.
-
-References:
-
-https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-api-gateway/
-
-Question 41: Skipped
-A new department will begin using AWS services an AWS account and a Solutions Architect needs to create an authentication and authorization strategy. Select the correct statements regarding IAM groups? (choose 2)
-
-
-
-
-
-
-Explanation
-An IAM group is a collection of IAM users. Groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users.
-
-The following facts apply to IAM Groups:
-
-- Groups are collections of users and have policies attached to them.
-
-- A group is not an identity and cannot be identified as a principal in an IAM policy.
-
-- Use groups to assign permissions to users.
-
-- IAM groups cannot be used to group EC2 instances.
-
-- Only users and services can assume a role to take on permissions (not groups).
+# A new department will begin using AWS services an AWS account and a Solutions Architect needs to create an authentication and authorization strategy. Select the correct statements regarding IAM groups? (choose 2)
 
 CORRECT: "IAM groups can be used to assign permissions to users" is a correct answer.
-
 CORRECT: "An IAM group is not an identity and cannot be identified as a principal in an IAM policy" is also a correct answer.
 
-INCORRECT: "IAM groups can be nested up to 4 levels" is incorrect as this not possible.
 
-INCORRECT: "IAM groups can be used to group EC2 instances" is incorrect as they can only be used to group user accounts.
-
-INCORRECT: "IAM groups can temporarily assume a role to take on permissions for a specific task" is incorrect as this is not possible.
-
-References:
-
-https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-iam/
-
-Question 42: Skipped
-A large quantity of data is stored on a NAS device on-premises and accessed using the SMB protocol. The company require a managed service for hosting the filesystem and a tool to automate the migration.
-
-Which actions should a Solutions Architect take?
-
-
-
-
-
-Explanation
-Amazon FSx for Windows File Server provides fully managed, highly reliable, and scalable file storage that is accessible over the industry-standard Server Message Block (SMB) protocol. This is the most suitable destination for this use case.
-
-AWS DataSync can be used to move large amounts of data online between on-premises storage and Amazon S3, Amazon EFS, or Amazon FSx for Windows File Server. The source datastore can be Server Message Block (SMB) file servers.
-
-
+# A large quantity of data is stored on a NAS device on-premises and accessed using the SMB protocol. The company require a managed service for hosting the filesystem and a tool to automate the migration. Which actions should a Solutions Architect take?
 
 CORRECT: "Migrate the data to Amazon FSx for Windows File Server using AWS DataSync" is the correct answer.
 
-INCORRECT: "Migrate the data to Amazon EFS using the AWS Server Migration Service (SMS)" is incorrect. EFS is used for hosting filesystems accessed over NFS from Linux (not Windows). The SMS service is used for migrating virtual machines, not data.
-
-INCORRECT: "Migrate the data to Amazon FSx for Lustre using AWS DataSync" is incorrect. Amazon FSx for Windows File Server should be used for hosting SMB shares.
-
-INCORRECT: "Migrate the data to Amazon S3 using and AWS Snowball Edge device" is incorrect. Amazon S3 is an object store and unsuitable for hosting an SMB filesystem. Snowball is not required in this case as the data is not going to S3 and there are no time or bandwidth limitations mentioned in the scenario.
-
-References:
-
-https://aws.amazon.com/fsx/windows/
-
-https://aws.amazon.com/datasync/features/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-fsx/
-
-https://digitalcloud.training/aws-migration-services/
-
-Question 43: Skipped
-An application is running in a private subnet of an Amazon VPC and must have outbound internet access for downloading updates. The Solutions Architect does not want the application exposed to inbound connection attempts. Which steps should be taken?
-
-
-
-
-
-Explanation
-To enable outbound connectivity for instances in private subnets a NAT gateway can be created. The NAT gateway is created in a public subnet and a route must be created in the private subnet pointing to the NAT gateway for internet-bound traffic. An internet gateway must be attached to the VPC to facilitate outbound connections.
-
-
-
-You cannot directly connect to an instance in a private subnet from the internet. You would need to use a bastion/jump host. Therefore, the application will not be exposed to inbound connection attempts.
+ 
+# An application is running in a private subnet of an Amazon VPC and must have outbound internet access for downloading updates. The Solutions Architect does not want the application exposed to inbound connection attempts. Which steps should be taken?
 
 CORRECT: "Create a NAT gateway and attach an internet gateway to the VPC" is the correct answer.
 
-INCORRECT: "Create a NAT gateway but do not create attach an internet gateway to the VPC" is incorrect. An internet gateway must be attached to the VPC for any outbound connections to work.
 
-INCORRECT: "Attach an internet gateway to the private subnet and create a NAT gateway" is incorrect. You do not attach internet gateways to subnets, you attach them to VPCs.
-
-INCORRECT: "Attach an internet gateway to the VPC but do not create a NAT gateway" is incorrect. Without a NAT gateway the instances in the private subnet will not be able to download updates from the internet.
-
-References:
-
-https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-vpc/
-
-Question 44: Skipped
-The database layer of an on-premises web application is being migrated to AWS. The database uses a multi-threaded, in-memory caching layer to improve performance for repeated queries. Which service would be the most suitable replacement for the database cache?
-
-
-
-
-
-Explanation
-Amazon ElastiCache with the Memcached engine is an in-memory database that can be used as a database caching layer. The memached engine supports multiple cores and threads and large nodes.
-
-
+# The database layer of an on-premises web application is being migrated to AWS. The database uses a multi-threaded, in-memory caching layer to improve performance for repeated queries. Which service would be the most suitable replacement for the database cache?
 
 CORRECT: "Amazon ElastiCache Memcached" is the correct answer.
 
-INCORRECT: "Amazon ElastiCache Redis" is incorrect. The Redis engine does not support multiple CPU cores or threads.
 
-INCORRECT: "Amazon DynamoDB DAX" is incorrect. Amazon DynamoDB Accelerator (DAX) is a database cache that should be used with DynamoDB only.
-
-INCORRECT: "Amazon RDS MySQL" is incorrect as this is not an example of an in-memory database that can be used as a database caching layer.
-
-References:
-
-https://aws.amazon.com/elasticache/redis-vs-memcached/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-elasticache/
-
-Question 45: Skipped
-A Solutions Architect is creating a solution for an application that must be deployed on Amazon EC2 hosts that are dedicated to the client. Instance placement must be automatic and billing should be per instance.
-
-Which type of EC2 deployment model should be used?
-
-
-
-
-
-Explanation
-Dedicated Instances are Amazon EC2 instances that run in a VPC on hardware that’s dedicated to a single customer. Your Dedicated instances are physically isolated at the host hardware level from instances that belong to other AWS accounts. Dedicated instances allow automatic instance placement and billing is per instance.
+# A Solutions Architect is creating a solution for an application that must be deployed on Amazon EC2 hosts that are dedicated to the client. Instance placement must be automatic and billing should be per instance. Which type of EC2 deployment model should be used?
 
 CORRECT: "Dedicated Instance" is the correct answer.
 
-INCORRECT: "Reserved Instance" is incorrect. Reserved instances are a method of reducing cost by committing to a fixed contract term of 1 or 3 years..
 
-INCORRECT: "Dedicated Host" is incorrect. An Amazon EC2 Dedicated Host is a physical server with EC2 instance capacity fully dedicated to your use. Dedicated Hosts can help you address compliance requirements and reduce costs by allowing you to use your existing server-bound software licenses. With dedicated hosts billing is on a per-host basis (not per instance).
-
-INCORRECT: "Cluster Placement Group" is incorrect. A Cluster Placement Group determines how instances are placed on underlying hardware to enable low-latency connectivity.
-
-References:
-
-https://aws.amazon.com/ec2/dedicated-hosts/
-
-https://aws.amazon.com/ec2/pricing/dedicated-instances/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-ec2/
-
-Question 46: Skipped
-A company has several AWS accounts each with multiple Amazon VPCs. The company must establish routing between all private subnets. The architecture should be simple and allow transitive routing to occur.
-
-How should the network connectivity be configured?
-
-
-
-
-
-Explanation
-You can build a hub-and-spoke topology with AWS Transit Gateway that supports transitive routing. This simplifies the network topology and adds additional features over VPC peering. AWS Resource Access Manager can be used to share the connection with the other AWS accounts.
-
-
+# A company has several AWS accounts each with multiple Amazon VPCs. The company must establish routing between all private subnets. The architecture should be simple and allow transitive routing to occur. How should the network connectivity be configured?
 
 CORRECT: "Create an AWS Transit Gateway and share it with each account using AWS Resource Access Manager" is the correct answer.
 
-INCORRECT: "Create a transitive VPC peering connection between each Amazon VPC and configure route tables" is incorrect. You cannot create transitive connections with VPC peering.
 
-INCORRECT: "Create an AWS Managed VPN between each Amazon VPC and configure route tables" is incorrect. This is a much more complex solution compared to AWS Transit Gateway so is not the best option.
-
-INCORRECT: "Create a hub-and-spoke topology with AWS App Mesh and use AWS Resource Access Manager to share route tables" is incorrect. AWS App Mesh is used for application-level networking for microservices applications.
-
-References:
-
-https://aws.amazon.com/blogs/aws/new-use-an-aws-transit-gateway-to-simplify-your-network-architecture/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-vpc/
-
-Question 47: Skipped
-A Solutions Architect manages multiple Amazon RDS MySQL databases. To improve security, the Solutions Architect wants to enable secure user access with short-lived credentials. How can these requirements be met?
-
-
-
-
-
-Explanation
-With MySQL, authentication is handled by AWSAuthenticationPlugin—an AWS-provided plugin that works seamlessly with IAM to authenticate your IAM users. Connect to the DB instance and issue the CREATE USER statement, as shown in the following example.
-
-CREATE USER jane_doe IDENTIFIED WITH AWSAuthenticationPlugin AS 'RDS';
-The IDENTIFIED WITH clause allows MySQL to use the AWSAuthenticationPlugin to authenticate the database account (jane_doe). The AS 'RDS' clause refers to the authentication method, and the specified database account should have the same name as the IAM user or role. In this example, both the database account and the IAM user or role are named jane_doe.
+# A Solutions Architect manages multiple Amazon RDS MySQL databases. To improve security, the Solutions Architect wants to enable secure user access with short-lived credentials. How can these requirements be met?
 
 CORRECT: "Create the MySQL user accounts to use the AWSAuthenticationPlugin with IAM" is the correct answer.
 
-INCORRECT: "Configure the MySQL databases to use the AWS Security Token Service (STS)" is incorrect. You cannot configure MySQL to directly use the AWS STS.
 
-INCORRECT: "Configure the application to use the AUTH command to send a unique password" is incorrect. This is used with Redis databases, not with RDS databases.
-
-INCORRECT: "Configure the MySQL databases to use AWS KMS data encryption keys" is incorrect. Data encryption keys are used for data encryption not management of connections strings.
-
-References:
-
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.DBAccounts.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-rds/
-
-Question 48: Skipped
-A company has deployed an API using Amazon API Gateway. There are many repeat requests and a solutions architect has been asked to implement measures to reduce request latency and the number of calls to the Amazon EC2 endpoint.
-
-How can this be most easily achieved?
-
-
-
-
-
-Explanation
-You can enable API caching in Amazon API Gateway to cache your endpoint's responses. With caching, you can reduce the number of calls made to your endpoint and also improve the latency of requests to your API.
-
-When you enable caching for a stage, API Gateway caches responses from your endpoint for a specified time-to-live (TTL) period, in seconds. API Gateway then responds to the request by looking up the endpoint response from the cache instead of making a request to your endpoint. The default TTL value for API caching is 300 seconds. The maximum TTL value is 3600 seconds. TTL=0 means caching is disabled.
-
-
+# A company has deployed an API using Amazon API Gateway. There are many repeat requests and a solutions architect has been asked to implement measures to reduce request latency and the number of calls to the Amazon EC2 endpoint.How can this be most easily achieved?
 
 CORRECT: "Create a cache for a stage and configure a TTL" is the correct answer.
 
-INCORRECT: "Create a cache for a method and configure a TTL" is incorrect. An API cache is not enabled for a method, it is enabled for a stage.
-
-INCORRECT: "Configure an edge-optimized endpoint with CloudFront" is incorrect. This is the default endpoint type with API Gateway so there’s no reason to believe the solution architect needs to configure this. Users are routed to the nearest CloudFront point of presence (POP). However, caching still takes place within API gateway using a stage cache.
-
-INCORRECT: "Configure a private endpoint place ElastiCache in front" is incorrect. You cannot use Amazon ElastiCache to cache API requests.
-
-References:
-
-https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/amazon-api-gateway/
-
-Question 49: Skipped
-A Solutions Architect is creating a multi-tier application that includes loosely-coupled, distributed application components and needs to determine a method of sending notifications instantaneously. Using Amazon SNS which transport protocols are supported? (choose 2)
-
-
-
-
-
-
-Explanation
-Note that the questions asks you which transport protocols are supported, NOT which subscribers – therefore AWS Lambda is not supported.
-
-Amazon SNS supports notifications over multiple transport protocols:
-
-- HTTP/HTTPS – subscribers specify a URL as part of the subscription registration.
-
-- Email/Email-JSON – messages are sent to registered addresses as email (text-based or JSON-object).
-
-- SQS – users can specify an SQS standard queue as the endpoint.
-
-- SMS – messages are sent to registered phone numbers as SMS text messages.
+ 
+# A Solutions Architect is creating a multi-tier application that includes loosely-coupled, distributed application components and needs to determine a method of sending notifications instantaneously. Using Amazon SNS which transport protocols are supported? (choose 2)
 
 CORRECT: "HTTPS" is the correct answer.
-
 CORRECT: "Email-JSON" is the correct answer.
 
-INCORRECT: "Amazon SWF" is incorrect as this is not a supported transport protocol.
 
-INCORRECT: "FTP" is incorrect as this is not a supported transport protocol.
-
-INCORRECT: "AWS Lambda" is incorrect as this is not a supported transport protocol.
-
-References:
-
-https://aws.amazon.com/sns/faqs/
-
-Save time with our AWS cheat sheets:
-
-https://digitalcloud.training/aws-application-integration-services/
-
-Question 50: Skipped
-A Solutions Architect is creating a design for a two-tier application with a MySQL RDS back-end. The performance requirements of the database tier are hard to quantify until the application is running and the Architect is concerned about right-sizing the database.
+# A Solutions Architect is creating a design for a two-tier application with a MySQL RDS back-end. The performance requirements of the database tier are hard to quantify until the application is running and the Architect is concerned about right-sizing the database.
 
 What methods of scaling are possible after the MySQL RDS database is deployed? (choose 2)
 
