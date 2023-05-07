@@ -5,9 +5,6 @@ Question 1: Incorrect
 # A development team needs to run up a few lab servers on a weekend for a new project. The servers will need to run uninterrupted for a few hours. Which EC2 pricing option would be most suitable?   
 
 
-
-
-
 Explanation
 On-Demand pricing ensures that instances will not be terminated and is the most economical option. Use on-demand for ad-hoc requirements where you cannot tolerate interruption.
 
